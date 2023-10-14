@@ -10,6 +10,7 @@ import { DetalleCoheteComponent } from './paginas/detalle-cohete/detalle-cohete.
 import { HeaderComponent } from './paginas/shared/header/header.component';
 import { FooterComponent } from './paginas/shared/footer/footer.component';
 import { CoheteComponent } from './cards/cohete/cohete.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CoheteComponent } from './cards/cohete/cohete.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

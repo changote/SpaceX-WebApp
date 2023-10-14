@@ -13,9 +13,9 @@ export class HttpService {
   
   constructor(private http: HttpClient) { }
 
-  public realizarGet(url: string, opciones?: any, timeoutMs = 30000): any{
+  public realizarGet(url: string, timeoutMs = 30000): any{
     this.eventHttp.emit(false);
-    return this.http.get(url, opciones).pipe(
+    return this.http.get(url).pipe(
       tap(_ => {
         this.eventHttp.emit(true);
       }),

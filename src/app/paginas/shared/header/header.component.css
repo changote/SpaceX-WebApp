@@ -43,6 +43,7 @@ header nav ul li a:hover{
     background-color: grey;
     border-radius: 20px;
     box-shadow: 4px 3px 5px rgb(70, 69, 69);
+    padding: 0.5rem;
 }
 
 
