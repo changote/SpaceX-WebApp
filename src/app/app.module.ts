@@ -7,6 +7,8 @@ import { Error404Component } from './paginas/error404/error404.component';
 import { MisDatosComponent } from './paginas/mis-datos/mis-datos.component';
 import { HomeComponent } from './paginas/home/home.component';
 import { DetalleCoheteComponent } from './paginas/detalle-cohete/detalle-cohete.component';
+import { HeaderComponent } from './paginas/shared/header/header.component';
+import { FooterComponent } from './paginas/shared/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { DetalleCoheteComponent } from './paginas/detalle-cohete/detalle-cohete.
     Error404Component,
     MisDatosComponent,
     HomeComponent,
-    DetalleCoheteComponent
+    DetalleCoheteComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
