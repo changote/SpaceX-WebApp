@@ -9,6 +9,7 @@ import { HomeComponent } from './paginas/home/home.component';
 import { DetalleCoheteComponent } from './paginas/detalle-cohete/detalle-cohete.component';
 import { HeaderComponent } from './paginas/shared/header/header.component';
 import { FooterComponent } from './paginas/shared/footer/footer.component';
+import { CoheteComponent } from './cards/cohete/cohete.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './paginas/shared/footer/footer.component';
     HomeComponent,
     DetalleCoheteComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    CoheteComponent
   ],
   imports: [
     BrowserModule,

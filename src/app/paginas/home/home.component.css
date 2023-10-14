@@ -1,0 +1,17 @@
+.carrousel {
+    width: 90%;
+    height: 20rem;
+    text-align: center;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.company {
+    width: 90%;
+    text-align: center;
+    background-color: blue;
+    border-radius: 1rem;
+}
