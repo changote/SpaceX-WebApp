@@ -11,6 +11,7 @@ import { HeaderComponent } from './paginas/shared/header/header.component';
 import { FooterComponent } from './paginas/shared/footer/footer.component';
 import { CoheteComponent } from './cards/cohete/cohete.component';
 import { HttpClientModule } from '@angular/common/http';
+import { LoginComponent } from './paginas/login/login.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     DetalleCoheteComponent,
     HeaderComponent,
     FooterComponent,
-    CoheteComponent
+    CoheteComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -5,11 +5,13 @@ import { MisDatosComponent } from './paginas/mis-datos/mis-datos.component';
 import { DetalleCoheteComponent } from './paginas/detalle-cohete/detalle-cohete.component';
 import { Error404Component } from './paginas/error404/error404.component';
 import { autenticacionGuard } from './servicios/autenticacion/autenticacion.guard';
+import { LoginComponent } from './paginas/login/login.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
+  { path: '', component: HomeComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
   { path: 'mis-datos', component: MisDatosComponent, canActivate:[autenticacionGuard]},
   { path: 'cohete/:id', component: DetalleCoheteComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
+  { path: 'login', component: LoginComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
   { path: 'error-404', component: Error404Component},
 ];
 

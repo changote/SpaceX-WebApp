@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/servicios/http/http.service';
+import { TranslationService } from 'src/app/servicios/translation/translation.service';
+import { VariablesGlobales } from 'src/app/variables-globales';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +10,33 @@ import { HttpService } from 'src/app/servicios/http/http.service';
 })
 export class HomeComponent implements OnInit{
   company: any;
-  constructor(private httpService: HttpService){
+  translatedText: any;
+
+  constructor(private httpService: HttpService, private translationService: TranslationService){
     
   }
   ngOnInit() {
-    this.httpService.realizarGet("https://api.spacexdata.com/v4/company").subscribe(
+    this.httpService.realizarGet(VariablesGlobales.urlApi + "company").subscribe(
       (data: any) => {
         this.company = data;
+        this.translatedText = this.translate(data.summary);
         console.log(this.company);
       },
       (error: any) => {
         console.error('Error:', error);
       }
     );
+    
   }
+  async translate(textToTranslate: string) {
+    const targetLanguage = "en";
+
+    this.translationService.translateText(textToTranslate, targetLanguage)
+      .subscribe((data) => {
+        this.translatedText = data.translatedText;
+        console.log(this.translatedText);
+      });
+  }
+
+  
 }
