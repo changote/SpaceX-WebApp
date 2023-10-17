@@ -3,10 +3,10 @@ width: 300px;
 height: 250px;
 margin: 1rem;
 border: 2px solid black;
-border-radius: 5px;
+border-radius: 10px;
 overflow: hidden;
 transition: 1s;
-box-shadow: 4px 3px 5px #000000;
+box-shadow: 2px 2px 5px #000000;
 background-color: rgba(240, 237, 237, 0.873);
 }
 
@@ -16,6 +16,7 @@ background-color: rgba(240, 237, 237, 0.873);
     display: flex;
     justify-content: center;
     align-items: center;
+    border: 3px solid black;
 }
 
 .cardPista{
@@ -39,15 +40,15 @@ background-color: rgba(240, 237, 237, 0.873);
 }
 
 .active{
-    background-color: rgba(0, 194, 0, 0.845);
+    background-color: rgba(0, 128, 0, 0.845);
 }
 
 .retired{
-    background-color: rgba(217, 0, 0, 0.886);
+    background-color: rgba(175, 0, 0, 0.886);
 }
 
 .contruccion{
-    background-color: rgba(215, 215, 0, 0.744);
+    background-color: rgba(215, 215, 0, 0.834);
 }
 
 .informacion{
