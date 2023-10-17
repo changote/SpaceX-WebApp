@@ -1,0 +1,13 @@
+
+    <h2> - - - - - Pistas de lanzamientos - - - - <i class="fa-solid fa-shuttle-space" style="color: #ffffff;"></i></h2>
+    <div class="container">
+    <div *ngFor="let pista of launchpads"> 
+    <app-pista [pista]="pista"></app-pista>
+    </div> 
+    </div> 
+    <h2><i class="fa-solid fa-shuttle-space fa-rotate-180" style="color: #ffffff;"></i> - - - - Pistas de aterrizaje - - - - - - - </h2>   
+    <div class="container">
+        <div *ngFor="let pista of landpads"> 
+        <app-pista [pista]="pista"></app-pista>
+        </div> 
+        </div> 

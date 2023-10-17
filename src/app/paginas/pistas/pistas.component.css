@@ -1,0 +1,18 @@
+.container{
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+h2{
+    text-align: center;
+    font-size: 3rem;
+    margin: 0px;
+    color: azure;
+    padding: 2rem;
+    font-family: 'Orbitron', sans-serif;
+}

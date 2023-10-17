@@ -1,0 +1,6 @@
+.container{
+    padding-left: 7rem;
+    padding-right: 7rem;
+    background-image: url(../assets/img/fondo.jpg);
+    background-size: cover;
+}

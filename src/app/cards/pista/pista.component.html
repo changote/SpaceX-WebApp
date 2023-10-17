@@ -1,0 +1,20 @@
+<div class="cardPista">
+  <div class="status retired" *ngIf="pista.status === 'retired'">
+    <span>Retirada</span>
+  </div>
+  <div class="status active" *ngIf="pista.status === 'active'">
+    <span>Activa</span>
+  </div>
+  <div class="status contruccion"*ngIf="pista.status === 'under construction'">
+    <span>En construcción</span>
+  </div>
+  <div class="imgPista">
+    <img src="{{ pista.images.large }}" alt="imagen pista" />
+  </div>
+  <div class="nombres">
+    <h3>{{ pista.name }}</h3>
+  </div>
+  <div class="informacion">
+    <p>Localidad {{ pista.locality }}</p>
+  </div>
+</div>

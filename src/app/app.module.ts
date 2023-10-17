@@ -12,6 +12,8 @@ import { FooterComponent } from './paginas/shared/footer/footer.component';
 import { CoheteComponent } from './cards/cohete/cohete.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './paginas/login/login.component';
+import { PistasComponent } from './paginas/pistas/pistas.component';
+import { PistaComponent } from './cards/pista/pista.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { LoginComponent } from './paginas/login/login.component';
     HeaderComponent,
     FooterComponent,
     CoheteComponent,
-    LoginComponent
+    LoginComponent,
+    PistasComponent,
+    PistaComponent
   ],
   imports: [
     BrowserModule,
