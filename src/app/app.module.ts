@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './paginas/login/login.component';
 import { PistasComponent } from './paginas/pistas/pistas.component';
 import { PistaComponent } from './cards/pista/pista.component';
+import { SidebarComponent } from './paginas/shared/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PistaComponent } from './cards/pista/pista.component';
     CoheteComponent,
     LoginComponent,
     PistasComponent,
-    PistaComponent
+    PistaComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
