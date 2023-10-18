@@ -1,4 +1,4 @@
-header{
+header {
     display: flex;
     background-color: rgb(64, 64, 64);
     margin: 0;
@@ -7,6 +7,8 @@ header{
     width: 100%;
     height: 100px;
     align-items: center;
+    position: fixed;
+    z-index: 1;
 }
 
 img {
@@ -18,7 +20,7 @@ img {
 }
 
 
-header nav{
+header nav {
     width: 60%;
     display: flex;
     align-items: center;
@@ -32,39 +34,41 @@ header nav ul {
     justify-content: space-around;
 }
 
-header nav ul li
-{
+header nav ul li {
+
     text-align: center;
-    margin: 2rem;
     font-size: 1.5rem;
 }
 
-header nav ul li a:hover{
+header nav ul li a:hover {
     background-color: grey;
     border-radius: 20px;
     box-shadow: 4px 3px 5px rgb(70, 69, 69);
-    padding: 0.5rem;
+    transition: .5s;
 }
 
-
-header ul li a{
-text-decoration: none;
-margin: 1rem;
-font-family: 'Comfortaa', sans-serif;
+header ul li a {
+    text-decoration: none;
+    font-family: 'Comfortaa', sans-serif;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
-#logo{
+#logo {
     width: 20%;
-padding-left: 1rem;
+    padding-left: 1rem;
 }
 
-#loggeo{
+#loggeo {
     width: 10%;
     margin: 1rem;
     display: flex;
+    padding-right: 1rem;
 }
 
-#loggeo a{
+#loggeo a {
     width: 100%;
     text-decoration: none;
     text-align: center;
@@ -75,4 +79,19 @@ padding-left: 1rem;
 
 a {
     color: white;
+}
+
+@media (max-width: 1334px) {
+    .texto-nav {
+        display: none;
+    }
+
+    a {
+        font-size: 50px;
+    }
+    header ul li a {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    
 }
