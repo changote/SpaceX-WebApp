@@ -1,3 +1,36 @@
+<app-loading *ngIf="loading; else elseBlock"></app-loading>
+<ng-template #elseBlock>
+<div class="background">
 <div class="container">
-    asd
+    <img src="{{pista.images.large}}" alt="Pista">
+    <div>
+        <h2>{{ pista.full_name }}</h2>
+        <div *ngIf="landpad; else launchpadBlock">
+        <ul>
+            <li>{{pista.details}}</li>
+            <li>Tipo: {{pista.type}}</li>
+            <li>{{pista.landing_attempts}} intentos de aterrizaje</li>
+            <li>{{pista.landing_successes}} aterrizajes exitosos</li>
+            <li>Latitud: {{pista.latitude}}</li>
+            <li>Longitud: {{pista.longitude}}</li>
+            <li>Localidad: {{pista.locality}}</li>
+            <li>Region de {{pista.region}}</li>
+            <li>Estado: {{pista.status}}</li>
+        </ul>
+        </div>
+        <ng-template #launchpadBlock>
+            <ul>
+                <li>{{pista.details}}</li>
+                <li>{{pista.launch_attempts}} intentos de lanzamiento</li>
+                <li>{{pista.launch_successes}} lanzamientos exitosos</li>
+                <li>Latitud: {{pista.latitude}}</li>
+                <li>Longitud: {{pista.longitude}}</li>
+                <li>Localidad: {{pista.locality}}</li>
+                <li>Region de {{pista.region}}</li>
+                <li>Estado: {{pista.status}}</li>
+            </ul>
+        </ng-template>
+    </div>
+    </div>
 </div>
+</ng-template>
