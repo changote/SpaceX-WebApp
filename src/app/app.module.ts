@@ -16,6 +16,9 @@ import { PistasComponent } from './paginas/pistas/pistas.component';
 import { PistaComponent } from './cards/pista/pista.component';
 import { LoadingComponent } from './paginas/loading/loading.component';
 import { DetallePistaComponent } from './paginas/detalle-pista/detalle-pista.component';
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { FormularioContactoComponent } from './paginas/formulario-contacto/formulario-contacto.component';
+import { RegistroComponent } from './modales/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +34,15 @@ import { DetallePistaComponent } from './paginas/detalle-pista/detalle-pista.com
     PistasComponent,
     PistaComponent,
     LoadingComponent,
-    DetallePistaComponent
+    DetallePistaComponent,
+    FormularioContactoComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CarouselModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

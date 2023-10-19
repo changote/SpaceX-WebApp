@@ -3,6 +3,7 @@ import { HttpService } from 'src/app/servicios/http/http.service';
 import { TranslationService } from 'src/app/servicios/translation/translation.service';
 import { VariablesGlobales } from 'src/app/variables-globales';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
