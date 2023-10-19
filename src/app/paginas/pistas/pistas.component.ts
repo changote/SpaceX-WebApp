@@ -10,10 +10,18 @@ import { VariablesGlobales } from 'src/app/variables-globales';
 export class PistasComponent implements OnInit{
 
   launchpads: any;
-  landpads:any;
+  landpads: any;
+  loading = true;
   constructor(private httpService: HttpService){}
 
   ngOnInit() {
+    this.cargarPistas();
+    setTimeout(() => {
+    this.loading = false;
+    }, 2000);
+    
+  }
+  private cargarPistas() {
     this.httpService.realizarGet(VariablesGlobales.urlApi + "launchpads").subscribe(
       (data: any) => {
         this.launchpads = data;
@@ -33,5 +41,6 @@ export class PistasComponent implements OnInit{
       }
     );
   }
-
 }
+
+

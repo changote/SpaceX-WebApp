@@ -35,14 +35,12 @@ header nav ul {
 }
 
 header nav ul li {
-
     text-align: center;
     font-size: 1.5rem;
 }
 
 header nav ul li a:hover {
     background-color: grey;
-    border-radius: 20px;
     box-shadow: 4px 3px 5px rgb(70, 69, 69);
     transition: .5s;
 }
@@ -52,8 +50,9 @@ header ul li a {
     font-family: 'Comfortaa', sans-serif;
     padding-left: 1rem;
     padding-right: 1rem;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 2.2rem;
+    padding-bottom: 2.2rem;
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0);
 }
 
 #logo {

@@ -29,3 +29,13 @@ h2{
         display: none;
     }
 }
+
+@media (max-width: 845px) {
+    .barras {
+        display: none;
+    }
+    .container{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
