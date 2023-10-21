@@ -7,18 +7,19 @@
     <div class="background">
       <h2>Lanzamientos</h2>
       <div class="container">
-        <div class="carLanzamiento">
-          <div class="imgLanzamiento">
-            <!--<img [src]="auto.flickr_images[0]" alt="imagen pista" />-->
+        <div class="2006">
+          <h2>Lanzamientos del 2006</h2>
+            <div *ngFor="let lanzamiento of lanzamientos">
+                <div *ngIf="lanzamiento.fecha >= 2006 && lanzamiento.fecha <= 2021">
+                  <app-lanzamiento [lanzamiento]="lanzamiento"></app-lanzamiento>
+                </div>              
           </div>
-          <div class="texto">
-
-          </div>
-        </div>
-        <div *ngFor="let lanzamiento of lanzamientos">
-          <app-lanzamiento [lanzamiento]="lanzamiento"></app-lanzamiento>
         </div>
       </div>
     </div>
   </div>
 </ng-template>
+
+<div *ngFor="let lanzamiento of lanzamientos">
+  <app-lanzamiento [lanzamiento]="lanzamiento"></app-lanzamiento>
+</div>

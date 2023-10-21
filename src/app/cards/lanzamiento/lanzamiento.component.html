@@ -1,1 +1,15 @@
-<p>lanzamiento works!</p>
+<a href="/lanzamientos/{{ lanzamiento.id }}">
+  <div class="cardLanzamiento">
+    <div class="imgLanzamiento">
+      <img src="{{ lanzamiento.links.patch.small }}" alt="imagen lanzamiento" />
+    </div>
+    <div class="texto">
+      <div class="titulo">
+        <h3>{{ lanzamiento.name }}</h3>
+      </div>
+      <div class="Fecha">
+        <p>{{ lanzamiento.date_unix }}</p>
+      </div>
+    </div>
+  </div>
+</a>
