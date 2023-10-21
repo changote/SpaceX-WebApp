@@ -16,6 +16,7 @@ import { PistasComponent } from './paginas/pistas/pistas.component';
 import { PistaComponent } from './cards/pista/pista.component';
 import { LoadingComponent } from './paginas/loading/loading.component';
 import { DetallePistaComponent } from './paginas/detalle-pista/detalle-pista.component';
+import { LanzamientosComponent } from './paginas/lanzamientos/lanzamientos.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { DetallePistaComponent } from './paginas/detalle-pista/detalle-pista.com
     PistasComponent,
     PistaComponent,
     LoadingComponent,
-    DetallePistaComponent
+    DetallePistaComponent,
+    LanzamientosComponent
   ],
   imports: [
     BrowserModule,

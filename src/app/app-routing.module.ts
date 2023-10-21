@@ -8,6 +8,7 @@ import { autenticacionGuard } from './servicios/autenticacion/autenticacion.guar
 import { LoginComponent } from './paginas/login/login.component';
 import { PistasComponent } from './paginas/pistas/pistas.component';
 import { DetallePistaComponent } from './paginas/detalle-pista/detalle-pista.component';
+import { LanzamientosComponent } from './paginas/lanzamientos/lanzamientos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'cohete/:id', component: DetalleCoheteComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
   { path: 'pista/:id', component: DetallePistaComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
   { path: 'login', component: LoginComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
-  { path: 'pistas', component: PistasComponent},
+  { path: 'lanzamientos', component:  LanzamientosComponent },
+  { path: 'pistas', component: PistasComponent },
   { path: 'error-404', component: Error404Component},
 ];
 
