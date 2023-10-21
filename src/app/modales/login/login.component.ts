@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
   hide = true;
+  
+  constructor(private dialogRef: MatDialogRef<LoginComponent>) {}
+  
+  closeModal() {
+    this.dialogRef.close();
+  }
 }

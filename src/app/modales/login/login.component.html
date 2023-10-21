@@ -1,19 +1,14 @@
-<div class="container">
-    <h2 class="title">Iniciar sesion</h2>
-    <form action="">
-        <div>
-            Usuario
-            <input type="text" name="username" maxlength="100"/>
-        </div>
-        <div>
-            Contrasena
-            <input type="password" name="password" maxlength="100"/>
-        </div>
-      
-      
-      <div class="botones">
-        <input type="submit" value="Login" />
-        <input type="submit" value="Cancelar" />
-      </div>
-    </form>
-  </div>
+<form class="container" action="">
+    <span class="title">Iniciar sesion</span>
+    <div class="input-login">
+      usuario
+      <input type="text" name="username" maxlength="100" />
+      contrasena
+      <input type="password" name="password" maxlength="100" />
+    </div>
+
+    <div class="botones">
+      <button type="submit" value="Login">Login</button>
+      <button (click)="closeModal()">Cancelar</button>
+    </div>
+  </form>
