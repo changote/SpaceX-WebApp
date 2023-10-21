@@ -1,0 +1,29 @@
+.background{
+    background-color: rgba(27, 27, 27, 0.719);
+    position: relative;
+    padding-top: 100px;
+}
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.img img{
+    height: 30rem;
+}
+
+.text{
+    width: 70%;
+    text-align: center;
+    color: white;
+}
+.text h2 {
+    font-size:3rem;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 2px 4px 4px gray;
+}
+.text h3 {
+    font-family: 'Comfortaa', sans-serif;
+    font-size:2rem;
+}

@@ -13,6 +13,8 @@ export class DetallePistaComponent implements OnInit {
   pista: any;
   loading = true;
   landpad = true;
+  error = false;
+
   constructor(private route: ActivatedRoute, private httpService: HttpService) {}
 
   ngOnInit() {
@@ -25,9 +27,12 @@ export class DetallePistaComponent implements OnInit {
       if (id) {
         this.pistaId = id;
         this.cargarDatosPista(this.pistaId);
+        if(this.error = true){
+          this.cargarDatosLaunchpad(id);
+        }
         setTimeout(() => {
           this.loading = false;
-          }, 2000);
+          }, 1000);
       }
     });
   }
@@ -37,7 +42,7 @@ export class DetallePistaComponent implements OnInit {
       (data: any) => {
         this.pista = data;
         if (this.pista.name === undefined) {
-          this.cargarDatosLaunchpad(id);
+          this.error = true;
         }
       },
       (error: any) => {
@@ -52,6 +57,12 @@ export class DetallePistaComponent implements OnInit {
         this.pista = data;
         if(this.pista.status === 'retired'){
           this.pista.status = 'Retirada';
+        }
+        if(this.pista.status === 'active'){
+          this.pista.status = 'Activa';
+        }
+        if(this.pista.status === 'under construction'){
+          this.pista.status = 'En construccion';
         }
         this.landpad = false;
       },

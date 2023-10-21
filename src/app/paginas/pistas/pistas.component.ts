@@ -18,7 +18,7 @@ export class PistasComponent implements OnInit{
     this.cargarPistas();
     setTimeout(() => {
     this.loading = false;
-    }, 2000);
+    }, 1000);
     
   }
   private cargarPistas() {

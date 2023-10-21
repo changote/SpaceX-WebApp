@@ -21,7 +21,7 @@ export class HomeComponent implements OnInit{
       (data: any) => {
         setTimeout(() => {
           this.loading = false;
-        }, 2000);
+        }, 1000);
         this.company = data;
         this.translatedText = this.translate(data.summary);
         console.log(this.company);
