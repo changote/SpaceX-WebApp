@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/servicios/http/http.service';
 import { TranslationService } from 'src/app/servicios/translation/translation.service';
 import { VariablesGlobales } from 'src/app/variables-globales';
+import { SlideInterface } from 'src/app/imageSlider/types/slide.interface';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit{
   loading = true;
   translatedText: any;
 
-  slider = [
+  slides: SlideInterface[] = [
     { url: "../../../assets/img/slider-1.jpg", title: '1' },
     { url: "../../../assets/img/slider-2.jpg", title: '2' },
     { url: "../../../assets/img/slider-3.jpg", title: '3' },

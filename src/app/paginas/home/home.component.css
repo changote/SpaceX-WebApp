@@ -1,8 +1,7 @@
 .carrousel {
     width: 80%;
-    height: 20rem;
+    height: 30rem;
     text-align: center;
-    background-color: red;
 }
 .container-principal {
     display: flex;

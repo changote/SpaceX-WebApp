@@ -1,8 +1,9 @@
 <app-loading *ngIf="loading; else elseBlock"></app-loading>
 <ng-template #elseBlock>
     <div class="container-principal">
-        <image-slider></image-slider>
-        <div class="carrousel">CARROUSEL</div>
+        <div class="carrousel">
+            <image-slider [slides]="slides"></image-slider>
+        </div>
         <div class="company">
             <h1 class="descripcion"><i class="fa-solid fa-satellite fa-rotate-270" style="color: #ffffff;"></i> Que es spacex? <i class="fa-solid fa-satellite" style="color: #ffffff;"></i></h1>
         </div>

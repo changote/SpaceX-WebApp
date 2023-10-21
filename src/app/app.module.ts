@@ -27,6 +27,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { LanzamientoComponent } from './cards/lanzamiento/lanzamiento.component';
+import { ImageSliderModule } from './imageSlider/imageSlider.module';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { LanzamientoComponent } from './cards/lanzamiento/lanzamiento.component'
     BrowserAnimationsModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    ImageSliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
