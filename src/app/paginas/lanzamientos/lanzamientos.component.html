@@ -1,1 +1,25 @@
-<p>lanzamientos works!</p>
+<app-loading *ngIf="loading; else elseBlock"></app-loading>
+<ng-template #elseBlock>
+  <div class="body">
+    <div class="sidebar" class="col-md-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="background">
+      <h2>Lanzamientos</h2>
+      <div class="container">
+        <div class="2006">
+          <h2>Lanzamientos del 2006</h2>
+            <div *ngFor="let lanzamiento of lanzamientos">
+                <div *ngIf="lanzamiento.fecha >= 2006 && lanzamiento.fecha <= 2021">
+                  <app-lanzamiento [lanzamiento]="lanzamiento"></app-lanzamiento>
+                </div>              
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
+
+<div *ngFor="let lanzamiento of lanzamientos">
+  <app-lanzamiento [lanzamiento]="lanzamiento"></app-lanzamiento>
+</div>

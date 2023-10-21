@@ -26,6 +26,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
+import { LanzamientoComponent } from './cards/lanzamiento/lanzamiento.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { MatIconModule } from '@angular/material/icon';
     RegistroComponent,
     SidebarComponent,
     EventosHistoricosComponent,
-    EventoComponent    
+    EventoComponent,
+    LanzamientoComponent    
   ],
   imports: [
     BrowserModule,
