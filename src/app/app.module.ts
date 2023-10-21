@@ -11,7 +11,7 @@ import { HeaderComponent } from './paginas/shared/header/header.component';
 import { FooterComponent } from './paginas/shared/footer/footer.component';
 import { CoheteComponent } from './cards/cohete/cohete.component';
 import { HttpClientModule } from '@angular/common/http';
-import { LoginComponent } from './paginas/login/login.component';
+import { LoginComponent } from './modales/login/login.component';
 import { PistasComponent } from './paginas/pistas/pistas.component';
 import { PistaComponent } from './cards/pista/pista.component';
 import { LoadingComponent } from './paginas/loading/loading.component';
@@ -22,6 +22,10 @@ import { RegistroComponent } from './modales/registro/registro.component';
 import { SidebarComponent } from './paginas/shared/sidebar/sidebar.component';
 import { EventosHistoricosComponent } from './paginas/eventos-historicos/eventos-historicos.component';
 import { EventoComponent } from './cards/evento/evento.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -43,12 +47,16 @@ import { EventoComponent } from './cards/evento/evento.component';
     RegistroComponent,
     SidebarComponent,
     EventosHistoricosComponent,
-    EventoComponent
+    EventoComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

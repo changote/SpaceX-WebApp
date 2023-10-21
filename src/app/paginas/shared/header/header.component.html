@@ -10,6 +10,8 @@
             </ul>
         </nav>
         <div id="loggeo">
-            <a href="/login"><i class="fa-solid fa-user-astronaut" style="color: #ffffff;"></i> ingresar</a>
+            <div *ngIf="!usuarioLogueado" (click)="modalLogin()">
+            <a><i class="fa-solid fa-user-astronaut" style="color: #ffffff;"></i> ingresar</a>
+        </div>
         </div>
 </header>

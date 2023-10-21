@@ -1,0 +1,11 @@
+.container {
+    position: relative;
+    transition: 0.25s;
+    height: 30rem;
+    width: 20rem;
+}
+.title{
+    text-align: center;
+    
+}
+  
