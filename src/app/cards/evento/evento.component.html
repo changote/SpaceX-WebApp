@@ -1,0 +1,17 @@
+    <div class="cardEvento">
+      <div class="imgPista">
+        <!--<img src="{{ pista.images.large }}" alt="imagen pista" />-->
+      </div>
+      <div class="titulo">
+        <h3>{{event.title }}</h3>
+      </div>
+      <div class="fecha">
+        <p>{{event.event_date_unix}}</p>
+      </div>
+      <div class="informacion">
+        <p>{{event.details }}</p>
+      </div>
+      <div class="link">
+        <a href="{{event.links}}" target="_blank">Articulo de {{event.title }}</a>
+      </div>
+    </div>

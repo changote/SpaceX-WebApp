@@ -39,3 +39,14 @@ h2{
         margin-right: 0;
     }
 }
+
+app-sidebar {
+    width: 300px;
+    position: relative;
+    top: 300px;
+    background-color: white;
+}
+
+body{
+    display: flex;
+}

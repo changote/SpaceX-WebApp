@@ -1,0 +1,60 @@
+.background{
+    background-color: rgba(27, 27, 27, 0.719);
+    position: relative;
+    padding-top: 100px;
+}
+
+.container{
+    padding-bottom: 150px;
+    color: white;
+    font-size: 2rem;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+input, select{
+    margin: 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-left: 40rem;
+    margin-right: 40rem;
+    background-color: rgba(169, 169, 169, 0.729);
+}
+
+select{
+    margin-left: 45rem;
+    margin-right: 45rem;
+}
+
+textarea{
+    margin-left: 20rem;
+    margin-right: 20rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    background-color: rgba(169, 169, 169, 0.729);
+}
+
+h2{
+text-align: center;
+margin: 3rem;
+font-family: 'Orbitron', sans-serif;
+}
+
+.botones{
+    display: flex;
+    justify-content: space-evenly;
+    padding-left: 20rem;
+    padding-right: 20rem;
+}
+
+.botones input{
+    margin: 1rem;
+    font-size: 1.5rem;
+    background-color: rgba(53, 53, 53, 0.841);
+    color: white;
+}

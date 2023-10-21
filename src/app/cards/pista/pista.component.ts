@@ -9,4 +9,5 @@ export class PistaComponent {
 
 @Input() pista: any;
 
+
 }

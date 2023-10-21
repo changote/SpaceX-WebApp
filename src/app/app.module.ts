@@ -17,6 +17,11 @@ import { PistaComponent } from './cards/pista/pista.component';
 import { LoadingComponent } from './paginas/loading/loading.component';
 import { DetallePistaComponent } from './paginas/detalle-pista/detalle-pista.component';
 import { LanzamientosComponent } from './paginas/lanzamientos/lanzamientos.component';
+import { FormularioContactoComponent } from './paginas/formulario-contacto/formulario-contacto.component';
+import { RegistroComponent } from './modales/registro/registro.component';
+import { SidebarComponent } from './paginas/shared/sidebar/sidebar.component';
+import { EventosHistoricosComponent } from './paginas/eventos-historicos/eventos-historicos.component';
+import { EventoComponent } from './cards/evento/evento.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +38,12 @@ import { LanzamientosComponent } from './paginas/lanzamientos/lanzamientos.compo
     PistaComponent,
     LoadingComponent,
     DetallePistaComponent,
-    LanzamientosComponent
+    LanzamientosComponent,
+    FormularioContactoComponent,
+    RegistroComponent,
+    SidebarComponent,
+    EventosHistoricosComponent,
+    EventoComponent
   ],
   imports: [
     BrowserModule,
