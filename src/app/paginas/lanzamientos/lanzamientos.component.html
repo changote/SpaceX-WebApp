@@ -6,20 +6,18 @@
     </div>
     <div class="background">
       <h2>Lanzamientos</h2>
-      <div class="container">
-        <div class="2006">
-          <h2>Lanzamientos del 2006</h2>
-            <div *ngFor="let lanzamiento of lanzamientos">
-                <div *ngIf="lanzamiento.fecha >= 2006 && lanzamiento.fecha <= 2021">
-                  <app-lanzamiento [lanzamiento]="lanzamiento"></app-lanzamiento>
-                </div>              
+      <div *ngFor="let year of getYears()">
+        <h2>Lanzamientos del {{year}}</h2>
+        <div class="container">
+          <div *ngFor="let lanzamiento of lanzamientos">
+            <div *ngIf="lanzamiento.fecha == year">
+              <div class="card">
+              <app-lanzamiento [lanzamiento]="lanzamiento"></app-lanzamiento>
+            </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 </ng-template>
-
-<div *ngFor="let lanzamiento of lanzamientos">
-  <app-lanzamiento [lanzamiento]="lanzamiento"></app-lanzamiento>
-</div>

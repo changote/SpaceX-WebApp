@@ -1,7 +1,7 @@
 .container {
     max-width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
     font-family: "Comfortaa", sans-serif;
     margin-left: 10rem;
@@ -23,4 +23,7 @@
     color: azure;
     padding: 2rem;
     font-family: "Orbitron", sans-serif;
+  }
+  .card{
+    margin: 1rem;
   }

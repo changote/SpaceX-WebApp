@@ -1,7 +1,6 @@
 .cardLanzamiento {
     width: 300px;
     height: 320px;
-    margin: 1rem;
     border: 2px solid black;
     border-radius: 10px;
     overflow: hidden;

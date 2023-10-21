@@ -10,6 +10,7 @@
     flex-wrap: wrap;
     padding: 2rem;
     padding-top: 120px;
+    transition: 1s;
 }
 
 .company {

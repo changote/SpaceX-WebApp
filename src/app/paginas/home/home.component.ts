@@ -14,6 +14,15 @@ export class HomeComponent implements OnInit{
   loading = true;
   translatedText: any;
 
+  slider = [
+    { url: "../../../assets/img/slider-1.jpg", title: '1' },
+    { url: "../../../assets/img/slider-2.jpg", title: '2' },
+    { url: "../../../assets/img/slider-3.jpg", title: '3' },
+    { url: "../../../assets/img/slider-4.jpg", title: '4' },
+    { url: "../../../assets/img/slider-5.jpg", title: '5' },
+    { url: "../../../assets/img/slider-6.jpg", title: '6' }
+  ];
+
   constructor(private httpService: HttpService, private translationService: TranslationService){
     
   }
