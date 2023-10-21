@@ -1,0 +1,38 @@
+<app-loading *ngIf="loading; else elseBlock"></app-loading>
+<ng-template #elseBlock>
+  <div class="body">
+    <div class="sidebar" class="col-md-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="background">
+      <h2>Eventos historicos</h2>
+      <div class="container">
+        <div class="cardAuto">
+        <div class="imgAuto">
+          <img [src]="auto.flickr_images[0]" alt="imagen pista" />
+        </div>
+        <div class="titulo">
+          <h3>{{ auto.name }}</h3>
+        </div>
+        <div class="fecha">
+          <p>{{ auto.event_date_unix }}</p>
+        </div>
+        <div class="informacion">
+          <p>{{ auto.details }}</p>
+        </div>
+        <div class="link">
+          <a href="{{ auto.video }}" target="_blank"
+            >video de {{ auto.name }}</a
+          >
+        </div>
+        <div class="link">
+          <a href="{{ auto.wiki }}" target="_blank">video de {{ auto.name }}</a>
+        </div>
+      </div>
+      <div *ngFor="let evento of eventos">
+        <app-evento [event]="evento"></app-evento>
+      </div>
+    </div>
+  </div>
+</div>
+</ng-template>

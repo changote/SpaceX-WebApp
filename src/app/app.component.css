@@ -1,11 +1,18 @@
 .container{
-    padding-left: 7rem;
-    padding-right: 7rem;
     background-image: url(../assets/img/fondo2.jpg);
+    display: flex;
+    justify-content: center;
 }
+  
+  .main {
+    flex: 1; /* Esto hace que el componente principal ocupe el espacio restante disponible. */
+    padding: 20px; /* Espaciado dentro del componente principal. Ajusta según tus necesidades. */
+  }
+
 @media (max-width: 845px) {
     .container{
         padding-left: 15px;
         padding-right: 15px;
     }
 }
+

@@ -23,6 +23,7 @@ input, select{
     border-radius: 10px;
     margin-left: 40rem;
     margin-right: 40rem;
+    background-color: rgba(169, 169, 169, 0.729);
 }
 
 select{
@@ -35,6 +36,7 @@ textarea{
     margin-right: 20rem;
     margin-top: 1rem;
     border-radius: 10px;
+    background-color: rgba(169, 169, 169, 0.729);
 }
 
 h2{
@@ -53,4 +55,6 @@ font-family: 'Orbitron', sans-serif;
 .botones input{
     margin: 1rem;
     font-size: 1.5rem;
+    background-color: rgba(53, 53, 53, 0.841);
+    color: white;
 }

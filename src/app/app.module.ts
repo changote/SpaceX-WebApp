@@ -19,6 +19,9 @@ import { DetallePistaComponent } from './paginas/detalle-pista/detalle-pista.com
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { FormularioContactoComponent } from './paginas/formulario-contacto/formulario-contacto.component';
 import { RegistroComponent } from './modales/registro/registro.component';
+import { SidebarComponent } from './paginas/shared/sidebar/sidebar.component';
+import { EventosHistoricosComponent } from './paginas/eventos-historicos/eventos-historicos.component';
+import { EventoComponent } from './cards/evento/evento.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { RegistroComponent } from './modales/registro/registro.component';
     LoadingComponent,
     DetallePistaComponent,
     FormularioContactoComponent,
-    RegistroComponent
+    RegistroComponent,
+    SidebarComponent,
+    EventosHistoricosComponent,
+    EventoComponent
   ],
   imports: [
     BrowserModule,

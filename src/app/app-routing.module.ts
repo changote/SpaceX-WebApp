@@ -9,6 +9,7 @@ import { LoginComponent } from './paginas/login/login.component';
 import { PistasComponent } from './paginas/pistas/pistas.component';
 import { DetallePistaComponent } from './paginas/detalle-pista/detalle-pista.component';
 import { FormularioContactoComponent } from './paginas/formulario-contacto/formulario-contacto.component';
+import { EventosHistoricosComponent } from './paginas/eventos-historicos/eventos-historicos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
   { path: 'pistas', component: PistasComponent},
   { path: 'formulario-contacto', component: FormularioContactoComponent},
+  { path: 'eventos-historicos', component: EventosHistoricosComponent},
   { path: 'error-404', component: Error404Component},
 ];
 
