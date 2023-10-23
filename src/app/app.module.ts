@@ -28,6 +28,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { LanzamientoComponent } from './cards/lanzamiento/lanzamiento.component';
 import { ImageSliderModule } from './imageSlider/imageSlider.module';
+import { DetalleLanzamientoComponent } from './paginas/detalle-lanzamiento/detalle-lanzamiento.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { ImageSliderModule } from './imageSlider/imageSlider.module';
     SidebarComponent,
     EventosHistoricosComponent,
     EventoComponent,
-    LanzamientoComponent    
+    LanzamientoComponent,
+    DetalleLanzamientoComponent    
   ],
   imports: [
     BrowserModule,

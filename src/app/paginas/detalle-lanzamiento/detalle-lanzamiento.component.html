@@ -1,0 +1,31 @@
+<app-loading *ngIf="loading; else elseBlock"></app-loading>
+<ng-template #elseBlock>
+    <div class="body">
+        <div class="sidebar" class="col-md-3">
+            <app-sidebar></app-sidebar>
+        </div>
+        <div class="background">
+            <div class="container">
+                <h2>Lanzamiento {{lanzamiento.name}}</h2>
+                <div class="sector1">
+                    <div class="capsula">
+                        <img src="../../../assets/img/capsula.jpg" alt="Capsula">
+                    </div>
+                </div>
+                <div class="sector2">
+
+                </div>
+                <div class="sector3">
+                    
+                </div>
+                <div class="sector4">
+
+                </div>
+                <div class="sector5">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ng-template>

@@ -21,7 +21,7 @@ export class LanzamientosComponent {
     }, 2000);}
 
     private cargarLanzamientos() {
-      this.httpService.realizarGet(VariablesGlobales.urlApi + "launches").subscribe(
+      this.httpService.realizarGet(VariablesGlobales.urlApiv5 + "launches").subscribe(
         (data: any) => {
           this.lanzamientos = data;
           this.filtrarFecha();

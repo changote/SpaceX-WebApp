@@ -11,12 +11,14 @@ import { DetallePistaComponent } from './paginas/detalle-pista/detalle-pista.com
 import { LanzamientosComponent } from './paginas/lanzamientos/lanzamientos.component';
 import { FormularioContactoComponent } from './paginas/formulario-contacto/formulario-contacto.component';
 import { EventosHistoricosComponent } from './paginas/eventos-historicos/eventos-historicos.component';
+import { DetalleLanzamientoComponent } from './paginas/detalle-lanzamiento/detalle-lanzamiento.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
   { path: 'mis-datos', component: MisDatosComponent, canActivate:[autenticacionGuard]},
   { path: 'cohete/:id', component: DetalleCoheteComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
   { path: 'pista/:id', component: DetallePistaComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
+  { path: 'lanzamiento/:id', component: DetalleLanzamientoComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
   { path: 'login', component: LoginComponent, runGuardsAndResolvers: 'paramsOrQueryParamsChange'},
   { path: 'lanzamientos', component:  LanzamientosComponent },
   { path: 'pistas', component: PistasComponent },

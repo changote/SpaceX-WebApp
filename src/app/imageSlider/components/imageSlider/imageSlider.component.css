@@ -13,11 +13,11 @@
   right: 32px;
   font-size: 45px;
   color: #fff;
-  z-index: 1;
   cursor: pointer;
 }
 .rightArrow :hover{
   font-size: 50px;
+  transition: 0.2s;
 }
 
 .leftArrow {
@@ -27,8 +27,12 @@
   left: 32px;
   font-size: 45px;
   color: #fff;
-  z-index: 1;
   cursor: pointer;
+}
+
+.leftArrow :hover{
+  font-size: 50px;
+  transition: 0.2s;
 }
 
 .slider {
@@ -45,4 +49,5 @@
   margin: 0 3px;
   cursor: pointer;
   font-size: 20px;
+  color: white;
 }

@@ -1,0 +1,17 @@
+.container {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    font-family: "Comfortaa", sans-serif;
+    margin-left: 15rem;
+    margin-right: 15rem;
+  }
+  .background {
+    background-color: rgba(27, 27, 27, 0.719);
+    position: relative;
+    padding-top: 50px;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    padding-bottom: 5rem;
+  }
