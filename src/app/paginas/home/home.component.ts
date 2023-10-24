@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/servicios/http/http.service';
 import { TranslationService } from 'src/app/servicios/translation/translation.service';
-import { VariablesGlobales } from 'src/app/variables-globales';
+import { Urls } from 'src/app/url-globales';
 import { SlideInterface } from 'src/app/imageSlider/types/slide.interface';
 
 
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit{
     
   }
   ngOnInit() {
-    this.httpService.realizarGet(VariablesGlobales.urlApi + "company").subscribe(
+    this.httpService.realizarGet(Urls.urlApi + "company").subscribe(
       (data: any) => {
         setTimeout(() => {
           this.loading = false;

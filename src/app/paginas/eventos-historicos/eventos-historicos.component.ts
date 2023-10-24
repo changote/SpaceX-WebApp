@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpService } from 'src/app/servicios/http/http.service';
-import { VariablesGlobales } from 'src/app/variables-globales';
+import { Urls } from 'src/app/url-globales';
 
 @Component({
   selector: 'app-eventos-historicos',
@@ -22,7 +22,7 @@ export class EventosHistoricosComponent {
     }, 2000);}
 
     private cargarEventos() {
-      this.httpService.realizarGet(VariablesGlobales.urlApi + "history").subscribe(
+      this.httpService.realizarGet(Urls.urlApi + "history").subscribe(
         (data: any) => {
           this.eventos = data;
           console.log(this.eventos);
@@ -34,7 +34,7 @@ export class EventosHistoricosComponent {
     }
 
     private cargarEventoAuto(){
-      this.httpService.realizarGet(VariablesGlobales.urlApi + "roadster").subscribe(
+      this.httpService.realizarGet(Urls.urlApi + "roadster").subscribe(
         (data: any) => {
           this.auto = data;
           console.log(this.auto);

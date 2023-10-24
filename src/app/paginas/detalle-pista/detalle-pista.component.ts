@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { ImagenDialogComponent } from 'src/app/modales/imagen-dialog/imagen-dialog.component';
 import { HttpService } from 'src/app/servicios/http/http.service';
-import { VariablesGlobales } from 'src/app/variables-globales';
+import { Urls } from 'src/app/url-globales';
 
 @Component({
   selector: 'app-detalle-pista',
@@ -15,10 +17,11 @@ export class DetallePistaComponent implements OnInit {
   landpad = true;
   error = false;
 
-  constructor(private route: ActivatedRoute, private httpService: HttpService) {}
+  constructor(private route: ActivatedRoute, private httpService: HttpService, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.obtenerId();
+    console.log(this.landpad);
   }
 
   private obtenerId(){
@@ -30,20 +33,22 @@ export class DetallePistaComponent implements OnInit {
         if(this.error = true){
           this.cargarDatosLaunchpad(id);
         }
-        setTimeout(() => {
-          this.loading = false;
-          }, 1000);
       }
     });
   }
 
   private cargarDatosPista(id: string) {
-    this.httpService.realizarGet(VariablesGlobales.urlApi + "landpads/" + id).subscribe(
+    this.httpService.realizarGet(Urls.urlApi + "landpads/" + id).subscribe(
       (data: any) => {
+        setTimeout(() => {
+        }, 5000);
         this.pista = data;
+        console.log(this.pista.name);
         if (this.pista.name === undefined) {
-          this.error = true;
+           this.error = true;
         }
+        else
+         this.loading = false;
       },
       (error: any) => {
         console.error('Error:', error);
@@ -52,9 +57,10 @@ export class DetallePistaComponent implements OnInit {
   }
   
   private cargarDatosLaunchpad(id: string) {
-    this.httpService.realizarGet(VariablesGlobales.urlApi + "launchpads/" + id).subscribe(
+    this.httpService.realizarGet(Urls.urlApi + "launchpads/" + id).subscribe(
       (data: any) => {
         this.pista = data;
+        this.loading = false;
         if(this.pista.status === 'retired'){
           this.pista.status = 'Retirada';
         }
@@ -70,6 +76,18 @@ export class DetallePistaComponent implements OnInit {
         console.error('Error:', error);
       }
     );
+  }
+
+  public maximizarImagen(img: any){
+    this.dialog.open(ImagenDialogComponent, {
+      data: {
+        imagenURL: img
+      }
+    });
+  }
+
+  public volver(){
+    window.history.back();
   }
   
 }

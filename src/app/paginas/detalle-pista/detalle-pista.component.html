@@ -2,7 +2,10 @@
 <ng-template #elseBlock>
 <div class="background">
 <div class="container">
-    <img src="{{pista.images.large}}" alt="Pista">
+    <span (click)="volver()" class="goBack">Atras</span>
+    
+    <a (click)="maximizarImagen(pista.images.large)"><img src="{{pista.images.large}}" alt="Pista"></a>
+    
     <div>
         <h2>{{ pista.full_name }}</h2>
         <div *ngIf="landpad; else launchpadBlock">

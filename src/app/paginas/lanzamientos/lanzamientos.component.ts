@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpService } from 'src/app/servicios/http/http.service';
-import { VariablesGlobales } from 'src/app/variables-globales';
+import { Urls } from 'src/app/url-globales';
 
 @Component({
   selector: 'app-lanzamientos',
@@ -21,7 +21,7 @@ export class LanzamientosComponent {
     }, 2000);}
 
     private cargarLanzamientos() {
-      this.httpService.realizarGet(VariablesGlobales.urlApiv5 + "launches").subscribe(
+      this.httpService.realizarGet(Urls.urlApiv5 + "launches").subscribe(
         (data: any) => {
           this.lanzamientos = data;
           this.filtrarFecha();

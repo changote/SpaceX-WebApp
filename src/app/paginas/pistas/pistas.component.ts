@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/servicios/http/http.service';
-import { VariablesGlobales } from 'src/app/variables-globales';
+import { Urls } from 'src/app/url-globales';
 
 @Component({
   selector: 'app-pistas',
@@ -22,7 +22,7 @@ export class PistasComponent implements OnInit{
     
   }
   private cargarPistas() {
-    this.httpService.realizarGet(VariablesGlobales.urlApi + "launchpads").subscribe(
+    this.httpService.realizarGet(Urls.urlApi + "launchpads").subscribe(
       (data: any) => {
         this.launchpads = data;
         console.log(this.launchpads);
@@ -31,7 +31,7 @@ export class PistasComponent implements OnInit{
         console.error('Error:', error);
       }
     );
-    this.httpService.realizarGet(VariablesGlobales.urlApi + "landpads").subscribe(
+    this.httpService.realizarGet(Urls.urlApi + "landpads").subscribe(
       (data: any) => {
         this.landpads = data;
         console.log(this.landpads);

@@ -25,6 +25,7 @@ const routes: Routes = [
   { path: 'formulario-contacto', component: FormularioContactoComponent},
   { path: 'eventos-historicos', component: EventosHistoricosComponent},
   { path: 'error-404', component: Error404Component},
+  { path: '**', redirectTo: 'error-404' }
 ];
 
 @NgModule({

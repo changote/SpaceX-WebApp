@@ -29,3 +29,11 @@ li{
     margin: 1rem;
     font-size: 1.5rem;
 }
+
+.goBack{
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    top: 150px;
+    left: 300px;
+}

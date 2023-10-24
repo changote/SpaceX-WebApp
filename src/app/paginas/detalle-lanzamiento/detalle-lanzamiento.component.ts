@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpService } from 'src/app/servicios/http/http.service';
-import { VariablesGlobales } from 'src/app/variables-globales';
+import { Urls } from 'src/app/url-globales';
 
 @Component({
   selector: 'app-detalle-lanzamiento',
@@ -32,7 +32,7 @@ export class DetalleLanzamientoComponent {
   }
 
   private cargarDatosLauncher(id: string) {
-    this.httpService.realizarGet(VariablesGlobales.urlApiv5 + "launches/" + id).subscribe(
+    this.httpService.realizarGet(Urls.urlApiv5 + "launches/" + id).subscribe(
       (data: any) => {
         this.lanzamiento = data;
       },
@@ -41,26 +41,4 @@ export class DetalleLanzamientoComponent {
       }
     );
   }
-
-  // private cargarDatosPayloads(id: string) {
-  //   this.httpService.realizarGet(VariablesGlobales.urlApiv5 + "payloads/" + id).subscribe(
-  //     (data: any) => {
-  //       this. = data;
-  //     },
-  //     (error: any) => {
-  //       console.error('Error:', error);
-  //     }
-  //   );
-  // }
-
-  // private cargarDatosLauncher(id: string) {
-  //   this.httpService.realizarGet(VariablesGlobales.urlApiv5 + "launches/" + id).subscribe(
-  //     (data: any) => {
-  //       this.lanzamiento = data;
-  //     },
-  //     (error: any) => {
-  //       console.error('Error:', error);
-  //     }
-  //   );
-  // }
 }

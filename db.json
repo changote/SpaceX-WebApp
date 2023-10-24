@@ -1,0 +1,51 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "username": "admin",
+            "password": "12345"
+        },
+        {
+            "id": 2,
+            "username": "caro",
+            "password": "12345"
+        },
+        {
+            "id": 3,
+            "username": "agus",
+            "password": "12345"
+        }
+    ],
+    "persons": [
+        {
+            "id": 1,
+            "name": "pepe",
+            "last_name": "josefo",
+            "age": 40,
+            "gender": "H",
+            "email": "pepe@gmail.com"
+        },
+        {
+            "id": 2,
+            "name": "carolina",
+            "last_name": "ferraris",
+            "age": 29,
+            "gender": "M",
+            "email": "caro@gmail.com"
+        },
+        {
+            "id": 3,
+            "name": "agustin",
+            "last_name": "gomez",
+            "age": 26,
+            "gender": "H",
+            "email": "agus@gmail.com"
+        }
+    ],
+    "travel_request": [
+        {
+            "email": "agus@gmail.com",
+            "text": "Hola quiero viajar jaja xd"
+        }
+    ]
+}

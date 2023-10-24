@@ -29,6 +29,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { LanzamientoComponent } from './cards/lanzamiento/lanzamiento.component';
 import { ImageSliderModule } from './imageSlider/imageSlider.module';
 import { DetalleLanzamientoComponent } from './paginas/detalle-lanzamiento/detalle-lanzamiento.component';
+import { ImagenDialogComponent } from './modales/imagen-dialog/imagen-dialog.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { DetalleLanzamientoComponent } from './paginas/detalle-lanzamiento/detal
     EventosHistoricosComponent,
     EventoComponent,
     LanzamientoComponent,
-    DetalleLanzamientoComponent    
+    DetalleLanzamientoComponent,
+    ImagenDialogComponent    
   ],
   imports: [
     BrowserModule,

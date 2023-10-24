@@ -2,6 +2,7 @@
     background-image: url(../assets/img/fondo2.jpg);
     display: flex;
     justify-content: center;
+    cursor:default;
 }
   
   .main {
