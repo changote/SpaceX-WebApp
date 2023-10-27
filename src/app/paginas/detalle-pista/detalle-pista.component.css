@@ -12,6 +12,7 @@
 .container img {
     height: 40rem;
     border-radius: 10px;
+    cursor: pointer;
 }
 h2{
     text-align: center;
@@ -35,5 +36,5 @@ li{
     cursor: pointer;
     color: white;
     top: 150px;
-    left: 300px;
+    left: 10%;
 }

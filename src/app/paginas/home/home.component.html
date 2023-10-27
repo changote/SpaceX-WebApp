@@ -13,7 +13,7 @@
             </div>
             <div class="right-column">
                 <ul>
-                    <li>{{ translatedText }}</li>
+                    <li>{{ company.summary }}</li>
                     <li>Fundador: {{ company.founder }}</li>
                     <li>Fundado en: {{ company.founded }}</li>
                     <li>Empleados: {{ company.employees }}</li>
@@ -21,7 +21,7 @@
                     <li>CEO: {{ company.ceo }}</li>
                     <li>CTO: {{ company.cto }}</li>
                     <li>COO: {{ company.coo }}</li>
-                    <li>Valuada en: {{ company.valuation | currency:'USD':'symbol':'1.2-2' }}</li>
+                    <li>Valuada en: {{ company.valuation | currency:'USD':'symbol':'1.2-2' }} de dolares</li>
                 </ul>
             </div>
         </div>

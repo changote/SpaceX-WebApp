@@ -1,24 +1,21 @@
 {
     "users": [
         {
-            "id": 1,
             "username": "admin",
             "password": "12345"
         },
         {
-            "id": 2,
             "username": "caro",
             "password": "12345"
         },
         {
-            "id": 3,
             "username": "agus",
             "password": "12345"
         }
     ],
-    "persons": [
+    "person": [
         {
-            "id": 1,
+            "username": "admin",
             "name": "pepe",
             "last_name": "josefo",
             "age": 40,
@@ -26,7 +23,7 @@
             "email": "pepe@gmail.com"
         },
         {
-            "id": 2,
+            "username": "caro",
             "name": "carolina",
             "last_name": "ferraris",
             "age": 29,
@@ -34,7 +31,7 @@
             "email": "caro@gmail.com"
         },
         {
-            "id": 3,
+            "username": "agus",
             "name": "agustin",
             "last_name": "gomez",
             "age": 26,

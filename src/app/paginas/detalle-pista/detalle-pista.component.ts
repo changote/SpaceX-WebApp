@@ -21,69 +21,71 @@ export class DetallePistaComponent implements OnInit {
 
   ngOnInit() {
     this.obtenerId();
-    console.log(this.landpad);
   }
 
-  private obtenerId(){
-    this.route.paramMap.subscribe(params => {
+  private async obtenerId() {
+    this.route.paramMap.subscribe(async params => {
       const id = params.get('id');
       if (id) {
         this.pistaId = id;
-        this.cargarDatosPista(this.pistaId);
-        if(this.error = true){
-          this.cargarDatosLaunchpad(id);
+        await this.cargarDatosPista(this.pistaId); // Espera hasta que se complete cargarDatosPista
+  
+        if (this.error) {
+          await this.cargarDatosLaunchpad(id); // Espera hasta que se complete cargarDatosLaunchpad
         }
+  
+        setTimeout(() => {
+          this.loading = false;
+        }, 1000);
       }
     });
-  }
-
-  private cargarDatosPista(id: string) {
-    this.httpService.realizarGet(Urls.urlApi + "landpads/" + id).subscribe(
-      (data: any) => {
-        setTimeout(() => {
-        }, 5000);
-        this.pista = data;
-        console.log(this.pista.name);
-        if (this.pista.name === undefined) {
-           this.error = true;
-        }
-        else
-         this.loading = false;
-      },
-      (error: any) => {
-        console.error('Error:', error);
-      }
-    );
   }
   
-  private cargarDatosLaunchpad(id: string) {
-    this.httpService.realizarGet(Urls.urlApi + "launchpads/" + id).subscribe(
-      (data: any) => {
-        this.pista = data;
-        this.loading = false;
-        if(this.pista.status === 'retired'){
-          this.pista.status = 'Retirada';
-        }
-        if(this.pista.status === 'active'){
-          this.pista.status = 'Activa';
-        }
-        if(this.pista.status === 'under construction'){
-          this.pista.status = 'En construccion';
-        }
-        this.landpad = false;
-      },
-      (error: any) => {
-        console.error('Error:', error);
-      }
-    );
+  
+  private async cargarDatosLaunchpad(id: string) {
+    try {
+      const data: any = await this.httpService.realizarGet(Urls.urlApi + "launchpads/" + id).toPromise();
+      this.pista = data;
+      this.setStatus();
+      this.landpad = false;
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
 
-  public maximizarImagen(img: any){
-    this.dialog.open(ImagenDialogComponent, {
-      data: {
-        imagenURL: img
-      }
-    });
+  private async cargarDatosPista(id: string) {
+    try {
+      const data: any = await this.httpService.realizarGet(Urls.urlApi + "landpads/" + id).toPromise();
+      this.pista = data;
+      this.setStatus();
+    } catch (error: any) {
+      this.error = true;
+      console.log("error 2"+this.error);
+    }
+  }
+  private setStatus(){
+    if(this.pista.status === 'retired'){
+      this.pista.status = 'Retirada';
+    }
+    if(this.pista.status === 'active'){
+      this.pista.status = 'Activa';
+    }
+    if(this.pista.status === 'under construction'){
+      this.pista.status = 'En construccion';
+    }
+  }
+
+  public maximizarImagen(){
+    if (this.pista && this.pista.images && this.pista.images.large && this.pista.images.large.length > 0) {
+      const imgURL = this.pista.images.large[0];
+      this.dialog.open(ImagenDialogComponent, {
+        data: {
+          imagenURL: imgURL
+        }
+      });
+    } else {
+      console.error('No se pudo encontrar la imagen.');
+    }
   }
 
   public volver(){

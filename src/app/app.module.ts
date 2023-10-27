@@ -22,14 +22,12 @@ import { RegistroComponent } from './modales/registro/registro.component';
 import { SidebarComponent } from './paginas/shared/sidebar/sidebar.component';
 import { EventosHistoricosComponent } from './paginas/eventos-historicos/eventos-historicos.component';
 import { EventoComponent } from './cards/evento/evento.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatDialogModule } from '@angular/material/dialog';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatIconModule } from '@angular/material/icon';
 import { LanzamientoComponent } from './cards/lanzamiento/lanzamiento.component';
 import { ImageSliderModule } from './imageSlider/imageSlider.module';
 import { DetalleLanzamientoComponent } from './paginas/detalle-lanzamiento/detalle-lanzamiento.component';
 import { ImagenDialogComponent } from './modales/imagen-dialog/imagen-dialog.component';
+import { MaterialModule } from './modules/material/material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -60,11 +58,9 @@ import { ImagenDialogComponent } from './modales/imagen-dialog/imagen-dialog.com
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule,
-    MatDialogModule,
-    MatFormFieldModule,
-    MatIconModule,
+    MaterialModule,
     ImageSliderModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

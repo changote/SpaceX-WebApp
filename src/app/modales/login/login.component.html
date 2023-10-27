@@ -1,14 +1,13 @@
-<form class="container" action="">
-    <span class="title">Iniciar sesion</span>
-    <div class="input-login">
-      usuario
-      <input type="text" name="username" maxlength="100" />
-      contraseña
-      <input type="password" name="password" maxlength="100" />
-    </div>
+<form class="container" (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <span class="title">Iniciar sesión</span>
+  <div class="input-login">
+    Usuario
+    <input type="text" name="username" maxlength="100" [(ngModel)]="userData.username" required />
+    Contraseña
+    <input type="password" name="password" maxlength="100" [(ngModel)]="userData.password" required />
+  </div>
+  <div class="botones">
+    <button type="submit" value="Login">Login</button>
+  </div>
+</form>
 
-    <div class="botones">
-      <button type="submit" value="Login">Login</button>
-      <button (click)="closeModal()">Cancelar</button>
-    </div>
-  </form>

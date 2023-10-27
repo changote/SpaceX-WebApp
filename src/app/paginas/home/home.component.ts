@@ -34,7 +34,6 @@ export class HomeComponent implements OnInit{
           this.loading = false;
         }, 1000);
         this.company = data;
-        this.translatedText = this.translate(data.summary);
         console.log(this.company);
       },
       (error: any) => {

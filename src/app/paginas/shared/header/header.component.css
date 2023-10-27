@@ -80,6 +80,9 @@ header ul li a {
 a {
     color: white;
 }
+.active {
+    background-color: rgb(124, 123, 123)!important;
+  }
 
 @media (max-width: 1334px) {
     .texto-nav {

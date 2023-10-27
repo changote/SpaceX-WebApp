@@ -2,6 +2,7 @@ import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { catchError , tap , timeout } from 'rxjs/operators';
+import { throwError } from 'rxjs';
 
 
 @Injectable({
@@ -13,16 +14,18 @@ export class HttpService {
   
   constructor(private http: HttpClient) { }
 
-  public realizarGet(url: string, timeoutMs = 30000): any{
+  public realizarGet(url: string): any {
     this.eventHttp.emit(false);
     return this.http.get(url).pipe(
       tap(_ => {
         this.eventHttp.emit(true);
       }),
-      timeout(timeoutMs),
       catchError((error: HttpErrorResponse) => {
         this.eventHttp.emit(true);
-        return error + "Error";
+        if (error.status === 404) {
+          return throwError('Error 404: Recurso no encontrado');
+        }
+        return throwError('Otro error'); // Puedes personalizar el mensaje para otros códigos de error si es necesario
       })
     );
   }

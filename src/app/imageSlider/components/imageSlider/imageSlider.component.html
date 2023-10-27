@@ -3,16 +3,9 @@
     <div (click)="goToPrevious()" class="leftArrow"><i class="fa-brands fa-space-awesome fa-rotate-270" style="color: white;"></i></div>
     <div (click)="goToNext()" class="rightArrow"><i class="fa-brands fa-space-awesome fa-rotate-90" style="color: white;"></i></div>
   </div>
-  <div
-    class="slide"
-    [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"
-  ></div>
+  <div class="slide" [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"></div>
   <div class="dotsContainer">
-    <div
-      *ngFor="let slide of slides; let slideIndex = index"
-      class="dot"
-      (click)="goToSlide(slideIndex)"
-    >
+    <div *ngFor="let slide of slides; let slideIndex = index" class="dot" (click)="goToSlide(slideIndex)">
       ●
     </div>
   </div>

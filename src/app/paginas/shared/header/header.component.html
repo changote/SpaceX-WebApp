@@ -1,17 +1,31 @@
 <header>
-        <div id="logo">
-            <a href=""><img src="../../../../assets/logo/SpaceX_Logo_Black.png" alt="Logo Space X"></a>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="/pistas"><i class="fa-solid fa-helicopter-symbol" style="color: #ffffff;"></i><span class="texto-nav"> pistas</span></a></li>
-                <li><a href="/eventos-historicos"><i class="fa-solid fa-shuttle-space fa-rotate-270" style="color: #ffffff;"></i><span class="texto-nav"> eventos historicos</span></a></li>
-                <li><a href="/lanzamientos"><i class="fa-solid fa-satellite-dish" style="color: #ffffff;"></i><span class="texto-nav"> lanzamientos</span></a></li>
-            </ul>
-        </nav>
-        <div id="loggeo">
-            <div *ngIf="!usuarioLogueado" (click)="modalLogin()">
-            <a><i class="fa-solid fa-user-astronaut" style="color: #ffffff;"></i> ingresar</a>
-        </div>
-        </div>
-</header>
+    <div id="logo">
+      <a href=""><img src="../../../../assets/logo/SpaceX_Logo_Black.png" alt="Logo Space X"></a>
+    </div>
+    <nav>
+      <ul>
+        <li>
+          <a href="/pistas" [class.active]="isTabActive('/pistas')"><i class="fa-solid fa-helicopter-symbol" style="color: #ffffff;"></i><span class="texto-nav"> pistas</span></a>
+        </li>
+        <li>
+          <a href="/eventos-historicos" [class.active]="isTabActive('/eventos-historicos')"><i class="fa-solid fa-shuttle-space fa-rotate-270" style="color: #ffffff;"></i><span class="texto-nav"> eventos historicos</span></a>
+        </li>
+        <li>
+          <a href="/lanzamientos" [class.active]="isTabActive('/lanzamientos')"><i class="fa-solid fa-satellite-dish" style="color: #ffffff;"></i><span class="texto-nav"> lanzamientos</span></a>
+        </li>
+      </ul>
+    </nav>
+    <div id="loggeo">
+      <div *ngIf="!usuarioLogueado" (click)="modalLogin()">
+        <a><i class="fa-solid fa-user-astronaut" style="color: #ffffff;"></i> ingresar</a>
+      </div>
+      <div *ngIf="usuarioLogueado">
+        <a [matMenuTriggerFor]="beforeMenu"><i class="fa-solid fa-user-astronaut" style="color: #ffffff;"></i> {{user.name}}</a>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+          <button mat-menu-item>Mis datos</button>
+          <button mat-menu-item (click)="logout()">Cerrar sesion</button>
+        </mat-menu>
+      </div>
+    </div>
+  </header>
+  
