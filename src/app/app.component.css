@@ -3,6 +3,7 @@
     display: flex;
     justify-content: center;
     cursor:default;
+    min-height: 90%;
 }
   
   .main {

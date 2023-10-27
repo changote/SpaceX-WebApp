@@ -52,7 +52,7 @@ import { FormsModule } from '@angular/forms';
     EventoComponent,
     LanzamientoComponent,
     DetalleLanzamientoComponent,
-    ImagenDialogComponent    
+    ImagenDialogComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { Router } from '@angular/router';
 import { User } from 'src/app/entidades/user';
 import { AuthService } from 'src/app/servicios/autenticacion/auth.service';
 import { HttpService } from 'src/app/servicios/http/http.service';
@@ -20,12 +18,13 @@ export class LoginComponent implements OnInit{
     username: '',
     password: ''
   };
+  mensajeError = '';
 
   ngOnInit() {
     this.getUsuarios();
   }
 
-  constructor(private httpService: HttpService, private authService: AuthService, private _snackBar: MatSnackBar){
+  constructor(private httpService: HttpService, private authService: AuthService){
 
   }
   async onSubmit() {
@@ -43,6 +42,9 @@ export class LoginComponent implements OnInit{
         console.error(error);
       }
     }
+    else{
+      this.mensajeError = 'Credenciales incorrectas!';
+    }
   }
   private getUsuarios(){
     this.httpService.realizarGet(Urls.urlJsonSvUsers).subscribe(
@@ -54,26 +56,18 @@ export class LoginComponent implements OnInit{
       }
     );
   }
-
-  private getUserData(username: string){
+  
+  private getUserData(username: string) {
     this.httpService.realizarGet(Urls.urlJsonSvUserData + "?username=" + username).subscribe(
       (data: any) => {
         this.userLogged = data;
         this.authService.setUser(this.userLogged[0]);
         window.location.reload();
-        this.openSnackBar();
-        
       },
       (error: any) => {
         console.error('Error:', error);
       }
     );
   }
-
-  openSnackBar() {
-    console.log("hola");
-    this._snackBar.open("Bienvenido a bordo " + this.userLogged[0].name, "Gracias!", {
-      duration: 3000,
-    });
-  }
+  
 }

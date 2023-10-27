@@ -5,19 +5,32 @@
       <app-sidebar></app-sidebar>
     </div>
     <div class="background">
-      <h2>Lanzamientos</h2>
-      <div *ngFor="let year of getYears()">
-        <h2>Lanzamientos del {{year}}</h2>
-        <div class="container">
-          <div *ngFor="let lanzamiento of lanzamientos">
-            <div *ngIf="lanzamiento.fecha == year">
-              <div class="card">
-              <app-lanzamiento [lanzamiento]="lanzamiento"></app-lanzamiento>
-            </div>
+
+
+
+      <ng-container *ngFor="let year of years">
+        <div *ngIf="selectedYear === null || year === selectedYear">
+          <div class="header-container">
+            <h2>Lanzamientos del {{year}}</h2>
+            <mat-form-field>
+              <mat-label>Filtrar por año</mat-label>
+              <mat-select [(value)]="selectedYear">
+                <mat-option *ngFor="let option of years" [value]="option">{{ option }}</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="container">
+            <div *ngFor="let lanzamiento of lanzamientos">
+              <div *ngIf="selectedYear === null || lanzamiento.fecha === selectedYear">
+                <div class="card">
+                  <app-lanzamiento [lanzamiento]="lanzamiento"></app-lanzamiento>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </ng-container>
+
     </div>
   </div>
 </ng-template>
