@@ -1,14 +1,18 @@
 <form class="container" (ngSubmit)="onSubmit()" #loginForm="ngForm">
   <span class="title">Iniciar sesión</span>
   <div class="input-login">
-    Usuario
-    <input type="text" name="username" maxlength="100" [(ngModel)]="userData.username" required />
-    Contraseña
-    <input type="password" name="password" maxlength="100" [(ngModel)]="userData.password" required />
+    <mat-form-field>
+      <mat-label>Usuario</mat-label>
+      <input type="text" name="username" maxlength="100" [(ngModel)]="userData.username" required matInput>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Contraseña</mat-label>
+      <input type="password" name="password" maxlength="100" [(ngModel)]="userData.password" required matInput>
+    </mat-form-field>
   </div>
   <div class="botones">
-    <button type="submit" value="Login">Login</button>
+    <button type="submit" value="Login" mat-button>Login</button>
+    <button mat-button (click)="modalRegistro()">Registrarse</button>
   </div>
   <span> {{ mensajeError }}</span>
 </form>
-

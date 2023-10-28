@@ -1,0 +1,52 @@
+.input-registro label {
+    display: flex;
+    align-items: center;
+}
+
+.input-registro input,
+.input-registro select {
+    margin: 1rem;
+    font-size: 1rem;
+}
+
+.container {
+    position: relative;
+    height: 50rem;
+    width: 40rem;
+    background-color: rgba(0, 0, 0, 0.74);
+    font-family: 'Orbitron', sans-serif;
+    padding: .5rem;
+}
+
+.title {
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.input-registro {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+}
+
+.botones {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    bottom: 0;
+}
+
+.botones button {
+    height: 2rem;
+    margin: 10px;
+    font-family: 'Orbitron', sans-serif;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
