@@ -1,17 +1,99 @@
 .container {
-    max-width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    font-family: "Comfortaa", sans-serif;
-    margin-left: 15rem;
-    margin-right: 15rem;
-  }
-  .background {
-    background-color: rgba(27, 27, 27, 0.719);
-    position: relative;
-    padding-top: 50px;
-    margin-left: 10rem;
-    margin-right: 10rem;
-    padding-bottom: 5rem;
-  }
+  max-width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+  font-family: "Comfortaa", sans-serif;
+  align-items: center;
+}
+.background {
+  background-color: rgba(27, 27, 27, 0.719);
+  position: relative;
+  padding-top: 50px;
+  margin-left: 10rem;
+  margin-right: 10rem;
+  padding-bottom: 5rem;
+}
+
+img {
+  width: 20%;
+  object-fit: contain;
+}
+
+.cable1 {
+  transform: rotate(90deg);
+}
+
+/*parte 1*/
+.sector1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*parte 2*/
+.sector2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.sector3 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.cable2 {
+  width: 100%;
+}
+
+.contenedorCable{
+  width: 20%;
+}
+
+.chip {
+  background-image: url("../../../assets/img/chip.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 180px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+
+.img img{
+height: 50%;
+}
+
+/*sector 4*/
+.sector4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+/*sector 5*/
+.sector5 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.sector5 div img {
+  width: 100%;
+}
+
+.imgDentroChip{
+  width: 90px;
+  height: 90px;
+  background-image: url("../../../assets/img/capsula.jpg");
+  object-fit: cover;
+}

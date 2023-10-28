@@ -1,31 +1,94 @@
 <app-loading *ngIf="loading; else elseBlock"></app-loading>
 <ng-template #elseBlock>
-    <div class="body">
-        <div class="sidebar" class="col-md-3">
-            <app-sidebar></app-sidebar>
-        </div>
-        <div class="background">
-            <div class="container">
-                <h2>Lanzamiento {{lanzamiento.name}}</h2>
-                <div class="sector1">
-                    <div class="capsula">
-                        <img src="../../../assets/img/capsula.jpg" alt="Capsula">
-                    </div>
-                </div>
-                <div class="sector2">
-
-                </div>
-                <div class="sector3">
-                    
-                </div>
-                <div class="sector4">
-
-                </div>
-                <div class="sector5">
-
-                </div>
-
-            </div>
-        </div>
+  <div class="body">
+    <div class="sidebar" class="col-md-3">
+      <app-sidebar></app-sidebar>
     </div>
+    <div class="background">
+      <div class="container">
+        <h2>Lanzamiento {{ lanzamiento.name }}</h2>
+        <div class="sector1">
+          <div class="chip">
+            <div class="cores">
+              <img
+                src="../../../assets/img/cores.png"
+                class="img"
+                alt="cores"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="sector2">
+          <img
+            src="../../../assets/img/rainbow-line.gif"
+            alt="coneccion"
+            class="cable1"
+          />
+        </div>
+        <div class="sector3">
+          <div class="chip">
+            <img
+              src="../../../assets/img/payloadsGeneral2.jpg"
+              alt="payloads"
+            />
+          </div>
+          <div class="contenedorCable">
+            <img
+              src="../../../assets/img/rainbow-line.gif"
+              alt="coneccion"
+              class="cable2"
+            />
+          </div>
+          <div class="chip">
+            <img
+              src="{{ lanzamiento.links.flickr.original[0] }}"
+              class="img"
+              alt="lanzamiento"
+            />
+          </div>
+          <div class="contenedorCable">
+            <img
+              src="../../../assets/img/rainbow-line.gif"
+              alt="coneccion"
+              class="cable2"
+            />
+          </div>
+          <div class="chip">
+            <div class="imgDentroChip">
+              <a href="">Capsulas</a>
+            </div>
+          </div>
+        </div>
+        <div class="sector4">
+          <img
+            src="../../../assets/img/rainbow-line.gif"
+            alt="coneccion"
+            class="cable1"
+          />
+        </div>
+        <div class="sector5">
+          <div class="chip">
+            <img src="../../../assets/img/ships.jpeg" class="img" alt="ships" />
+          </div>
+          <div class="contenedorCable">
+            <img
+              src="../../../assets/img/rainbow-line.gif"
+              alt="coneccion"
+              class="cable2"
+            />
+          </div>
+          <div class="contenedorCable">
+            <img
+              src="../../../assets/img/rainbow-line.gif"
+              alt="coneccion"
+              class="cable2"
+            />
+          </div>
+          <div class="chip">
+            <img src="../../../assets/img/crew.jpg" class="img" alt="crew" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </ng-template>
