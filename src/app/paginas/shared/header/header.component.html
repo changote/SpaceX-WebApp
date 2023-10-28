@@ -22,7 +22,7 @@
       <div *ngIf="usuarioLogueado">
         <a [matMenuTriggerFor]="beforeMenu"><i class="fa-solid fa-user-astronaut" style="color: #ffffff;"></i> {{ user.name | lowercase }}</a>
         <mat-menu #beforeMenu="matMenu" xPosition="before">
-          <button mat-menu-item>Mis datos</button>
+          <button mat-menu-item (click)="misDatos()">Mis datos</button>
           <button mat-menu-item (click)="logout()">Cerrar sesion</button>
         </mat-menu>
       </div>

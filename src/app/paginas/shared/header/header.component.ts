@@ -53,4 +53,8 @@ export class HeaderComponent implements OnInit {
     window.location.reload();
   }
 
+  misDatos(){
+    this.router.navigate(['/mis-datos'])
+  }
+
 }

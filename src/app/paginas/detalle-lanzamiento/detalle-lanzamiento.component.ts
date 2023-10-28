@@ -41,4 +41,8 @@ export class DetalleLanzamientoComponent {
       }
     );
   }
+
+  public volver(){
+    window.history.back();
+  }
 }

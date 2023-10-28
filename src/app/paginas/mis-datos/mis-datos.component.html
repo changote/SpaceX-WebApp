@@ -1,1 +1,24 @@
-<p>mis-datos works!</p>
+<app-loading *ngIf="loading; else elseBlock"></app-loading>
+<ng-template #elseBlock>
+    <div class="container-principal">
+        <h2>Perfil</h2>
+        <div class="imgForms" *ngIf="user.gender == 'M'">
+                <img src="../../../assets/img/girlAstronauta.jpg" alt="">
+            </div>
+            <div class="imgForms" *ngIf="user.gender == 'H'">
+                <img src="../../../assets/img/messiAstronauta.jpg" alt="">
+            </div>
+            <div class="imgForms" *ngIf="user.gender == 'A'">
+                <img src="../../../assets/img/antilopejpg.jpg" alt="">
+            </div>
+            <div class="imgForms" *ngIf="user.gender == 'P'">
+                <img src="../../../assets/img/girlAstronauta.jpg" alt="">
+            </div>
+            <div class="listaFormularios">
+            </div>
+        </div>
+        <div class="informacion">
+            <p>Nombre</p>
+            <p></p>
+        </div>
+</ng-template>
