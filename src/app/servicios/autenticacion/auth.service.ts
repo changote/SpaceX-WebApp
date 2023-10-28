@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private user: any; // Puedes definir una interfaz o tipo de usuario más específico
+  private user: any;
 
   setUser(user: any) {
     if(this.isLoggedIn()){

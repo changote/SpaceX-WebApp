@@ -1,24 +1,28 @@
 <form class="container" (ngSubmit)="onSubmit()" #registerForm="ngForm">
   <h2 class="title">Registro</h2>
   <div class="input-registro">
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Nombre</mat-label>
-      <input type="text" name="nombre" maxlength="100" matInput>
+      <input type="text" name="nombre" maxlength="100" matInput [(ngModel)]="registroData.nombre" required matInput>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Apellido</mat-label>
-      <input type="text" name="apellido" maxlength="100" matInput>
+      <input type="text" name="apellido" maxlength="100" matInput [(ngModel)]="registroData.apellido" required matInput>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Usuario</mat-label>
-      <input type="text" name="usuario" maxlength="100" matInput>
+      <input type="text" name="usuario" maxlength="100" matInput [(ngModel)]="registroData.username" required matInput (ngModelChange)="checkUserExistence()">
     </mat-form-field>
+    <div *ngIf="userExists" class="error-message">
+      El usuario ya existe.
+    </div>
+    
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Género</mat-label>
-      <mat-select name="genero" matInput>
+      <mat-select name="genero" matInput [(ngModel)]="registroData.genero" required matInput>
         <mat-option value="1">Mujer</mat-option>
         <mat-option value="2">Hombre</mat-option>
         <mat-option value="3">Antilope</mat-option>
@@ -26,23 +30,28 @@
       </mat-select>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Email</mat-label>
-      <input type="email" name="email" maxlength="100" matInput>
+      <input type="email" name="email" maxlength="100" matInput [(ngModel)]="registroData.email" required matInput>
     </mat-form-field>
 
-    <mat-form-field class="example-full-width">
+    <mat-form-field>
       <mat-label>Password</mat-label>
-      <input type="password" name="pass1" maxlength="100" matInput>
+      <input type="password" name="password" maxlength="100" matInput [(ngModel)]="registroData.password" required matInput>
     </mat-form-field>
-
-    <mat-form-field class="example-full-width">
+    
+    <mat-form-field>
       <mat-label>Repite Password</mat-label>
-      <input type="password" name="pass2" maxlength="100" matInput>
+      <input type="password" name="repeatPassword" maxlength="100" matInput [(ngModel)]="registroData.repeatPassword" required matInput>
     </mat-form-field>
+    
+    <div *ngIf="!contrasenasCoinciden()" class="error-message">
+      Las contraseñas no coinciden.
+    </div>
+    
   </div>
   <div class="botones">
-    <button type="submit" value="Confirmar" mat-button>Confirmar</button>
+    <button type="submit" mat-button [disabled]="!todoOk()">Confirmar</button>
     <button type="button" value="Cancelar" mat-button>Cancelar</button>
   </div>
 </form>
