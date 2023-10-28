@@ -29,4 +29,18 @@ export class HttpService {
       })
     );
   }
+
+  public realizarPost(url: string, datos: any) {
+    this.eventHttp.emit(false);
+    return this.http.post(url, {data: datos}).pipe(
+      tap(_ => {
+        this.eventHttp.emit(true);
+      }),
+      catchError((error: HttpErrorResponse) => {
+        this.eventHttp.emit(true);
+        return error.message;
+      })
+    );
+
+  }
 }

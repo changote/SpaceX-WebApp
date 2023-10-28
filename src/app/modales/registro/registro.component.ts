@@ -5,7 +5,8 @@ import { User } from 'src/app/entidades/user';
 import { HttpService } from 'src/app/servicios/http/http.service';
 import { AuthService } from 'src/app/servicios/autenticacion/auth.service';
 import { Urls } from 'src/app/url-globales';
-import { Registro } from 'src/app/entidades/registro';
+import { RegistroService } from 'src/app/servicios/registro/registro.service';
+import { RegistroCompleto } from 'src/app/entidades/registroCompleto';
 
 @Component({
   selector: 'app-registro',
@@ -24,15 +25,16 @@ export class RegistroComponent implements OnInit {
   };
   gotoRegistro = false;
   mensajeError = '';
-  registroData: Registro = {
-    nombre: '',
+  registroData: RegistroCompleto = {
+    name: '',
     email: '',
-    apellido: '',
+    last_name: '',
     username: '',
-    genero: '',
-    password: '',
-    repeatPassword: ''
+    gender: '',
+    age: 0,
+    password: ''
   }
+  repeatPassword = '';
   userExists: boolean = false;
 
 
@@ -40,27 +42,11 @@ export class RegistroComponent implements OnInit {
     this.getUsuarios();
   }
 
-  constructor(private httpService: HttpService, private authService: AuthService, private dialog: MatDialog) {
+  constructor(private httpService: HttpService, private authService: AuthService, private dialog: MatDialog, private registroService: RegistroService) {
 
   }
   async onSubmit() {
-    for (let user of this.users) {
-      if (user.username == this.userData.username && user.password == this.userData.password) {
-        console.log("login ok");
-        this.loginOk = true;
-        break;
-      }
-    }
-    if (this.loginOk) {
-      try {
-        this.getUserData(this.userData.username);
-      } catch (error) {
-        console.error(error);
-      }
-    }
-    else if (!this.gotoRegistro) {
-      this.mensajeError = 'Credenciales incorrectas!';
-    }
+    this.registroService.registroUsuario(this.registroData);
   }
   private getUsuarios() {
     this.httpService.realizarGet(Urls.urlJsonSvUsers).subscribe(
@@ -86,23 +72,21 @@ export class RegistroComponent implements OnInit {
     );
   }
   contrasenasCoinciden(): boolean {
-    return this.registroData.password === this.registroData.repeatPassword;
+    return this.registroData.password === this.repeatPassword;
   }
   todoOk(): boolean {
     return (
-      !!this.registroData.nombre &&
-      !!this.registroData.apellido &&
+      !!this.registroData.name &&
+      !!this.registroData.last_name &&
       !!this.registroData.username &&
-      !!this.registroData.genero &&
+      !!this.registroData.gender &&
       !!this.registroData.email &&
       !!this.registroData.password &&
-      !!this.registroData.repeatPassword &&
+      !!this.repeatPassword &&
       this.contrasenasCoinciden() &&
       !this.userExists
     );
   }
-
-
 
   checkUserExistence() {
     this.httpService.realizarGet(Urls.urlJsonSvUserData + "?username=" + this.registroData.username).subscribe(
@@ -120,4 +104,5 @@ export class RegistroComponent implements OnInit {
       }
     );
   }
+  
 }

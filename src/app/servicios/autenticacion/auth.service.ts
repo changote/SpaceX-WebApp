@@ -10,7 +10,6 @@ export class AuthService {
     if(this.isLoggedIn()){
       this.logout();
     }
-    console.log(user);
     localStorage.setItem('user', JSON.stringify(user));
   }
 

@@ -1,48 +1,90 @@
 {
-    "users": [
-        {
-            "username": "admin",
-            "password": "12345"
-        },
-        {
-            "username": "caro",
-            "password": "12345"
-        },
-        {
-            "username": "agus",
-            "password": "12345"
-        }
-    ],
-    "person": [
-        {
-            "username": "admin",
-            "name": "pepe",
-            "last_name": "josefo",
-            "age": 40,
-            "gender": "H",
-            "email": "pepe@gmail.com"
-        },
-        {
-            "username": "caro",
-            "name": "carolina",
-            "last_name": "ferraris",
-            "age": 29,
-            "gender": "M",
-            "email": "caro@gmail.com"
-        },
-        {
-            "username": "agus",
-            "name": "agustin",
-            "last_name": "gomez",
-            "age": 26,
-            "gender": "H",
-            "email": "agus@gmail.com"
-        }
-    ],
-    "travel_request": [
-        {
-            "email": "agus@gmail.com",
-            "text": "Hola quiero viajar jaja xd"
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "password": "12345"
+    },
+    {
+      "id": "2",
+      "username": "caro",
+      "password": "12345"
+    },
+    {
+      "id": "3",
+      "username": "agus",
+      "password": "12345"
+    },
+    {
+      "data": {
+        "username": "asd",
+        "password": "asd"
+      },
+      "id": "ZnQZakG"
+    },
+    {
+      "data": {
+        "username": "asds",
+        "password": "asd"
+      },
+      "id": "-7vvg5E"
+    }
+  ],
+  "person": [
+    {
+      "id": "1",
+      "username": "admin",
+      "name": "pepe",
+      "last_name": "josefo",
+      "age": 40,
+      "gender": "H",
+      "email": "pepe@gmail.com"
+    },
+    {
+      "id": "2",
+      "username": "caro",
+      "name": "carolina",
+      "last_name": "ferraris",
+      "age": 29,
+      "gender": "M",
+      "email": "caro@gmail.com"
+    },
+    {
+      "id": "3",
+      "username": "agus",
+      "name": "agustin",
+      "last_name": "gomez",
+      "age": 26,
+      "gender": "H",
+      "email": "agus@gmail.com"
+    },
+    {
+      "data": {
+        "name": "asd",
+        "last_name": "asd",
+        "username": "asd",
+        "gender": "1",
+        "email": "asd",
+        "age": 0
+      },
+      "id": "Dht7k9x"
+    },
+    {
+      "data": {
+        "name": "asd",
+        "last_name": "asd",
+        "username": "asds",
+        "gender": "1",
+        "email": "asd",
+        "age": 0
+      },
+      "id": "K7fse8z"
+    }
+  ],
+  "travel_request": [
+    {
+      "email": "agus@gmail.com",
+      "text": "Hola quiero viajar jaja xd"
+    }
+  ]
 }

@@ -3,12 +3,12 @@
   <div class="input-registro">
     <mat-form-field>
       <mat-label>Nombre</mat-label>
-      <input type="text" name="nombre" maxlength="100" matInput [(ngModel)]="registroData.nombre" required matInput>
+      <input type="text" name="nombre" maxlength="100" matInput [(ngModel)]="registroData.name" required matInput>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>Apellido</mat-label>
-      <input type="text" name="apellido" maxlength="100" matInput [(ngModel)]="registroData.apellido" required matInput>
+      <input type="text" name="apellido" maxlength="100" matInput [(ngModel)]="registroData.last_name" required matInput>
     </mat-form-field>
 
     <mat-form-field>
@@ -22,7 +22,7 @@
 
     <mat-form-field>
       <mat-label>Género</mat-label>
-      <mat-select name="genero" matInput [(ngModel)]="registroData.genero" required matInput>
+      <mat-select name="genero" matInput [(ngModel)]="registroData.gender" required matInput>
         <mat-option value="1">Mujer</mat-option>
         <mat-option value="2">Hombre</mat-option>
         <mat-option value="3">Antilope</mat-option>
@@ -42,7 +42,7 @@
     
     <mat-form-field>
       <mat-label>Repite Password</mat-label>
-      <input type="password" name="repeatPassword" maxlength="100" matInput [(ngModel)]="registroData.repeatPassword" required matInput>
+      <input type="password" name="repeatPassword" maxlength="100" matInput [(ngModel)]="repeatPassword" required matInput>
     </mat-form-field>
     
     <div *ngIf="!contrasenasCoinciden()" class="error-message">
