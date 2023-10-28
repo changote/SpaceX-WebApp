@@ -1,24 +1,45 @@
 <app-loading *ngIf="loading; else elseBlock"></app-loading>
 <ng-template #elseBlock>
-    <div class="container-principal">
-        <h2>Perfil</h2>
-        <div class="imgForms" *ngIf="user.gender == 'M'">
-                <img src="../../../assets/img/girlAstronauta.jpg" alt="">
-            </div>
-            <div class="imgForms" *ngIf="user.gender == 'H'">
-                <img src="../../../assets/img/messiAstronauta.jpg" alt="">
-            </div>
-            <div class="imgForms" *ngIf="user.gender == 'A'">
-                <img src="../../../assets/img/antilopejpg.jpg" alt="">
-            </div>
-            <div class="imgForms" *ngIf="user.gender == 'P'">
-                <img src="../../../assets/img/girlAstronauta.jpg" alt="">
-            </div>
-            <div class="listaFormularios">
-            </div>
-        </div>
-        <div class="informacion">
-            <p>Nombre</p>
-            <p></p>
-        </div>
+  <div class="container-principal">
+    <div class="izquierda">
+      <div class="listaFormularios">
+        <h2>Formularios</h2>
+        <ul>
+          <li>pedido2</li>
+          <li>pedido2</li>
+          <li>pedido2</li>
+          <li>pedido2</li>
+          <li>pedido2</li>
+          <li>pedido2</li>
+        </ul>
+      </div>
+    </div>
+    <div class="centro">
+      <h2><i class="fa-solid fa-user-astronaut" style="color: #ffffff;"></i> {{ user.name }}</h2>
+      <div class="imgForms" *ngIf="user.gender === 'M'">
+        <img src="../../../assets/img/girlAstronauta.jpg" alt="" />
+      </div>
+      <div class="imgForms" *ngIf="user.gender === 'H'">
+        <img src="../../../assets/img/messiAstronauta.jpg" alt="" />
+      </div>
+      <div class="imgForms" *ngIf="user.gender === 'A'">
+        <img src="../../../assets/img/antilopejpg.jpg" alt="" />
+      </div>
+      <div class="imgForms" *ngIf="user.gender === 'P'">
+        <img src="../../../assets/img/girlAstronauta.jpg" alt="" />
+      </div>
+    </div>
+    <div class="derecha">
+      <div class="informacion">
+        <h3><i class="fa-solid fa-meteor" style="color: #ffffff;"></i> Apellido</h3>
+        <p class="dato1">{{ user.last_name }}</p>
+        <h3 class="dato2"><i class="fa-solid fa-heart-circle-bolt" style="color: #ffffff;"></i> Edad</h3>
+        <p class="dato3">{{ user.age }}</p>
+        <h3 class="dato3"><i class="fa-solid fa-satellite-dish" style="color: #ffffff;"></i> User</h3>
+        <p class="dato2"> {{ user.username }}</p>
+        <h3 class="dato1"><i class="fa-solid fa-newspaper" style="color: #ffffff;"></i> E-mail</h3>
+        <p>{{ user.email }}</p>
+      </div>
+    </div>
+  </div>
 </ng-template>

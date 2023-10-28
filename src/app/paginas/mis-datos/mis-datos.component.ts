@@ -15,10 +15,11 @@ export class MisDatosComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    this.user = this.authService.getUser;
+    this.user = this.authService.getUser();
     setTimeout(() => {
       this.loading = false;
     }, 1000);
+    console.log(this.user.gender);
   }
 
 
