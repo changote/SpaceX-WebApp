@@ -3,6 +3,8 @@ import { User } from 'src/app/entidades/user';
 import { AuthService } from 'src/app/servicios/autenticacion/auth.service';
 import { HttpService } from 'src/app/servicios/http/http.service';
 import { Urls } from 'src/app/url-globales';
+import { RegistroComponent } from '../registro/registro.component';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-login',
@@ -10,6 +12,7 @@ import { Urls } from 'src/app/url-globales';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit{
+  private static dialogRef: MatDialogRef<LoginComponent>;
   hide = true;
   loginOk = false;
   userLogged: any;
@@ -18,13 +21,14 @@ export class LoginComponent implements OnInit{
     username: '',
     password: ''
   };
+  gotoRegistro = false;
   mensajeError = '';
 
   ngOnInit() {
     this.getUsuarios();
   }
 
-  constructor(private httpService: HttpService, private authService: AuthService){
+  constructor(private httpService: HttpService, private authService: AuthService, private dialog: MatDialog){
 
   }
   async onSubmit() {
@@ -42,7 +46,7 @@ export class LoginComponent implements OnInit{
         console.error(error);
       }
     }
-    else{
+    else if(!this.gotoRegistro){
       this.mensajeError = 'Credenciales incorrectas!';
     }
   }
@@ -68,6 +72,22 @@ export class LoginComponent implements OnInit{
         console.error('Error:', error);
       }
     );
+  }
+
+  public modalRegistro(){
+    this.closeDialog();
+    this.gotoRegistro = true;
+    this.dialog.open(RegistroComponent);
+  }
+
+  static setDialogRef(dialogRef: MatDialogRef<LoginComponent>): void {
+    LoginComponent.dialogRef = dialogRef;
+  }
+
+  closeDialog() {
+    if (LoginComponent.dialogRef) {
+      LoginComponent.dialogRef.close();
+    }
   }
   
 }

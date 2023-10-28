@@ -15,19 +15,12 @@
     padding-top: 3rem;
     padding-bottom: 2rem;
 }
-.input-login{
+.input-login {
+    height: 50%;
     display: flex;
-    align-items: center;
+    justify-content: center;
     flex-direction: column;
-    width: 100%;
-    color: white;
-    margin-top: 3rem;
-}
-.input-login input{
-    height: 2rem;
-    width: 20rem;
-    margin: 1rem;
-    border-radius: 5px;
+    flex-wrap: wrap;
 }
 .botones{
     width: 80%;
@@ -37,7 +30,7 @@
 }
 .botones button {
     height: 2rem;
-    margin: 10px;
+    margin-bottom: 2rem;
     font-family: 'Orbitron', sans-serif;
     color: black;
     font-size: 1rem;

@@ -1,10 +1,9 @@
 import { Component } from '@angular/core';
 import { LoginComponent } from '../../../modales/login/login.component';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { OnInit } from '@angular/core';
 import { NavigationEnd } from '@angular/router';
-import { User } from 'src/app/entidades/user';
 import { AuthService } from 'src/app/servicios/autenticacion/auth.service';
 
 @Component({
@@ -17,16 +16,14 @@ export class HeaderComponent implements OnInit {
   currentURL: string = '';
   fragment: any = '';
   user:any;
+  dialogRef!: MatDialogRef<LoginComponent>;
 
   constructor(private dialog: MatDialog, private router: Router, private authService: AuthService){
 
   }
   modalLogin(){
-    this.dialog.open(LoginComponent, {
-      ariaLabel: "Modal iniciar sesión",
-      width: "auto",
-      maxWidth: "95vw"
-    });
+    this.dialogRef = this.dialog.open(LoginComponent);
+    LoginComponent.setDialogRef(this.dialogRef);
   }
   isTabActive(tabRoute: string): boolean {
     return this.currentURL === tabRoute;
