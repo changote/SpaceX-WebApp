@@ -16,6 +16,15 @@
   padding-bottom: 5rem;
 }
 
+h2{
+  text-align: center;
+  font-size: 3rem;
+  margin: 0px;
+  color: azure;
+  padding: 2rem;
+  font-family: "Orbitron", sans-serif;
+}
+
 img {
   width: 20%;
   object-fit: contain;
@@ -48,7 +57,7 @@ img {
 }
 
 .cable2 {
-  width: 100%;
+  width: 100%;  
 }
 
 .contenedorCable{
@@ -79,6 +88,10 @@ height: 50%;
   height: 50px;
 }
 
+.sector4 img{
+  clip-path: inset(0 45px 0 0);
+}
+
 /*sector 5*/
 .sector5 {
   display: flex;
@@ -87,13 +100,10 @@ height: 50%;
   z-index: 2;
 }
 
-.sector5 div img {
-  width: 100%;
-}
-
-.imgDentroChip{
-  width: 90px;
-  height: 90px;
-  background-image: url("../../../assets/img/capsula.jpg");
-  object-fit: cover;
+.imgdiv img{
+width: 110px;
+height: 110px;
+object-fit: cover;
+border-radius: 10px;
+box-shadow: 4px 2px 2px black;
 }
