@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
 import { HttpService } from 'src/app/servicios/http/http.service';
 import { Urls } from 'src/app/url-globales';
 
@@ -30,15 +31,17 @@ export class DetalleLanzamientoComponent {
       }
     });
   }
+  
+  private async cargarDatosLauncher(id: string) {
+    try {
+      let responseApi = this.httpService.realizarGet(Urls.urlApiv5 + "launches/" + id);
+      this.lanzamiento = await lastValueFrom(responseApi);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 
-  private cargarDatosLauncher(id: string) {
-    this.httpService.realizarGet(Urls.urlApiv5 + "launches/" + id).subscribe(
-      (data: any) => {
-        this.lanzamiento = data;
-      },
-      (error: any) => {
-        console.error('Error:', error);
-      }
-    );
+  public volver(){
+    window.history.back();
   }
 }

@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginComponent } from '../login/login.component';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
-import { User } from 'src/app/entidades/user';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Registro, User } from 'src/app/entidades/model-implements';
 import { HttpService } from 'src/app/servicios/http/http.service';
-import { AuthService } from 'src/app/servicios/autenticacion/auth.service';
 import { Urls } from 'src/app/url-globales';
 import { RegistroService } from 'src/app/servicios/registro/registro.service';
-import { RegistroCompleto } from 'src/app/entidades/registroCompleto';
+import { lastValueFrom } from 'rxjs';
 
 @Component({
   selector: 'app-registro',
@@ -19,21 +18,9 @@ export class RegistroComponent implements OnInit {
   loginOk = false;
   userLogged: any;
   users: User[] = [];
-  userData: User = {
-    username: '',
-    password: ''
-  };
   gotoRegistro = false;
   mensajeError = '';
-  registroData: RegistroCompleto = {
-    name: '',
-    email: '',
-    last_name: '',
-    username: '',
-    gender: '',
-    age: 0,
-    password: ''
-  }
+  registroData: Registro = new Registro();
   repeatPassword = '';
   userExists: boolean = false;
 
@@ -42,11 +29,12 @@ export class RegistroComponent implements OnInit {
     this.getUsuarios();
   }
 
-  constructor(private httpService: HttpService, private authService: AuthService, private dialog: MatDialog, private registroService: RegistroService) {
+  constructor(private httpService: HttpService, private registroService: RegistroService) {
 
   }
   async onSubmit() {
-    this.registroService.registroUsuario(this.registroData);
+    await this.registroService.registroUsuario(this.registroData);
+    window.location.reload();
   }
   private getUsuarios() {
     this.httpService.realizarGet(Urls.urlJsonSvUsers).subscribe(
@@ -59,18 +47,6 @@ export class RegistroComponent implements OnInit {
     );
   }
 
-  private getUserData(username: string) {
-    this.httpService.realizarGet(Urls.urlJsonSvUserData + "?username=" + username).subscribe(
-      (data: any) => {
-        this.userLogged = data;
-        this.authService.setUser(this.userLogged[0]);
-        window.location.reload();
-      },
-      (error: any) => {
-        console.error('Error:', error);
-      }
-    );
-  }
   contrasenasCoinciden(): boolean {
     return this.registroData.password === this.repeatPassword;
   }
@@ -88,21 +64,19 @@ export class RegistroComponent implements OnInit {
     );
   }
 
-  checkUserExistence() {
-    this.httpService.realizarGet(Urls.urlJsonSvUserData + "?username=" + this.registroData.username).subscribe(
-      (data: any) => {
-        const possibleUser = data;
-        if (possibleUser !== null && (Array.isArray(possibleUser) ? possibleUser.length > 0 : true)) {
-          this.userExists = true;
-        }
-        else
-          this.userExists = false;
-      },
-      (error: any) => {
-        console.error('Error:', error);
-        this.userExists = false; // Set userExists to false in case of an error
+  async checkUserExistence() {
+    try {
+      let responseApi = this.httpService.realizarGet(Urls.urlJsonSvUserData + "?username=" + this.registroData.username);
+      const possibleUser = await lastValueFrom(responseApi);
+      if (possibleUser !== null && (Array.isArray(possibleUser) ? possibleUser.length > 0 : true)) {
+        this.userExists = true;
       }
-    );
+      else {
+        this.userExists = false;
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
-  
+
 }

@@ -2,7 +2,7 @@ import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
 import { catchError , tap , timeout } from 'rxjs/operators';
-import { throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 
 
 @Injectable({
@@ -14,33 +14,15 @@ export class HttpService {
   
   constructor(private http: HttpClient) { }
 
-  public realizarGet(url: string): any {
-    this.eventHttp.emit(false);
-    return this.http.get(url).pipe(
-      tap(_ => {
-        this.eventHttp.emit(true);
-      }),
-      catchError((error: HttpErrorResponse) => {
-        this.eventHttp.emit(true);
-        if (error.status === 404) {
-          return throwError('Error 404: Recurso no encontrado');
-        }
-        return throwError('Otro error'); // Puedes personalizar el mensaje para otros códigos de error si es necesario
-      })
-    );
+  public realizarGet(url: string): Observable<any[]>{
+    return this.http.get<any[]>(url);
   }
 
-  public realizarPost(url: string, datos: any) {
-    this.eventHttp.emit(false);
-    return this.http.post(url, {data: datos}).pipe(
-      tap(_ => {
-        this.eventHttp.emit(true);
-      }),
-      catchError((error: HttpErrorResponse) => {
-        this.eventHttp.emit(true);
-        return error.message;
-      })
-    );
+  public realizarPost(url: string, datos: any): Observable<boolean> {
+    return this.http.post<boolean>(url, datos);
+  }
 
+  public realizarPut(url: string, id: number, update: any): Observable<boolean> {
+    return this.http.put<boolean>(url + id, update);
   }
 }

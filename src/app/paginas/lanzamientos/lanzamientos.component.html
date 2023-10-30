@@ -1,13 +1,7 @@
 <app-loading *ngIf="loading; else elseBlock"></app-loading>
 <ng-template #elseBlock>
   <div class="body">
-    <div class="sidebar" class="col-md-3">
-      <app-sidebar></app-sidebar>
-    </div>
     <div class="background">
-
-
-
       <ng-container *ngFor="let year of years">
         <div *ngIf="selectedYear === null || year === selectedYear">
           <div class="header-container">

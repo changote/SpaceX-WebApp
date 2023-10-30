@@ -19,7 +19,6 @@ import { DetallePistaComponent } from './paginas/detalle-pista/detalle-pista.com
 import { LanzamientosComponent } from './paginas/lanzamientos/lanzamientos.component';
 import { FormularioContactoComponent } from './paginas/formulario-contacto/formulario-contacto.component';
 import { RegistroComponent } from './modales/registro/registro.component';
-import { SidebarComponent } from './paginas/shared/sidebar/sidebar.component';
 import { EventosHistoricosComponent } from './paginas/eventos-historicos/eventos-historicos.component';
 import { EventoComponent } from './cards/evento/evento.component';
 import { LanzamientoComponent } from './cards/lanzamiento/lanzamiento.component';
@@ -47,12 +46,11 @@ import { FormsModule } from '@angular/forms';
     LanzamientosComponent,
     FormularioContactoComponent,
     RegistroComponent,
-    SidebarComponent,
     EventosHistoricosComponent,
     EventoComponent,
     LanzamientoComponent,
     DetalleLanzamientoComponent,
-    ImagenDialogComponent
+    ImagenDialogComponent,
   ],
   imports: [
     BrowserModule,

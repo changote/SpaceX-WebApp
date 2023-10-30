@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
+import { lastValueFrom } from 'rxjs';
 import { ImagenDialogComponent } from 'src/app/modales/imagen-dialog/imagen-dialog.component';
 import { HttpService } from 'src/app/servicios/http/http.service';
 import { Urls } from 'src/app/url-globales';
@@ -17,7 +18,7 @@ export class DetallePistaComponent implements OnInit {
   landpad = true;
   error = false;
 
-  constructor(private route: ActivatedRoute, private httpService: HttpService, private dialog: MatDialog) {}
+  constructor(private route: ActivatedRoute, private httpService: HttpService, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.obtenerId();
@@ -29,23 +30,23 @@ export class DetallePistaComponent implements OnInit {
       if (id) {
         this.pistaId = id;
         await this.cargarDatosPista(this.pistaId); // Espera hasta que se complete cargarDatosPista
-  
+
         if (this.error) {
           await this.cargarDatosLaunchpad(id); // Espera hasta que se complete cargarDatosLaunchpad
         }
-  
+
         setTimeout(() => {
           this.loading = false;
         }, 1000);
       }
     });
   }
-  
-  
+
+
   private async cargarDatosLaunchpad(id: string) {
     try {
-      const data: any = await this.httpService.realizarGet(Urls.urlApi + "launchpads/" + id).toPromise();
-      this.pista = data;
+      let responseApi = this.httpService.realizarGet(Urls.urlApi + "launchpads/" + id);
+      this.pista = await lastValueFrom(responseApi);
       this.setStatus();
       this.landpad = false;
     } catch (error) {
@@ -55,27 +56,27 @@ export class DetallePistaComponent implements OnInit {
 
   private async cargarDatosPista(id: string) {
     try {
-      const data: any = await this.httpService.realizarGet(Urls.urlApi + "landpads/" + id).toPromise();
-      this.pista = data;
+      let responseApi = this.httpService.realizarGet(Urls.urlApi + "landpads/" + id);
+      this.pista = await lastValueFrom(responseApi);
       this.setStatus();
     } catch (error: any) {
       this.error = true;
-      console.log("error 2"+this.error);
+      console.log("error 2" + this.error);
     }
   }
-  private setStatus(){
-    if(this.pista.status === 'retired'){
+  private setStatus() {
+    if (this.pista.status === 'retired') {
       this.pista.status = 'Retirada';
     }
-    if(this.pista.status === 'active'){
+    if (this.pista.status === 'active') {
       this.pista.status = 'Activa';
     }
-    if(this.pista.status === 'under construction'){
+    if (this.pista.status === 'under construction') {
       this.pista.status = 'En construccion';
     }
   }
 
-  public maximizarImagen(){
+  public maximizarImagen() {
     if (this.pista && this.pista.images && this.pista.images.large && this.pista.images.large.length > 0) {
       const imgURL = this.pista.images.large[0];
       this.dialog.open(ImagenDialogComponent, {
@@ -88,8 +89,8 @@ export class DetallePistaComponent implements OnInit {
     }
   }
 
-  public volver(){
+  public volver() {
     window.history.back();
   }
-  
+
 }

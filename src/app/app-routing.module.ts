@@ -15,7 +15,7 @@ import { DetalleLanzamientoComponent } from './paginas/detalle-lanzamiento/detal
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'mis-datos', component: MisDatosComponent, canActivate:[autenticacionGuard] },
+  { path: 'mis-datos', component: MisDatosComponent, canMatch:[autenticacionGuard] },
   { path: 'cohete/:id', component: DetalleCoheteComponent },
   { path: 'pista/:id', component: DetallePistaComponent },
   { path: 'lanzamiento/:id', component: DetalleLanzamientoComponent },

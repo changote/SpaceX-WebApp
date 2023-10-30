@@ -1,0 +1,73 @@
+.container-principal{
+    top: 100px;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    width: 70rem;
+    font-family: "Comfortaa", sans-serif;
+}
+
+h2{
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+}
+
+img{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 400px;
+    height: 400px;;
+}
+
+.centro{
+    margin: 2rem;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.izquierda{
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 2rem;
+    align-items: center;
+    text-align: center;
+}
+
+.izquierda ul{
+    list-style: none;
+}
+
+.izquierda li{
+    margin: 1rem;
+}
+
+.derecha{
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 2rem;
+    align-items: center;
+}
+
+.dato1{
+margin-left: 3rem;
+}
+
+.dato2{
+    margin-left: 6rem;
+}
+
+.dato3{
+    margin-left: 9rem;
+}
+
+

@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpService } from '../http/http.service';
 import { Urls } from 'src/app/url-globales';
-import { Registro } from 'src/app/entidades/registro';
-import { User } from 'src/app/entidades/user';
-import { RegistroCompleto } from 'src/app/entidades/registroCompleto';
+import { User, Registro } from 'src/app/entidades/model-implements';
 
 @Injectable({
   providedIn: 'root'
@@ -12,24 +10,32 @@ export class RegistroService {
 
   constructor(private http: HttpService) { }
 
-  registroUsuario(data: RegistroCompleto){
+  async registroUsuario(data: any){
     const user: User = {
+      id: null,
       username: data.username,
       password: data.password
     };
     const registro: Registro = {
+      id: null,
       name: data.name,
+      password: data.password,
       last_name: data.last_name,
       username: data.username,
       gender: data.gender,
       email: data.email,
       age: data.age
     }
-    this.http.realizarPost(Urls.urlJsonSvUsers, user).subscribe((respuesta: any) => {
-      console.log('Data added to "person" resource:', respuesta.data);
-    })
-    this.http.realizarPost(Urls.urlJsonSvUserData, registro).subscribe((respuesta: any) => {
-      console.log('Data added to "person" resource:', respuesta.data);
+    this.createUser(Urls.urlJsonSvUsers, user);
+    this.createUser(Urls.urlJsonSvUserData, registro);
+  }
+
+  public createUser(url: string, user: any) {
+    this.http.realizarPost(url, user).subscribe({
+      next: () => {
+        console.log("Exito");
+      },
+      error: () => console.log("Error")
     })
   }
 }

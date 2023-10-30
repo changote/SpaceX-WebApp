@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { lastValueFrom } from 'rxjs';
 import { HttpService } from 'src/app/servicios/http/http.service';
 import { Urls } from 'src/app/url-globales';
 
@@ -21,27 +22,31 @@ export class EventosHistoricosComponent {
     this.loading = false;
     }, 2000);}
 
-    private cargarEventos() {
-      this.httpService.realizarGet(Urls.urlApi + "history").subscribe(
-        (data: any) => {
-          this.eventos = data;
-          console.log(this.eventos);
-        },
-        (error: any) => {
-          console.error('Error:', error);
-        }
-      );
+    // private cargarEventos() {
+    //   this.httpService.realizarGet(Urls.urlApi + "history").subscribe(
+    //     (data: any) => {
+    //       this.eventos = data;
+    //       console.log(this.eventos);
+    //     },
+    //     (error: any) => {
+    //       console.error('Error:', error);
+    //     }
+    //   );
+    // }
+    private async cargarEventos() {
+      try{
+        let apiResponse = this.httpService.realizarGet(Urls.urlApi + "history");
+        this.eventos = await lastValueFrom(apiResponse);
+      }catch(error){
+        console.log(error);
+      }
     }
-
-    private cargarEventoAuto(){
-      this.httpService.realizarGet(Urls.urlApi + "roadster").subscribe(
-        (data: any) => {
-          this.auto = data;
-          console.log(this.auto);
-        },
-        (error: any) => {
-          console.error('Error:', error);
-        }
-      );
+    private async cargarEventoAuto() {
+      try{
+        let apiResponse = this.httpService.realizarGet(Urls.urlApi + "roadster");
+        this.auto = await lastValueFrom(apiResponse);
+      }catch(error){
+        console.log(error);
+      }
     }
 }

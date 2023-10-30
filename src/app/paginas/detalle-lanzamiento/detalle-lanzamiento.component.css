@@ -107,3 +107,11 @@ object-fit: cover;
 border-radius: 10px;
 box-shadow: 4px 2px 2px black;
 }
+
+.goBack{
+  position: absolute;
+  cursor: pointer;
+  color: white;
+  top: 150px;
+  left: 10%;
+}

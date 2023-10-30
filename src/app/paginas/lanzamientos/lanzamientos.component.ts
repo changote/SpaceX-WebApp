@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { lastValueFrom } from 'rxjs';
 import { HttpService } from 'src/app/servicios/http/http.service';
 import { Urls } from 'src/app/url-globales';
 
@@ -23,17 +24,14 @@ export class LanzamientosComponent {
     this.getYears();
   }
 
-  private cargarLanzamientos() {
-    this.httpService.realizarGet(Urls.urlApiv5 + "launches").subscribe(
-      (data: any) => {
-        this.lanzamientos = data;
-        this.filtrarFecha();
-        console.log(this.lanzamientos);
-      },
-      (error: any) => {
-        console.error('Error:', error);
-      }
-    );
+  private async cargarLanzamientos(){
+    try {
+      let responseApi = this.httpService.realizarGet(Urls.urlApiv5 + "launches");
+      this.lanzamientos = await lastValueFrom(responseApi);
+      this.filtrarFecha();
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   private filtrarFecha() {

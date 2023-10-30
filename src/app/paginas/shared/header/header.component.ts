@@ -15,13 +15,13 @@ export class HeaderComponent implements OnInit {
   usuarioLogueado = false;
   currentURL: string = '';
   fragment: any = '';
-  user:any;
+  user: any;
   dialogRef!: MatDialogRef<LoginComponent>;
 
-  constructor(private dialog: MatDialog, private router: Router, private authService: AuthService){
+  constructor(private dialog: MatDialog, private router: Router, private authService: AuthService) {
 
   }
-  modalLogin(){
+  modalLogin() {
     this.dialogRef = this.dialog.open(LoginComponent);
     LoginComponent.setDialogRef(this.dialogRef);
   }
@@ -41,13 +41,23 @@ export class HeaderComponent implements OnInit {
     const userData = localStorage.getItem('user');
     console.log(userData);
     if (userData) {
+     
       this.user = JSON.parse(userData);
-    }
+    } 
+    console.log(this.user);
   }
 
-  logout(){
+  logout() {
     this.authService.logout();
-    window.location.reload();
+    this.router.navigate(['/']);
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+    
+  }
+
+  misDatos() {
+    this.router.navigate(['/mis-datos']);
   }
 
 }

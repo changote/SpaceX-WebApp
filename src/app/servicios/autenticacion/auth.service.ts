@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  private user: any;
 
   setUser(user: any) {
     if(this.isLoggedIn()){
@@ -14,7 +13,9 @@ export class AuthService {
   }
 
   getUser() {
-    return this.user;
+    const userString = localStorage.getItem('user');
+    if(userString)
+    return JSON.parse(userString);
   }
 
   isLoggedIn() {
