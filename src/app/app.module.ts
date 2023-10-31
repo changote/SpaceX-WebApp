@@ -27,7 +27,7 @@ import { DetalleLanzamientoComponent } from './paginas/detalle-lanzamiento/detal
 import { ImagenDialogComponent } from './modales/imagen-dialog/imagen-dialog.component';
 import { MaterialModule } from './modules/material/material.module';
 import { FormsModule } from '@angular/forms';
-import { CoreDatalladoComponent } from './modales/core-datallado/core-datallado.component';
+import { CoreDetalladoComponent } from './modales/core-detallado/core-detallado.component';
 import { PayloadsDetalladoComponent } from './modales/payloads-detallado/payloads-detallado.component';
 import { LanzamientoDetalladoComponent } from './modales/lanzamiento-detallado/lanzamiento-detallado.component';
 import { CapsulaDetalladoComponent } from './modales/capsula-detallado/capsula-detallado.component';
@@ -57,7 +57,7 @@ import { CrewDetalladoComponent } from './modales/crew-detallado/crew-detallado.
     LanzamientoComponent,
     DetalleLanzamientoComponent,
     ImagenDialogComponent,
-    CoreDatalladoComponent,
+    CoreDetalladoComponent,
     PayloadsDetalladoComponent,
     LanzamientoDetalladoComponent,
     CapsulaDetalladoComponent,

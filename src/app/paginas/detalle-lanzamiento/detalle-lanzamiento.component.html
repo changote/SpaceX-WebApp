@@ -7,10 +7,9 @@
         <h2> ✯-★ Lanzamiento {{ lanzamiento.name }} ★-✯</h2>
         <div class="sector1">
           <div class="chip">
-            <div class="imgdiv">
+            <div class="imgdiv" (click)="modalCore()" matTooltip="Cores">
               <img
                 src="../../../assets/img/cores.png"
-                (click)="detalleCore()"
                 class="imgDentroChip"
                 alt="cores"
               />
@@ -26,7 +25,7 @@
         </div>
         <div class="sector3">
           <div class="chip">
-            <div class="imgdiv">
+            <div class="imgdiv" (click)="modalPayload()" matTooltip="Payloads">
               <img
                 src="../../../assets/img/payloadsGeneral2.jpg"
                 alt="payloads"
@@ -42,7 +41,7 @@
             />
           </div>
           <div class="chip">
-            <div class="imgdiv">
+            <div class="imgdiv" (click)="modalLanzamiento()" matTooltip="Lanzamiento">
               <img
                 src="{{ lanzamiento.links.flickr.original[0] }}"
                 class="imgDentroChip"
@@ -58,10 +57,10 @@
             />
           </div>
           <div class="chip">
-            <div class="imgdiv">
+            <div class="imgdiv" (click)="modalCapsula()" matTooltip="Capsula">
               <img
                 src="../../../assets/img/capsula.jpg"
-                alt=""
+                alt="capsula"
                 class="imgDentroChip"
               />
             </div>
@@ -76,7 +75,7 @@
         </div>
         <div class="sector5">
           <div class="chip">
-            <div class="imgdiv">
+            <div class="imgdiv" (click)="modalShips()" matTooltip="Ships">
               <img
                 src="../../../assets/img/ships.jpeg"
                 class="imgDentroChip"
@@ -99,7 +98,7 @@
             />
           </div>
           <div class="chip">
-            <div class="imgdiv">
+            <div class="imgdiv" (click)="modalCrew()" matTooltip="Crew">
               <img
                 src="../../../assets/img/crew.jpg"
                 class="imgDentroChip"

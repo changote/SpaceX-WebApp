@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
+import { CoreDetalladoComponent } from 'src/app/modales/core-detallado/core-detallado.component';
 import { HttpService } from 'src/app/servicios/http/http.service';
 import { Urls } from 'src/app/url-globales';
 
@@ -13,7 +15,7 @@ export class DetalleLanzamientoComponent {
   loading = true;
   lanzamiento: any;
   lanzamientoId: any;
-  constructor(private route: ActivatedRoute, private httpService: HttpService) {}
+  constructor(private route: ActivatedRoute, private httpService: HttpService, private dialog: MatDialog) {}
 
   ngOnInit() {
     this.obtenerId();
@@ -45,9 +47,22 @@ export class DetalleLanzamientoComponent {
     window.history.back();
   }
 
-  detalleCore(){
-    /*
-    this.dialog.open(ImagenDialogComponent)
-    */
+  modalCore(){
+    this.dialog.open(CoreDetalladoComponent);
+  }
+  modalPayload(){
+    this.dialog.open(CoreDetalladoComponent);
+  }
+  modalLanzamiento(){
+    this.dialog.open(CoreDetalladoComponent);
+  }
+  modalCapsula(){
+    this.dialog.open(CoreDetalladoComponent);
+  }
+  modalShips(){
+    this.dialog.open(CoreDetalladoComponent);
+  }
+  modalCrew(){
+    this.dialog.open(CoreDetalladoComponent);
   }
 }
