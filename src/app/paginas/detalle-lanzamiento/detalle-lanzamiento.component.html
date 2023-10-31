@@ -4,12 +4,13 @@
     <div class="background">
       <div class="container">
         <span (click)="volver()" class="goBack"><i class="fa-solid fa-chevron-left" style="color: #ffffff; font-size: 2rem;"></i></span>
-        <h2>Lanzamiento {{ lanzamiento.name }}</h2>
+        <h2> ✯-★ Lanzamiento {{ lanzamiento.name }} ★-✯</h2>
         <div class="sector1">
           <div class="chip">
             <div class="imgdiv">
               <img
                 src="../../../assets/img/cores.png"
+                (click)="detalleCore()"
                 class="imgDentroChip"
                 alt="cores"
               />

@@ -14,3 +14,4 @@ export interface IRegistro {
     age: number;
     password: string;
 }
+

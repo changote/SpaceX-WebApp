@@ -27,6 +27,12 @@ import { DetalleLanzamientoComponent } from './paginas/detalle-lanzamiento/detal
 import { ImagenDialogComponent } from './modales/imagen-dialog/imagen-dialog.component';
 import { MaterialModule } from './modules/material/material.module';
 import { FormsModule } from '@angular/forms';
+import { CoreDatalladoComponent } from './modales/core-datallado/core-datallado.component';
+import { PayloadsDetalladoComponent } from './modales/payloads-detallado/payloads-detallado.component';
+import { LanzamientoDetalladoComponent } from './modales/lanzamiento-detallado/lanzamiento-detallado.component';
+import { CapsulaDetalladoComponent } from './modales/capsula-detallado/capsula-detallado.component';
+import { ShipsDetalladoComponent } from './modales/ships-detallado/ships-detallado.component';
+import { CrewDetalladoComponent } from './modales/crew-detallado/crew-detallado.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +57,12 @@ import { FormsModule } from '@angular/forms';
     LanzamientoComponent,
     DetalleLanzamientoComponent,
     ImagenDialogComponent,
+    CoreDatalladoComponent,
+    PayloadsDetalladoComponent,
+    LanzamientoDetalladoComponent,
+    CapsulaDetalladoComponent,
+    ShipsDetalladoComponent,
+    CrewDetalladoComponent,
   ],
   imports: [
     BrowserModule,

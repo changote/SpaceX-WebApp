@@ -5,9 +5,9 @@
       <ng-container *ngFor="let year of years">
         <div *ngIf="selectedYear === null || year === selectedYear">
           <div class="header-container">
-            <h2>Lanzamientos del {{year}}</h2>
+            <h2><i class="fa-solid fa-rocket" style="color: #ffffff;"></i> Lanzamientos del {{year}}</h2>
             <mat-form-field>
-              <mat-label>Filtrar por año</mat-label>
+              <mat-label><i class="fa-solid fa-magnifying-glass" style="color: #000000;"></i> Filtrar por año</mat-label>
               <mat-select [(value)]="selectedYear">
                 <mat-option *ngFor="let option of years" [value]="option">{{ option }}</mat-option>
               </mat-select>

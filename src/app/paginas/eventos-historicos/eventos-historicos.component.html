@@ -2,7 +2,7 @@
 <ng-template #elseBlock>
   <div class="body">
     <div class="background">
-      <h2>Eventos historicos</h2>
+      <h2> <i class="fa-solid fa-calendar-days" style="color: #ffffff;"></i> » » Eventos historicos « « <i class="fa-solid fa-calendar-days" style="color: #ffffff;"></i> </h2>
       <div class="container">
         <div class="cardAuto">
           <div class="imgAuto">
@@ -29,9 +29,16 @@
             >
           </div>
           </div>
+          
         </div>
-        <div *ngFor="let evento of eventos">
+        <div class="lineaStar">
+          ----------------------------◯------✩--------☽----------★---------◯--------------------------
+        </div>
+        <div *ngFor="let evento of eventos; let last = last">
           <app-evento [event]="evento"></app-evento>
+          <div class="lineaStar" *ngIf="!last">
+            ----------------------------◯------✩--------☽----------★---------◯--------------------------
+          </div>
         </div>
       </div>
     </div>
