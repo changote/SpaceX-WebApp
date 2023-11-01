@@ -12,7 +12,6 @@ export class LanzamientoDetalladoComponent {
   constructor(private httpService: HttpService,@Inject(MAT_DIALOG_DATA) public data: Lanzamiento){}
 
   ngOnInit(){
-    this.getAllCores();
     console.log(this.data);
   }
 }

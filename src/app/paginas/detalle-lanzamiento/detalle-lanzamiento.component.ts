@@ -62,22 +62,22 @@ export class DetalleLanzamientoComponent {
     console.log(this.lanzamiento.cores)
     this.dialog.open(CoreDetalladoComponent, {
       data: this.lanzamiento.cores,
-      height: '400px',
-      width: '350px',
+      height: 'auto',
+      width: 'auto',
     });
   }
   modalPayload(){
     this.dialog.open(PayloadsDetalladoComponent, {
       data: this.lanzamiento.payloads,
-      height: '400px',
-      width: '350px',
+      height: 'auto',
+      width: 'auto',
     });
   }
   modalLanzamiento(){
     this.dialog.open(LanzamientoDetalladoComponent, {
       data: this.lanzamiento,
-      height: '400px',
-      width: '350px',
+      height: 'auto',
+      width: 'auto',
     });
   }
   modalCapsula(){
@@ -90,15 +90,15 @@ export class DetalleLanzamientoComponent {
   modalShips(){
     this.dialog.open(ShipsDetalladoComponent, {
       data: this.lanzamiento.ships,
-      height: '400px',
-      width: '350px',
+      height: 'auto',
+      width: 'auto',
     });
   }
   modalCrew(){
     this.dialog.open(CrewDetalladoComponent, {
       data: this.lanzamiento.crew,
-      height: '400px',
-      width: '350px',
+      height: 'auto',
+      width: 'auto',
     });
   }
 }

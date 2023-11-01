@@ -1,6 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { lastValueFrom } from 'rxjs';
 import { HttpService } from 'src/app/servicios/http/http.service';
+import { Urls } from 'src/app/url-globales';
 
 @Component({
   selector: 'app-payloads-detallado',
@@ -8,26 +10,28 @@ import { HttpService } from 'src/app/servicios/http/http.service';
   styleUrls: ['./payloads-detallado.component.css']
 })
 export class PayloadsDetalladoComponent {
-  cores: any = [];
+  payloads: any = [];
   constructor(private httpService: HttpService,@Inject(MAT_DIALOG_DATA) public data: string[]){}
 
   ngOnInit(){
-    this.getAllCores();
+    this.getAllPayloads();
     console.log(this.data);
   }
 
-  private async cargarDataCores(id: string) {
+  private async cargarDatapayloads(id: string) {
     try {
-      let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "cores/" + id);
+      console.log(id);
+      let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "payloads/" + id);
       const data = await lastValueFrom(responseApi);
-      this.cores.push(data); 
+      console.log(data);
+      this.payloads.push(data); 
     } catch (error) {
       console.error('Error:', error);
     }
   }
-  getAllCores() {
-    for(let core of this.data){
-      this.cargarDataCores(core);
+  getAllPayloads() {
+    for(let payload of this.data){
+      this.cargarDatapayloads(payload);
     }
   }
 }

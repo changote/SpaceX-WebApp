@@ -1,1 +1,11 @@
-<p>ships-detallado works!</p>
+<div class="card" *ngFor="let ship of ships">
+    <h2> {{ship.name}}</h2>
+    <img src="{{ship.image}}" alt="imagen ship">
+<div class="texto">
+    <p>Rol:</p>
+    <ul *ngFor="let rol of ship.roles">
+        <p>{{rol}}</p>
+    </ul>
+    <p>Tipo: {{ship.type}}</p>
+</div>
+</div>

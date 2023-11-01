@@ -1,1 +1,11 @@
-<p>payloads-detallado works!</p>
+<div class="card" *ngFor="let payload of payloads">
+  <h2>{{ payload.name }}</h2>
+  <div class="texto">
+    <p>Tipo: {{ payload.type }}</p>
+    <p>Peso: {{ payload.mass_kg  }} kg</p>
+    <p>Clientes:</p>
+    <ul *ngFor=" let customer of payload.customers">
+        <p>{{customer}}</p>
+    </ul>
+  </div>
+</div>

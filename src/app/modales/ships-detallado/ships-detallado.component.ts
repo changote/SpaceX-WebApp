@@ -1,6 +1,8 @@
 import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { lastValueFrom } from 'rxjs';
 import { HttpService } from 'src/app/servicios/http/http.service';
+import { Urls } from 'src/app/url-globales';
 
 @Component({
   selector: 'app-ships-detallado',
@@ -8,26 +10,26 @@ import { HttpService } from 'src/app/servicios/http/http.service';
   styleUrls: ['./ships-detallado.component.css']
 })
 export class ShipsDetalladoComponent {
-  cores: any = [];
+  ships: any = [];
   constructor(private httpService: HttpService,@Inject(MAT_DIALOG_DATA) public data: string[]){}
 
   ngOnInit(){
-    this.getAllCores();
+    this.getAllShips();
     console.log(this.data);
   }
 
-  private async cargarDataCores(id: string) {
+  private async cargarDataShips(id: string) {
     try {
-      let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "cores/" + id);
+      let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "ships/" + id);
       const data = await lastValueFrom(responseApi);
-      this.cores.push(data); 
+      this.ships.push(data); 
     } catch (error) {
       console.error('Error:', error);
     }
   }
-  getAllCores() {
-    for(let core of this.data){
-      this.cargarDataCores(core);
+  getAllShips() {
+    for(let ship of this.data){
+      this.cargarDataShips(ship);
     }
   }
 }
