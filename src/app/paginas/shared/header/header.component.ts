@@ -39,12 +39,9 @@ export class HeaderComponent implements OnInit {
     });
     this.usuarioLogueado = this.authService.isLoggedIn();
     const userData = localStorage.getItem('user');
-    console.log(userData);
     if (userData) {
-     
       this.user = JSON.parse(userData);
-    } 
-    console.log(this.user);
+    }
   }
 
   logout() {

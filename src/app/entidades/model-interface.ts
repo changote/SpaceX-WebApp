@@ -15,3 +15,20 @@ export interface IRegistro {
     password: string;
 }
 
+export interface ILanzamiento {
+    capsules: string[];
+    cores: any[];
+    photo: string;
+    success: boolean;
+    rocket: string;
+    failures: string[];
+    details: string;
+    crew: string[];
+    ships: string[];
+    payloads: string[];
+    launchpad: string;
+    flight_number: number;
+    name: string;
+    date_utc: string;
+}
+

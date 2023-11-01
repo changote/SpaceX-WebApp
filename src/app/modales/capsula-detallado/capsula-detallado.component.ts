@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { HttpService } from 'src/app/servicios/http/http.service';
 
 @Component({
   selector: 'app-capsula-detallado',
@@ -7,4 +9,5 @@ import { Component } from '@angular/core';
 })
 export class CapsulaDetalladoComponent {
 
+  constructor(private httpService: HttpService,@Inject(MAT_DIALOG_DATA) public data: string[]){}
 }

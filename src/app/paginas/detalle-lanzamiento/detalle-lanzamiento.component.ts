@@ -2,7 +2,13 @@ import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
 import { lastValueFrom } from 'rxjs';
+import { Lanzamiento } from 'src/app/entidades/model-implements';
+import { CapsulaDetalladoComponent } from 'src/app/modales/capsula-detallado/capsula-detallado.component';
 import { CoreDetalladoComponent } from 'src/app/modales/core-detallado/core-detallado.component';
+import { CrewDetalladoComponent } from 'src/app/modales/crew-detallado/crew-detallado.component';
+import { LanzamientoDetalladoComponent } from 'src/app/modales/lanzamiento-detallado/lanzamiento-detallado.component';
+import { PayloadsDetalladoComponent } from 'src/app/modales/payloads-detallado/payloads-detallado.component';
+import { ShipsDetalladoComponent } from 'src/app/modales/ships-detallado/ships-detallado.component';
 import { HttpService } from 'src/app/servicios/http/http.service';
 import { Urls } from 'src/app/url-globales';
 
@@ -13,7 +19,7 @@ import { Urls } from 'src/app/url-globales';
 })
 export class DetalleLanzamientoComponent {
   loading = true;
-  lanzamiento: any;
+  lanzamiento: Lanzamiento = new Lanzamiento();
   lanzamientoId: any;
   constructor(private route: ActivatedRoute, private httpService: HttpService, private dialog: MatDialog) {}
 
@@ -35,34 +41,64 @@ export class DetalleLanzamientoComponent {
   }
   
   private async cargarDatosLauncher(id: string) {
-    try {
-      let responseApi = this.httpService.realizarGet(Urls.urlApiv5 + "launches/" + id);
-      this.lanzamiento = await lastValueFrom(responseApi);
-    } catch (error) {
-      console.error('Error:', error);
-    }
+    this.httpService.realizarGet(Urls.urlApiv5 + "launches/" + id).subscribe({
+      next: (data: any) => {
+        this.lanzamiento = new Lanzamiento(data);
+        for (let i = 0; i < data.cores.length; i++) {
+          const core = data.cores[i];
+          this.lanzamiento.cores[i] = core.core;
+        }
+        console.log(this.lanzamiento.cores)
+      }, error: () => console.log('error'),
+    });
   }
+  
 
   public volver(){
     window.history.back();
   }
 
   modalCore(){
-    this.dialog.open(CoreDetalladoComponent);
+    console.log(this.lanzamiento.cores)
+    this.dialog.open(CoreDetalladoComponent, {
+      data: this.lanzamiento.cores,
+      height: '400px',
+      width: '350px',
+    });
   }
   modalPayload(){
-    this.dialog.open(CoreDetalladoComponent);
+    this.dialog.open(PayloadsDetalladoComponent, {
+      data: this.lanzamiento.payloads,
+      height: '400px',
+      width: '350px',
+    });
   }
   modalLanzamiento(){
-    this.dialog.open(CoreDetalladoComponent);
+    this.dialog.open(LanzamientoDetalladoComponent, {
+      data: this.lanzamiento,
+      height: '400px',
+      width: '350px',
+    });
   }
   modalCapsula(){
-    this.dialog.open(CoreDetalladoComponent);
+    this.dialog.open(CapsulaDetalladoComponent, {
+      data: this.lanzamiento.capsules,
+      height: '400px',
+      width: '350px',
+    });
   }
   modalShips(){
-    this.dialog.open(CoreDetalladoComponent);
+    this.dialog.open(ShipsDetalladoComponent, {
+      data: this.lanzamiento.ships,
+      height: '400px',
+      width: '350px',
+    });
   }
   modalCrew(){
-    this.dialog.open(CoreDetalladoComponent);
+    this.dialog.open(CrewDetalladoComponent, {
+      data: this.lanzamiento.crew,
+      height: '400px',
+      width: '350px',
+    });
   }
 }

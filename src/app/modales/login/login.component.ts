@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
   public async checkAuth(): Promise<boolean> {
     let users: User[] = [];
     try {
-      let apiResponse = this.httpService.realizarGet(`${Urls.urlJsonSvUsers}?username=${this.userData.username}&password=${this.userData.password}`);
+      let apiResponse = this.httpService.realizarGet(`${Urls.urlJsonSv}users/?username=${this.userData.username}&password=${this.userData.password}`);
       users = await lastValueFrom(apiResponse);
     } catch (error) {
       console.log(error);
@@ -59,7 +59,7 @@ export class LoginComponent implements OnInit {
 
   private async getUserData(username: string) {
     try {
-      let responseApi = this.httpService.realizarGet(Urls.urlJsonSvUserData + "?username=" + username);
+      let responseApi = this.httpService.realizarGet(Urls.urlJsonSv + "person/?username=" + username);
       this.userLogged = await lastValueFrom(responseApi);
       this.authService.setUser(this.userLogged[0]);
       window.location.reload();

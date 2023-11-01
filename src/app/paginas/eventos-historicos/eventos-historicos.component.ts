@@ -35,7 +35,7 @@ export class EventosHistoricosComponent {
     // }
     private async cargarEventos() {
       try{
-        let apiResponse = this.httpService.realizarGet(Urls.urlApi + "history");
+        let apiResponse = this.httpService.realizarGet(Urls.urlApiv4 + "history");
         this.eventos = await lastValueFrom(apiResponse);
       }catch(error){
         console.log(error);
@@ -43,7 +43,7 @@ export class EventosHistoricosComponent {
     }
     private async cargarEventoAuto() {
       try{
-        let apiResponse = this.httpService.realizarGet(Urls.urlApi + "roadster");
+        let apiResponse = this.httpService.realizarGet(Urls.urlApiv4 + "roadster");
         this.auto = await lastValueFrom(apiResponse);
       }catch(error){
         console.log(error);

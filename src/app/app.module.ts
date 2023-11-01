@@ -34,6 +34,7 @@ import { CapsulaDetalladoComponent } from './modales/capsula-detallado/capsula-d
 import { ShipsDetalladoComponent } from './modales/ships-detallado/ships-detallado.component';
 import { CrewDetalladoComponent } from './modales/crew-detallado/crew-detallado.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

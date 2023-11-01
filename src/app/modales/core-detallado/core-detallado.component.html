@@ -1,1 +1,10 @@
-<p>core-datallado works!</p>
+<div *ngFor="let core of cores">
+    {{core.reuse_count}}
+    {{core.rtls_attempts}}
+    {{core.rtls_landings}}
+    {{core.asds_attempts}}
+    {{core.asds_landings}}
+    {{core.last_update}}
+    {{core.serial}}
+    {{core.status}}
+</div>
