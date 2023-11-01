@@ -26,8 +26,8 @@ export class RegistroService {
       email: data.email,
       age: data.age
     }
-    this.createUser(Urls.urlJsonSvUsers, user);
-    this.createUser(Urls.urlJsonSvUserData, registro);
+    this.createUser(Urls.urlJsonSv + 'users/', user);
+    this.createUser(Urls.urlJsonSv + 'person/', registro);
   }
 
   public createUser(url: string, user: any) {

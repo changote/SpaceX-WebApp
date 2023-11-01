@@ -1,6 +1,5 @@
 export class Urls {
-    public static urlApi: any = "https://api.spacexdata.com/v4/";
+    public static urlApiv4: any = "https://api.spacexdata.com/v4/";
     public static urlApiv5: any = "https://api.spacexdata.com/v5/";
-    public static urlJsonSvUsers: any = "http://localhost:3000/users/";
-    public static urlJsonSvUserData: any = "http://localhost:3000/person/";
+    public static urlJsonSv: any = "http://localhost:3000/";
 }

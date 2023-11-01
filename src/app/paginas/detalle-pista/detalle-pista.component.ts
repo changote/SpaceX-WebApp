@@ -45,7 +45,7 @@ export class DetallePistaComponent implements OnInit {
 
   private async cargarDatosLaunchpad(id: string) {
     try {
-      let responseApi = this.httpService.realizarGet(Urls.urlApi + "launchpads/" + id);
+      let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "launchpads/" + id);
       this.pista = await lastValueFrom(responseApi);
       this.setStatus();
       this.landpad = false;
@@ -56,7 +56,7 @@ export class DetallePistaComponent implements OnInit {
 
   private async cargarDatosPista(id: string) {
     try {
-      let responseApi = this.httpService.realizarGet(Urls.urlApi + "landpads/" + id);
+      let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "landpads/" + id);
       this.pista = await lastValueFrom(responseApi);
       this.setStatus();
     } catch (error: any) {

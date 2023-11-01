@@ -3,108 +3,60 @@
   <div class="body">
     <div class="background">
       <div class="container">
-        <span (click)="volver()" class="goBack"><i class="fa-solid fa-chevron-left" style="color: #ffffff; font-size: 2rem;"></i></span>
+        <span (click)="volver()" class="goBack"><i class="fa-solid fa-chevron-left"
+            style="color: #ffffff; font-size: 2rem;"></i></span>
         <h2> ✯-★ Lanzamiento {{ lanzamiento.name }} ★-✯</h2>
         <div class="sector1">
           <div class="chip">
-            <div class="imgdiv">
-              <img
-                src="../../../assets/img/cores.png"
-                (click)="detalleCore()"
-                class="imgDentroChip"
-                alt="cores"
-              />
+            <div class="imgdiv" (click)="modalCore()" matTooltip="Cores">
+              <img src="../../../assets/img/cores.png" class="imgDentroChip" alt="cores" />
             </div>
           </div>
         </div>
         <div class="sector2">
-          <img
-            src="../../../assets/img/rainbow-line.gif"
-            alt="coneccion"
-            class="cable1"
-          />
+          <img src="../../../assets/img/rainbow-line.gif" alt="coneccion" class="cable1" />
         </div>
         <div class="sector3">
           <div class="chip">
-            <div class="imgdiv">
-              <img
-                src="../../../assets/img/payloadsGeneral2.jpg"
-                alt="payloads"
-                class="imgDentroChip"
-              />
+            <div class="imgdiv" (click)="modalPayload()" matTooltip="Payloads">
+              <img src="../../../assets/img/payloadsGeneral2.jpg" alt="payloads" class="imgDentroChip" />
             </div>
           </div>
           <div class="contenedorCable">
-            <img
-              src="../../../assets/img/rainbow-line.gif"
-              alt="coneccion"
-              class="cable2"
-            />
+            <img src="../../../assets/img/rainbow-line.gif" alt="coneccion" class="cable2" />
           </div>
           <div class="chip">
-            <div class="imgdiv">
-              <img
-                src="{{ lanzamiento.links.flickr.original[0] }}"
-                class="imgDentroChip"
-                alt="lanzamiento"
-              />
+            <div class="imgdiv" (click)="modalLanzamiento()" matTooltip="Lanzamiento">
+              <img src="{{ lanzamiento.photo }}" class="imgDentroChip" alt="lanzamiento" />
             </div>
           </div>
           <div class="contenedorCable">
-            <img
-              src="../../../assets/img/rainbow-line.gif"
-              alt="coneccion"
-              class="cable2"
-            />
+            <img src="../../../assets/img/rainbow-line.gif" alt="coneccion" class="cable2" />
           </div>
           <div class="chip">
-            <div class="imgdiv">
-              <img
-                src="../../../assets/img/capsula.jpg"
-                alt=""
-                class="imgDentroChip"
-              />
+            <div class="imgdiv" (click)="modalCapsula()" matTooltip="Capsula">
+              <img src="../../../assets/img/capsula.jpg" alt="capsula" class="imgDentroChip" />
             </div>
           </div>
         </div>
         <div class="sector4">
-          <img
-            src="../../../assets/img/rainbow-line.gif"
-            alt="coneccion"
-            class="cable1"
-          />
+          <img src="../../../assets/img/rainbow-line.gif" alt="coneccion" class="cable1" />
         </div>
         <div class="sector5">
           <div class="chip">
-            <div class="imgdiv">
-              <img
-                src="../../../assets/img/ships.jpeg"
-                class="imgDentroChip"
-                alt="ships"
-              />
+            <div class="imgdiv" (click)="modalShips()" matTooltip="Ships">
+              <img src="../../../assets/img/ships.jpeg" class="imgDentroChip" alt="ships" />
             </div>
           </div>
           <div class="contenedorCable">
-            <img
-              src="../../../assets/img/rainbow-line.gif"
-              alt="coneccion"
-              class="cable2"
-            />
+            <img src="../../../assets/img/rainbow-line.gif" alt="coneccion" class="cable2" />
           </div>
           <div class="contenedorCable">
-            <img
-              src="../../../assets/img/rainbow-line.gif"
-              alt="coneccion"
-              class="cable2"
-            />
+            <img src="../../../assets/img/rainbow-line.gif" alt="coneccion" class="cable2" />
           </div>
           <div class="chip">
-            <div class="imgdiv">
-              <img
-                src="../../../assets/img/crew.jpg"
-                class="imgDentroChip"
-                alt="crew"
-              />
+            <div class="imgdiv" (click)="modalCrew()" matTooltip="Crew">
+              <img src="../../../assets/img/crew.jpg" class="imgDentroChip" alt="crew" />
             </div>
           </div>
         </div>

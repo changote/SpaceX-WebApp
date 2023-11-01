@@ -37,7 +37,7 @@ export class RegistroComponent implements OnInit {
     window.location.reload();
   }
   private getUsuarios() {
-    this.httpService.realizarGet(Urls.urlJsonSvUsers).subscribe(
+    this.httpService.realizarGet(Urls.urlJsonSv + 'users/').subscribe(
       (data: any) => {
         this.users = data;
       },
@@ -66,7 +66,7 @@ export class RegistroComponent implements OnInit {
 
   async checkUserExistence() {
     try {
-      let responseApi = this.httpService.realizarGet(Urls.urlJsonSvUserData + "?username=" + this.registroData.username);
+      let responseApi = this.httpService.realizarGet(Urls.urlJsonSv + "person/?username=" + this.registroData.username);
       const possibleUser = await lastValueFrom(responseApi);
       if (possibleUser !== null && (Array.isArray(possibleUser) ? possibleUser.length > 0 : true)) {
         this.userExists = true;

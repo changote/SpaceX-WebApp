@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CoreDatalladoComponent } from './core-datallado.component';
+import { CoreDetalladoComponent } from './core-detallado.component';
 
 describe('CoreDatalladoComponent', () => {
-  let component: CoreDatalladoComponent;
-  let fixture: ComponentFixture<CoreDatalladoComponent>;
+  let component: CoreDetalladoComponent;
+  let fixture: ComponentFixture<CoreDetalladoComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [CoreDatalladoComponent]
+      declarations: [CoreDetalladoComponent]
     });
-    fixture = TestBed.createComponent(CoreDatalladoComponent);
+    fixture = TestBed.createComponent(CoreDetalladoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

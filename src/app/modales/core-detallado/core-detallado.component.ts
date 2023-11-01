@@ -1,13 +1,15 @@
-import { Component, Inject } from '@angular/core';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { HttpService } from 'src/app/servicios/http/http.service';
+import { Urls } from 'src/app/url-globales';
+import { lastValueFrom } from 'rxjs';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
-  selector: 'app-ships-detallado',
-  templateUrl: './ships-detallado.component.html',
-  styleUrls: ['./ships-detallado.component.css']
+  selector: 'app-core-detallado',
+  templateUrl: './core-detallado.component.html',
+  styleUrls: ['./core-detallado.component.css']
 })
-export class ShipsDetalladoComponent {
+export class CoreDetalladoComponent implements OnInit{
   cores: any = [];
   constructor(private httpService: HttpService,@Inject(MAT_DIALOG_DATA) public data: string[]){}
 

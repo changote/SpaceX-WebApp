@@ -7,6 +7,7 @@
   font-family: "Comfortaa", sans-serif;
   align-items: center;
 }
+
 .background {
   background-color: rgba(27, 27, 27, 0.719);
   position: relative;
@@ -16,7 +17,7 @@
   padding-bottom: 5rem;
 }
 
-h2{
+h2 {
   text-align: center;
   font-size: 3rem;
   margin: 0px;
@@ -35,7 +36,7 @@ img {
 }
 
 /*parte 1*/
-.sector1{
+.sector1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,10 +58,10 @@ img {
 }
 
 .cable2 {
-  width: 100%;  
+  width: 100%;
 }
 
-.contenedorCable{
+.contenedorCable {
   width: 20%;
 }
 
@@ -76,8 +77,8 @@ img {
   z-index: 3;
 }
 
-.img img{
-height: 50%;
+.img img {
+  height: 50%;
 }
 
 /*sector 4*/
@@ -88,7 +89,7 @@ height: 50%;
   height: 50px;
 }
 
-.sector4 img{
+.sector4 img {
   clip-path: inset(0 45px 0 0);
 }
 
@@ -100,15 +101,16 @@ height: 50%;
   z-index: 2;
 }
 
-.imgdiv img{
-width: 110px;
-height: 110px;
-object-fit: cover;
-border-radius: 10px;
-box-shadow: 4px 2px 2px black;
+.imgdiv img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 4px 2px 2px black;
+  cursor: pointer;
 }
 
-.goBack{
+.goBack {
   position: absolute;
   cursor: pointer;
   color: white;

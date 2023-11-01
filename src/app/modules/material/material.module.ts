@@ -8,7 +8,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
-
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 
@@ -33,7 +33,8 @@ import {MatInputModule} from '@angular/material/input';
     MatMenuModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule
   ]
 })
 export class MaterialModule { }

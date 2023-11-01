@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit{
 
   public async traerDatosCompania() {
     try{
-      let apiResponse =  this.httpService.realizarGet(Urls.urlApi + "company");
+      let apiResponse =  this.httpService.realizarGet(Urls.urlApiv4 + "company");
       this.company = await lastValueFrom(apiResponse);
       setTimeout(() => {
         this.loading = false;
