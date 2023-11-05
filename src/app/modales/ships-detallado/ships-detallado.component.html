@@ -1,11 +1,21 @@
-<div class="card" *ngFor="let ship of ships">
-    <h2> {{ship.name}}</h2>
-    <img src="{{ship.image}}" alt="imagen ship">
-<div class="texto">
-    <p>Rol:</p>
-    <ul *ngFor="let rol of ship.roles">
-        <p>{{rol}}</p>
-    </ul>
-    <p>Tipo: {{ship.type}}</p>
-</div>
-</div>
+<mat-tab-group animationDuration="2000ms">
+        <div class="card" *ngFor="let ship of ships">
+            
+            <mat-tab label={{ship.name}}>
+                <div class="container">
+                <img *ngIf="ship.image != null" src="{{ship.image}}" alt="imagen ship">
+                <img *ngIf="ship.image == null" src="../../../assets/img/ship-default.jpg" alt="imagen ship">
+                <div class="texto">
+                    <p>Rol:</p>
+                    <mat-chip-set class="example-chip" cdkDropList cdkDropListOrientation="horizontal">
+                        <mat-chip class="example-box" cdkDrag *ngFor="let rol of ship.roles">
+                            {{rol}}
+                        </mat-chip>
+                    </mat-chip-set>
+                </div>
+                <p>Tipo: {{ship.type}}</p>
+                
+        </div>
+            </mat-tab>
+        </div>
+    </mat-tab-group>

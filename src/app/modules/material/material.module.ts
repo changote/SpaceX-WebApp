@@ -9,7 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {MatInputModule} from '@angular/material/input';
 import { MatTooltipModule } from '@angular/material/tooltip';
-
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatChipsModule} from '@angular/material/chips';
 
 
 @NgModule({
@@ -34,7 +35,9 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     BrowserAnimationsModule,
     MatSelectModule,
     MatInputModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatTabsModule,
+    MatChipsModule
   ]
 })
 export class MaterialModule { }

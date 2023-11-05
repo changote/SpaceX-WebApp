@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { lastValueFrom } from 'rxjs';
 import { HttpService } from 'src/app/servicios/http/http.service';
@@ -9,7 +9,7 @@ import { Urls } from 'src/app/url-globales';
   templateUrl: './ships-detallado.component.html',
   styleUrls: ['./ships-detallado.component.css']
 })
-export class ShipsDetalladoComponent {
+export class ShipsDetalladoComponent implements OnInit{
   ships: any = [];
   constructor(private httpService: HttpService,@Inject(MAT_DIALOG_DATA) public data: string[]){}
 

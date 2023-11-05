@@ -101,4 +101,15 @@ export class DetalleLanzamientoComponent {
       width: 'auto',
     });
   }
+
+  iluminarBarco() {
+    const barco = document.getElementById('barco_xA0_Imagen');
+    console.log("barco");
+    barco!.style.filter = 'brightness(150%)'; // Cambia el brillo para iluminar el barco
+  }
+
+  restaurarBarco() {
+    const barco = document.getElementById('barco_xA0_Imagen_1_');
+    barco!.style.filter = 'brightness(100%)'; // Restaura el brillo original del barco
+  }
 }

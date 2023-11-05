@@ -117,3 +117,18 @@ img {
   top: 150px;
   left: 10%;
 }
+
+image#barco_xA0_Imagen :hover {
+  transform: scale(1.2); /* Cambia el tamaño del barco al hacer hover */
+  cursor: pointer; /* Cambia el cursor al puntero al hacer hover */
+  /* Otros estilos que desees aplicar al hacer hover */
+  display: none;
+}
+
+.svg-img {
+  width: 100%; /* Ajusta el ancho según tus necesidades */
+  /* Otros estilos para el contenedor de la imagen SVG si es necesario */
+}
+object svg g g image{
+  cursor: pointer;
+}

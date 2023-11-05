@@ -1,1 +1,14 @@
-<p>crew-detallado works!</p>
+<div *ngIf="crew != null">
+<mat-tab-group animationDuration="2000ms">
+    <div class="card" *ngFor="let member of crew">
+        <mat-tab label={{member.name}}>
+            <img *ngIf="member.image != null" src="{{member.image}}" alt="imagen ship">
+            <p>{{member.status}}</p>
+            <p>{{member.agency}}</p>
+        </mat-tab>
+    </div>
+</mat-tab-group>
+</div>
+<div *ngIf="tieneCrew == true">
+    no hay datos
+</div>

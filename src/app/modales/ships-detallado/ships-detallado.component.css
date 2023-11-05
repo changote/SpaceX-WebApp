@@ -6,7 +6,7 @@
     text-align: center;
     }
     
-    .card img{
+    img{
         height: 400px;
         border-radius: 20px;
     }
@@ -27,3 +27,6 @@
         padding: 1rem;
         padding-left: 12rem;
     }
+.container {
+    padding: 2rem;
+}
