@@ -32,3 +32,15 @@ export interface ILanzamiento {
     date_utc: string;
 }
 
+export interface ICore{
+    reuse_count: number;
+    rtls_attempts: number;
+    rtls_landings: number;
+    asds_attempts: number;
+    asds_landings: number;
+    last_update: string;
+    serial: string;
+    status: string;
+    porcentaje: number;
+}
+

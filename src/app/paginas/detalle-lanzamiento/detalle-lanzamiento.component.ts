@@ -83,8 +83,8 @@ export class DetalleLanzamientoComponent {
   modalCapsula(){
     this.dialog.open(CapsulaDetalladoComponent, {
       data: this.lanzamiento.capsules,
-      height: '400px',
-      width: '350px',
+      height: 'auto',
+      width: 'auto',
     });
   }
   modalShips(){

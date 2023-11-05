@@ -37,7 +37,12 @@
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
+    border-radius: 10px;
+    border: 0;
+    background-color: white;
+    box-shadow: 2px 2px 2px black;
 }
+
 .error-message{
     color:red;
     padding-bottom: 20px;

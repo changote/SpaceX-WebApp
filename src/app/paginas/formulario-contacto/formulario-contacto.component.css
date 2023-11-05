@@ -15,27 +15,24 @@ form{
     display: flex;
     flex-direction: column;
     text-align: center;
+    align-items: center;
+    margin-left: 20rem;
+    margin-right: 20rem;
 }
 
 input, select{
-    margin: 1rem;
+    margin: 2rem;
     padding: 0.5rem;
     border-radius: 10px;
-    margin-left: 40rem;
-    margin-right: 40rem;
     background-color: rgba(169, 169, 169, 0.729);
     cursor: pointer;
-}
-
-select{
-    margin-left: 45rem;
-    margin-right: 45rem;
+    width: 60%;
+    display: flex;
 }
 
 textarea{
-    margin-left: 20rem;
-    margin-right: 20rem;
-    margin-top: 1rem;
+    width: 80%;
+    margin-top: 2rem;
     border-radius: 10px;
     background-color: rgba(169, 169, 169, 0.729);
 }
@@ -44,19 +41,19 @@ h2{
 text-align: center;
 margin: 3rem;
 font-family: 'Orbitron', sans-serif;
+margin-bottom: 4rem;
 }
 
 .botones{
     display: flex;
     justify-content: space-evenly;
-    padding-left: 20rem;
-    padding-right: 20rem;
 }
 
 .botones input{
     cursor: pointer;
-    margin: 1rem;
+    margin: 2rem;
     font-size: 1.5rem;
     background-color: rgba(53, 53, 53, 0.841);
     color: white;
+    width: auto;
 }
