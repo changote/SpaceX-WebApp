@@ -14,10 +14,6 @@ export class LanzamientoDetalladoComponent {
 
   ngOnInit() {
     this.getPhotos();
-    if(this.data.success == undefined){
-      this.data.success = "Sin informacion";
-      this.data.hola = 
-    }
     console.log(this.data);
   }
 

@@ -37,10 +37,14 @@ export class CoreDetalladoComponent implements AfterViewInit{
     try {
       console.log(id);
       let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "cores/" + id);
-      const data:Core = await lastValueFrom(responseApi);
+      const data = await lastValueFrom(responseApi);
       console.log(data);
-      data.po
-      this.cores.push(data); 
+      let coreData = data[0] as Core;
+      let intentos = coreData.asds_attempts + coreData.rtls_attempts;
+      let aterrizajes = coreData.asds_landings + coreData.rtls_landings;
+      coreData.porcentaje = (aterrizajes / intentos) * 100;
+      console.log(coreData);
+      this.cores.push(coreData); 
 
       this.dataSource.data = this.cores;
     } catch (error) {
