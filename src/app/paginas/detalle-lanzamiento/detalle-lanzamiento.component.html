@@ -26,8 +26,11 @@
             <img src="../../../assets/img/rainbow-line.gif" alt="coneccion" class="cable2" />
           </div>
           <div class="chip">
-            <div class="imgdiv" (click)="modalLanzamiento()" matTooltip="Lanzamiento">
+            <div class="imgdiv" (click)="modalLanzamiento()" matTooltip="Lanzamiento" *ngIf="lanzamiento.photo.length != 0">
               <img src="{{ lanzamiento.photo }}" class="imgDentroChip" alt="lanzamiento" />
+            </div>
+            <div class="imgdiv" (click)="modalLanzamiento()" matTooltip="Lanzamiento" *ngIf="lanzamiento.photo.length == 0">
+              <img src="../../../assets/img/lanzamientoDefaut.jpg" class="imgDentroChip" alt="lanzamiento"/>
             </div>
           </div>
           <div class="contenedorCable">

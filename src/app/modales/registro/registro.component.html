@@ -12,6 +12,11 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>Edad</mat-label>
+      <input type="number" name="edad" maxlength="100" matInput [(ngModel)]="registroData.age" required matInput>
+    </mat-form-field>
+
+    <mat-form-field>
       <mat-label>Usuario</mat-label>
       <input type="text" name="usuario" maxlength="100" matInput [(ngModel)]="registroData.username" required matInput (ngModelChange)="checkUserExistence()">
     </mat-form-field>

@@ -12,6 +12,7 @@ import { LanzamientosComponent } from './paginas/lanzamientos/lanzamientos.compo
 import { FormularioContactoComponent } from './paginas/formulario-contacto/formulario-contacto.component';
 import { EventosHistoricosComponent } from './paginas/eventos-historicos/eventos-historicos.component';
 import { DetalleLanzamientoComponent } from './paginas/detalle-lanzamiento/detalle-lanzamiento.component';
+import { InfoNosotrosComponent } from './paginas/info-nosotros/info-nosotros.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'pistas', component: PistasComponent },
   { path: 'formulario-contacto', component: FormularioContactoComponent, canMatch: [autenticacionGuard] },
   { path: 'eventos-historicos', component: EventosHistoricosComponent},
+  { path: 'info-nosotros', component: InfoNosotrosComponent},
   { path: 'error-404', component: Error404Component},
   { path: '**', redirectTo: 'error-404' }
 ];

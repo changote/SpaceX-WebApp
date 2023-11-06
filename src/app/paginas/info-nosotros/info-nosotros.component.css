@@ -1,0 +1,83 @@
+.cuerpo{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 120px;
+    text-align: center;
+    color: white;
+    font-family: "Orbitron", sans-serif;
+    width: 100%;
+    padding-bottom: 15rem;
+}
+
+h2{
+    font-size: 3rem;
+    margin: 1rem;
+}
+
+.centro img{
+    border-radius: 100%;
+    object-fit: cover;
+    width: 600px;
+    height: 600px;
+}
+
+.conteiner{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+    width: 100%;
+    font-family: "Comfortaa", sans-serif;
+}
+
+.informacion{
+
+}
+
+.ladoIzquierdo {
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 2rem;
+    align-items: center;
+}
+
+.ladoDerecho{
+    width: 30%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 2rem;
+    align-items: center;
+}
+
+.ddato1{
+        margin-left: 3rem;
+}
+
+.ddato2{
+    margin-left: 6rem;
+}
+
+.ddato3{
+    margin-left: 9rem;
+}
+
+.iidato1{
+    margin-right: 3rem;
+}
+
+.idato2{
+    margin-right: 6rem;
+}
+
+.idato3{
+    margin-right: 9rem;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}

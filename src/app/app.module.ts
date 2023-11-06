@@ -33,6 +33,7 @@ import { LanzamientoDetalladoComponent } from './modales/lanzamiento-detallado/l
 import { CapsulaDetalladoComponent } from './modales/capsula-detallado/capsula-detallado.component';
 import { ShipsDetalladoComponent } from './modales/ships-detallado/ships-detallado.component';
 import { CrewDetalladoComponent } from './modales/crew-detallado/crew-detallado.component';
+import { InfoNosotrosComponent } from './paginas/info-nosotros/info-nosotros.component';
 
 
 @NgModule({
@@ -64,6 +65,7 @@ import { CrewDetalladoComponent } from './modales/crew-detallado/crew-detallado.
     CapsulaDetalladoComponent,
     ShipsDetalladoComponent,
     CrewDetalladoComponent,
+    InfoNosotrosComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,4 +1,7 @@
 <div class="conteiner">
+    <div class="titulo">
+        <h2>Crew</h2>
+    </div>
   <div *ngIf="crew != null">
     <mat-tab-group animationDuration="2000ms">
       <div class="card" *ngFor="let member of crew">
@@ -22,5 +25,5 @@
       </div>
     </mat-tab-group>
   </div>
-  <div *ngIf="tieneCrew == true">no hay datos</div>
+  <div *ngIf="crew.length == 0" class="textoNoInfo">no hay datos</div>
 </div>
