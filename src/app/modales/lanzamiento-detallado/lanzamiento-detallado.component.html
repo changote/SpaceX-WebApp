@@ -4,10 +4,10 @@
     <div *ngIf="data.success == true" class="exitoso">
         <p class="exito">Exito</p>
       </div>
-      <div *ngIf="data.success == false" class="exito">
+      <div *ngIf="data.success == false" class="exitoso">
         <p class="fracaso">Fracaso</p>
       </div>
-      <div *ngIf="data.success == undefined" class="exito">
+      <div *ngIf="data.success == undefined" class="exitoso">
         <p class="sin-definir">Sin informacion</p>
       </div>
     <image-slider [slides]="slides"></image-slider>
@@ -17,7 +17,12 @@
       <p>Fecha: {{ data.date_utc }}</p>
       <p>Numero de vuelo: {{ data.flight_number }}</p>
     </div>
-    <p>Detalles: {{ data.details }}</p>
-    <p>Fallas: {{ data.failures }}</p>
+    <p *ngIf="data.details != undefined">Detalles: {{ data.details }}</p>
+
+    <div *ngFor="let falla of data.failures">
+        <p>Fallas: {{falla.reason}} </p>
+        {{falla.reason}}
+    </div>
+    
   </div>
 </div>
