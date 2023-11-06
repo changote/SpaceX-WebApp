@@ -1,14 +1,26 @@
-<div *ngIf="crew != null">
-<mat-tab-group animationDuration="2000ms">
-    <div class="card" *ngFor="let member of crew">
-        <mat-tab label={{member.name}}>
-            <img *ngIf="member.image != null" src="{{member.image}}" alt="imagen ship">
-            <p>{{member.status}}</p>
-            <p>{{member.agency}}</p>
+<div class="conteiner">
+  <div *ngIf="crew != null">
+    <mat-tab-group animationDuration="2000ms">
+      <div class="card" *ngFor="let member of crew">
+        <mat-tab label="{{ member.name }}">
+          <img
+            *ngIf="member.image != null"
+            src="{{ member.image }}"
+            alt="imagen ship"
+          />
+          <div class="texto">
+            <h3>{{ member.name }}</h3>
+            <div class="status retired" *ngIf="member.status === 'retired'">
+              <span>Estado: Retirado</span>
+            </div>
+            <div class="status active" *ngIf="member.status === 'active'">
+              <span>Estado: Activo</span>
+            </div>
+            <p>Agencia: {{ member.agency }}</p>
+          </div>
         </mat-tab>
-    </div>
-</mat-tab-group>
-</div>
-<div *ngIf="tieneCrew == true">
-    no hay datos
+      </div>
+    </mat-tab-group>
+  </div>
+  <div *ngIf="tieneCrew == true">no hay datos</div>
 </div>

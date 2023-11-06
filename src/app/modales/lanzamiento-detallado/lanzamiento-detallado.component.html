@@ -1,13 +1,21 @@
 <div class="card">
-    <h2>Lanzamiento {{data.name}}</h2>
-    <div class="carrousel">
-        <image-slider [slides]="slides"></image-slider>
+  <h2>Lanzamiento {{ data.name }}</h2>
+  <div class="carrousel">
+    <div *ngIf="data.success == true">
+        <p class="exito">Exito</p>
+      </div>
+      <div *ngIf="data.success == false">
+        <p class="fracaso">Fracaso</p>
+      </div>
+      {{data.success}}
+    <image-slider [slides]="slides"></image-slider>
+  </div>
+  <div class="texto">
+    <div class="sector1">
+      <p>Fecha: {{ data.date_utc }}</p>
+      <p>Numero de vuelo: {{ data.flight_number }}</p>
     </div>
-    <div class="texto">
-        <p>Fecha: {{data.date_utc }}</p>
-        <p>Detalles: {{data.details}}</p>
-        <p>Numero de vuelo: {{data.flight_number}}</p>
-        <p>Exito: {{data.success}}</p>
-        <p>Fallas: {{data.failures}}</p>
-    </div>
+    <p>Detalles: {{ data.details }}</p>
+    <p>Fallas: {{ data.failures }}</p>
+  </div>
 </div>

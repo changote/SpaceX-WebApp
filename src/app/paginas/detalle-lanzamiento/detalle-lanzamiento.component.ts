@@ -25,6 +25,7 @@ export class DetalleLanzamientoComponent {
 
   ngOnInit() {
     this.obtenerId();
+    console.log(this.lanzamiento);
   }
 
   private obtenerId(){

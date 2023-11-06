@@ -1,0 +1,28 @@
+img{
+    height: 700px;
+    display: flex;
+padding-left: 6rem;
+}
+
+.conteiner{
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    background-color: rgb(71, 71, 71);
+    font-family: 'Comfortaa', sans-serif;
+    color: white;
+}
+
+.texto{
+    display: flex;
+    flex-direction: column;
+    padding-top: 1rem;
+    text-align: center;
+}
+
+h3{
+    font-family: "Orbitron", sans-serif;
+    font-size: 2rem;
+}
