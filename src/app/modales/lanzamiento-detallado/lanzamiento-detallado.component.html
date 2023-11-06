@@ -2,14 +2,14 @@
   <h2>Lanzamiento {{ data.name }}</h2>
   <div class="carrousel">
     <div *ngIf="data.success == true" class="exitoso">
-        <p class="exito">Exito</p>
-      </div>
-      <div *ngIf="data.success == false" class="exitoso">
-        <p class="fracaso">Fracaso</p>
-      </div>
-      <div *ngIf="data.success == undefined" class="exitoso">
-        <p class="sin-definir">Sin informacion</p>
-      </div>
+      <p class="exito">Exito</p>
+    </div>
+    <div *ngIf="data.success == false" class="exitoso">
+      <p class="fracaso">Fracaso</p>
+    </div>
+    <div *ngIf="data.success == undefined" class="exitoso">
+      <p class="sin-definir">Sin informacion</p>
+    </div>
     <image-slider [slides]="slides"></image-slider>
   </div>
   <div class="texto">
@@ -18,10 +18,12 @@
       <p>Numero de vuelo: {{ data.flight_number }}</p>
     </div>
     <p *ngIf="data.details != undefined">Detalles: {{ data.details }}</p>
-
+    <p *ngIf="data.failures.length != 0">Fallas:</p>
     <div *ngFor="let falla of data.failures">
-        <p>Fallas: {{falla.reason}} </p>
+      <div class="muestra-falla">
+        <p>Razon: {{ falla.reason }}</p>
+        <p>Tiempo: {{ falla.time }}s</p>
+      </div>
     </div>
-    
   </div>
 </div>

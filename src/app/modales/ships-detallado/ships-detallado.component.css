@@ -17,16 +17,6 @@ h2 {
     padding: 3rem;
 }
 
-p {
-    text-align: start;
-    padding-left: 15rem;
-    margin: 0;
-}
-
-.texto p {
-    padding: 1rem;
-    padding-left: 12rem;
-}
 
 .container {
     padding: 2rem;
@@ -38,6 +28,7 @@ p {
     padding-right: 5rem;
     background-color: rgb(71, 71, 71);
     color: white;
+    font-family: "Comfortaa", sans-serif;
 }
 
 .titulo {
@@ -54,4 +45,8 @@ p {
     padding: 0;
     margin: 1rem;
     margin-bottom: 1.5rem;
+}
+
+h3{
+    text-align: center;
 }

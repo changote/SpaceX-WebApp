@@ -59,3 +59,10 @@ p {
 .sin-definir{
     background-color: rgba(215, 215, 0, 0.834);
 }
+
+.muestra-falla{
+    display: flex;
+    background-color: rgba(125, 7, 7, 0.726);
+    color: white;
+    border-radius: 5px;
+}
