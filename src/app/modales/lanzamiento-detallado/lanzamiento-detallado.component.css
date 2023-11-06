@@ -40,14 +40,15 @@ p {
   justify-content: space-between;
 }
 
-.exito p{
+.exitoso p{
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 0.5rem;
+    padding-right: 1.5rem;
     position: fixed;
 }
 
-.exitoso{
+.exito{
     background-color: rgba(0, 128, 0, 0.845);
 }
 
