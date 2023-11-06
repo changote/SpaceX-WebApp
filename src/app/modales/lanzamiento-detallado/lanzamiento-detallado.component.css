@@ -23,20 +23,38 @@ p {
   text-align: start;
   margin: 0;
 }
-
+.texto{
+    padding: 1rem;
+    padding-bottom: 3rem;
+}
 .texto p {
   padding: 1rem;
 }
 
 .carrousel {
-  height: 20rem;
-}
-
-.carrousel p {
-    position: fixed;
+  height: 500px;
 }
 
 .sector1 {
   display: flex;
   justify-content: space-between;
+}
+
+.exito p{
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    padding: 0.5rem;
+    position: fixed;
+}
+
+.exitoso{
+    background-color: rgba(0, 128, 0, 0.845);
+}
+
+.fracaso{
+    background-color: rgba(175, 0, 0, 0.886);
+}
+
+.sin-definir{
+    background-color: rgba(215, 215, 0, 0.834);
 }
