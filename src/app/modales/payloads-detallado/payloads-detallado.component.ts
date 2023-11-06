@@ -4,7 +4,7 @@ import { lastValueFrom } from 'rxjs';
 import { HttpService } from 'src/app/servicios/http/http.service';
 import { Urls } from 'src/app/url-globales';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
-import {MatPaginator, MatPaginatorModule} from '@angular/material/paginator';
+import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 
 
 @Component({
@@ -20,13 +20,13 @@ export class PayloadsDetalladoComponent implements AfterViewInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private httpService: HttpService,@Inject(MAT_DIALOG_DATA) public data: string[]){}
+  constructor(private httpService: HttpService, @Inject(MAT_DIALOG_DATA) public data: string[]) { }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getAllPayloads();
     console.log(this.data);
     this.dataSource.paginator = this.paginator;
@@ -38,16 +38,16 @@ export class PayloadsDetalladoComponent implements AfterViewInit {
       let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "payloads/" + id);
       const data = await lastValueFrom(responseApi);
       console.log(data);
-      this.payloads.push(data); 
+      this.payloads.push(data);
 
       this.dataSource.data = this.payloads;
     } catch (error) {
       console.error('Error:', error);
+    }
   }
-}
 
   getAllPayloads() {
-    for(let payload of this.data){
+    for (let payload of this.data) {
       this.cargarDatapayloads(payload);
     }
     this.resultsLength = this.payloads.length;

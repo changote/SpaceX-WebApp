@@ -37,7 +37,7 @@ export class Lanzamiento implements ILanzamiento {
     this.capsules = lanzamiento == undefined ? null : lanzamiento.capsules;
     this.cores = lanzamiento == undefined ? null : lanzamiento.cores;
     this.photo = lanzamiento == undefined ? null : lanzamiento.links.flickr.original;
-    this.success= lanzamiento == undefined ? null : lanzamiento.succes;
+    this.success= lanzamiento == undefined ? null : lanzamiento.success;
     this.rocket= lanzamiento == undefined ? null : lanzamiento.rocket;
     this.failures = lanzamiento == undefined ? null : lanzamiento.failures;
     this.details = lanzamiento == undefined ? null : lanzamiento.details;

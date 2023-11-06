@@ -25,7 +25,6 @@ export class DetalleLanzamientoComponent {
 
   ngOnInit() {
     this.obtenerId();
-    console.log(this.lanzamiento);
   }
 
   private obtenerId(){
@@ -40,18 +39,19 @@ export class DetalleLanzamientoComponent {
       }
     });
   }
-  
   private async cargarDatosLauncher(id: string) {
-    this.httpService.realizarGet(Urls.urlApiv5 + "launches/" + id).subscribe({
-      next: (data: any) => {
-        this.lanzamiento = new Lanzamiento(data);
-        for (let i = 0; i < data.cores.length; i++) {
-          const core = data.cores[i];
-          this.lanzamiento.cores[i] = core.core;
-        }
-        console.log(this.lanzamiento.cores)
-      }, error: () => console.log('error'),
-    });
+    try {
+      console.log(id);
+      let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "launches/" + id);
+      const data = await lastValueFrom(responseApi);
+      this.lanzamiento = new Lanzamiento(data);
+      for (let i = 0; i < this.lanzamiento.cores.length; i++) {
+        const core = this.lanzamiento.cores[i];
+        this.lanzamiento.cores[i] = core.core;
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
   }
   
 
