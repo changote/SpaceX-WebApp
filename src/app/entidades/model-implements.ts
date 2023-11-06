@@ -23,7 +23,7 @@ export class Lanzamiento implements ILanzamiento {
   photo: string = '';
   success: boolean = true;
   rocket: string = '';
-  failures: string[] = [];
+  failures: any[] = [];
   details: string = '';
   crew: string[] = [];
   ships: string[] = [];
