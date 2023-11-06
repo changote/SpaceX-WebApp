@@ -1,6 +1,6 @@
 <div class="conteiner">
   <div class="titulo"><h2>Payloads</h2></div>
-  <div class="informacion">
+  <div *ngIf="payloads.length != 0" class="informacion">
       <img src="../../../assets/img/payloads.jpg" alt="Payload general" />
     <div>
       <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -33,12 +33,13 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
       </table>
 
-      <mat-paginator
-        [pageSizeOptions]="[5]"
-        showFirstLastButtons
-        aria-label="Select page of periodic elements"
-      >
-      </mat-paginator>
+      <div *ngIf="payloads.length > 5">
+        <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons aria-label="Selecciona una pagina">
+        </mat-paginator>
+      </div>
     </div>
+  </div>
+  <div *ngIf="payloads.length == 0">
+    <span>Este lanzamiento no tiene payloads</span>
   </div>
 </div>

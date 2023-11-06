@@ -12,22 +12,22 @@ import { Core } from 'src/app/entidades/model-implements';
   templateUrl: './core-detallado.component.html',
   styleUrls: ['./core-detallado.component.css']
 })
-export class CoreDetalladoComponent implements AfterViewInit{
+export class CoreDetalladoComponent implements AfterViewInit {
   cores: Core[] = [];
-  displayedColumns: string[] = ['name', 'status', 'reuses', 'last-update', '%-aterrizajes-exitosos'];
+  displayedColumns: string[] = ['serial', 'status', 'reuses', 'last_update', 'porcentaje'];
   dataSource = new MatTableDataSource<any>([]); // Initialize as MatTableDataSource
   resultsLength = 0;
   aterrizajes = 0;
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-  constructor(private httpService: HttpService,@Inject(MAT_DIALOG_DATA) public data: string[]){}
+  constructor(private httpService: HttpService, @Inject(MAT_DIALOG_DATA) public data: string[]) { }
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
 
-  ngOnInit(){
+  ngOnInit() {
     this.getAllCores();
     console.log(this.data);
     this.dataSource.paginator = this.paginator;
@@ -36,24 +36,24 @@ export class CoreDetalladoComponent implements AfterViewInit{
   private async cargarDatacore(id: string) {
     try {
       console.log(id);
-      let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "cores/" + id);
-      const data = await lastValueFrom(responseApi);
-      console.log(data);
-      let coreData = data[0] as Core;
-      let intentos = coreData.asds_attempts + coreData.rtls_attempts;
-      let aterrizajes = coreData.asds_landings + coreData.rtls_landings;
-      coreData.porcentaje = (aterrizajes / intentos) * 100;
-      console.log(coreData);
-      this.cores.push(coreData); 
+      if (id != null) {
+        let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "cores/" + id);
+        const data = await lastValueFrom(responseApi);
 
-      this.dataSource.data = this.cores;
+        let coreData = data as unknown as Core;
+        let intentos = coreData.asds_attempts + coreData.rtls_attempts;
+        let aterrizajes = coreData.asds_landings + coreData.rtls_landings;
+        coreData.porcentaje = (aterrizajes / intentos) * 100;
+        this.cores.push(coreData);
+        this.dataSource.data = this.cores;
+      }
     } catch (error) {
       console.error('Error:', error);
+    }
   }
-}
 
   getAllCores() {
-    for(let capsula of this.data){
+    for (let capsula of this.data) {
       this.cargarDatacore(capsula);
     }
     this.resultsLength = this.cores.length;

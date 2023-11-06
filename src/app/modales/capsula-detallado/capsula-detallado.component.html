@@ -1,6 +1,8 @@
 <div class="conteiner">
-    <div class="titulo"><h2>Capsulas</h2></div>
-    <div class="informacion">
+  <div class="titulo">
+    <h2>Capsulas</h2>
+  </div>
+  <div *ngIf="capsulas.length != 0"class="informacion">
         <img src="../../../assets/img/capsula-general.jpg" alt="Capsula general" />
       <div>
         <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -44,4 +46,7 @@
         </table>
       </div>
     </div>
-  </div>
+<div *ngIf="capsulas.length == 0">
+    <span>Este lanzamiento no tiene capsulas</span>
+</div>
+</div>
