@@ -24,6 +24,16 @@
       "id": 5,
       "username": "prueba",
       "password": "ss"
+    },
+    {
+      "id": 6,
+      "username": "asd",
+      "password": "asd"
+    },
+    {
+      "id": 7,
+      "username": "rgdrg",
+      "password": "12345"
     }
   ],
   "person": [
@@ -63,13 +73,36 @@
       "gender": "Antilope",
       "email": "asda",
       "age": 0
+    },
+    {
+      "id": 5,
+      "name": "wdwads",
+      "password": "12345",
+      "last_name": "fergdrg",
+      "username": "rgdrg",
+      "gender": "Mujer",
+      "email": "fdgdrgdr",
+      "age": 0
     }
   ],
   "travel_request": [
     {
       "id": 1,
-      "email": "agus@gmail.com",
-      "text": "Hola quiero viajar jaja xd"
+      "nombre": "asdas",
+      "email": "pepe@gmail.com",
+      "comentario": "dasdaw"
+    },
+    {
+      "id": 2,
+      "nombre": "",
+      "email": "agomez@certant.com",
+      "comentario": ""
+    },
+    {
+      "id": 3,
+      "nombre": "dwadaw",
+      "email": "agomez@certant.com",
+      "comentario": "asdasd"
     }
   ]
 }

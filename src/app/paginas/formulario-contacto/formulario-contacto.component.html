@@ -2,14 +2,27 @@
   <div class="container">
     <h2>Formulario de contacto</h2>
     <form action="">
-      Nombre
-      <input type="text" name="nombre" maxlength="100" />
-      Email
-      <input type="text" name="email" maxlength="100" />
-      Cuentanos sobre ti y que nos aportarias
-      <textarea cols="30" rows="10" name="comentarios"></textarea>
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput placeholder="Ej: Mariano" name="nombre" [(ngModel)]="formulario.nombre" required matInput>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Ej: mariano@gmail.com" value="userEmail" name="email" [(ngModel)]="formulario.email" required matInput>
+        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+          Ingrese un email valido
+        </mat-error>
+        <mat-error *ngIf="emailFormControl.hasError('required')">
+          Email es <strong>obligatorio</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="text-area">
+        <mat-label>Cuentanos sobre ti y que nos aportarias..</mat-label>
+        <textarea matInput placeholder="Ej: yo quiero viajar al espacio porque..." name="comentario" [(ngModel)]="formulario.comentario" required matInput></textarea>
+      </mat-form-field>
       <div class="botones">
-        <input type="submit" value="Enviar formulario" />
+        <button mat-button (click)="submit()">Enviar formulario</button>
         <input type="Reset" value="Borrar todo" />
       </div>
     </form>

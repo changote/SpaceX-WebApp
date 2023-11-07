@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { FormulariosComponent } from 'src/app/modales/formularios/formularios.component';
 import { AuthService } from 'src/app/servicios/autenticacion/auth.service';
 
 @Component({
@@ -11,7 +13,7 @@ export class MisDatosComponent implements OnInit{
   user: any;
   loading = true;
 
-  constructor(private authService: AuthService){
+  constructor(private authService: AuthService, private dialog: MatDialog){
   }
 
   ngOnInit(): void {
@@ -22,5 +24,12 @@ export class MisDatosComponent implements OnInit{
     console.log(this.user.gender);
   }
 
+  modalFormularios(){
+    this.dialog.open(FormulariosComponent, {
+      data: this.user.email,
+      height: 'auto',
+      width: 'auto',
+    });
+  }
 
 }

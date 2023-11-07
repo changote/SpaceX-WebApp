@@ -19,6 +19,8 @@ export class HttpService {
   }
 
   public realizarPost(url: string, datos: any): Observable<boolean> {
+    console.log(datos);
+    console.log(url);
     return this.http.post<boolean>(url, datos);
   }
 

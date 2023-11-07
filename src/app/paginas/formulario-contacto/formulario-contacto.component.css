@@ -7,7 +7,6 @@
 .container{
     padding-bottom: 150px;
     color: white;
-    font-size: 2rem;
     font-family: 'Comfortaa', sans-serif;
 }
 
@@ -19,22 +18,8 @@ form{
     margin-left: 20rem;
     margin-right: 20rem;
 }
-
-input, select{
-    margin: 2rem;
-    padding: 0.5rem;
-    border-radius: 10px;
-    background-color: rgba(169, 169, 169, 0.729);
-    cursor: pointer;
-    width: 60%;
-    display: flex;
-}
-
-textarea{
-    width: 80%;
-    margin-top: 2rem;
-    border-radius: 10px;
-    background-color: rgba(169, 169, 169, 0.729);
+.text-area{
+    width: 100%;
 }
 
 h2{

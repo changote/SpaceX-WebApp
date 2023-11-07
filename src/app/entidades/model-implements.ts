@@ -1,4 +1,4 @@
-import { ICore, ILanzamiento, IRegistro, IUser } from "./model-interface";
+import { ICore, IFormulario, ILanzamiento, IRegistro, IUser } from "./model-interface";
 
 export class User implements IUser {
   id: number | null = null;
@@ -15,6 +15,13 @@ export class Registro implements IRegistro {
   email: string = '';
   age: number = 0;
   password: string = '';
+}
+
+export class Formulario implements IFormulario {
+  id: number | null = null;
+  nombre: string = '';
+  email: string = '';
+  comentario: string = '';  
 }
 
 export class Lanzamiento implements ILanzamiento {

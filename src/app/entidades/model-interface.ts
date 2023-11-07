@@ -15,6 +15,13 @@ export interface IRegistro {
     password: string;
 }
 
+export interface IFormulario {
+    id: number | null;
+    nombre: string;
+    email: string;
+    comentario: string;
+}
+
 export interface ILanzamiento {
     capsules: string[];
     cores: any[];
