@@ -1,3 +1,49 @@
 <div *ngFor="let formulario of formularios">
     {{ formulario.comentario }}
 </div>
+
+<div class="conteiner">
+    <div class="titulo">
+      <h2>Formularios</h2>
+    </div>
+    <div *ngIf="formularios.length != 0" class="informacion">
+      <div>
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+          <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>Nro formulario</th>
+            <td mat-cell *matCellDef="let element">{{ element.id }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="nombre">
+            <th mat-header-cell *matHeaderCellDef>Nombre</th>
+            <td mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="e-mail">
+            <th mat-header-cell *matHeaderCellDef>E-mail</th>
+            <td mat-cell *matCellDef="let element">{{ element.email }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="estado">
+            <th mat-header-cell *matHeaderCellDef>Estado</th>
+            <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+          </ng-container>
+  
+          <ng-container matColumnDef="eliminar">
+            <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+            <td mat-cell *matCellDef="let element"> <i class="fa-solid fa-trash" style="color: #ffffff;"></i> </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        </table>
+        <div *ngIf="formularios.length > 5">
+            <mat-paginator [pageSizeOptions]="[5]" showFirstLastButtons aria-label="Selecciona una pagina">
+            </mat-paginator>
+          </div>
+      </div>
+    </div>
+    <div *ngIf="formularios.length == 0" class="textoNoInfo">
+      <span>No tiene formularios</span>
+    </div>
+  </div>
