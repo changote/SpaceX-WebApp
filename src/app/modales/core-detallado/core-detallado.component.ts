@@ -42,8 +42,14 @@ export class CoreDetalladoComponent implements AfterViewInit {
 
         let coreData = data as unknown as Core;
         let intentos = coreData.asds_attempts + coreData.rtls_attempts;
-        let aterrizajes = coreData.asds_landings + coreData.rtls_landings;
-        coreData.porcentaje = (aterrizajes / intentos) * 100;
+
+        if(intentos != 0){
+          let aterrizajes = coreData.asds_landings + coreData.rtls_landings;
+          coreData.porcentaje = (aterrizajes / intentos) * 100;
+        } else {
+          coreData.porcentaje = 0;
+        }
+
         this.cores.push(coreData);
         this.dataSource.data = this.cores;
       }

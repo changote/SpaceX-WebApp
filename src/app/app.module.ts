@@ -34,6 +34,7 @@ import { CapsulaDetalladoComponent } from './modales/capsula-detallado/capsula-d
 import { ShipsDetalladoComponent } from './modales/ships-detallado/ships-detallado.component';
 import { CrewDetalladoComponent } from './modales/crew-detallado/crew-detallado.component';
 import { FormulariosComponent } from './modales/formularios/formularios.component';
+import { InfoNosotrosComponent } from './paginas/info-nosotros/info-nosotros.component';
 
 
 @NgModule({
@@ -66,6 +67,7 @@ import { FormulariosComponent } from './modales/formularios/formularios.componen
     ShipsDetalladoComponent,
     CrewDetalladoComponent,
     FormulariosComponent,
+    InfoNosotrosComponent,
   ],
   imports: [
     BrowserModule,

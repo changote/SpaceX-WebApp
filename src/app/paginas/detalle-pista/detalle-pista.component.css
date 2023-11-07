@@ -8,6 +8,7 @@
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    font-family: "Comfortaa", sans-serif;
 }
 .container img {
     height: 40rem;

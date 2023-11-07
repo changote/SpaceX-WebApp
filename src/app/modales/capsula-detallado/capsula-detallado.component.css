@@ -5,6 +5,7 @@
     background-color: rgb(71, 71, 71);
     height: auto;
     padding-bottom: 5rem;
+    color: white;
   }
   
   img {
@@ -41,4 +42,9 @@
   
   table{
       width: 800px;
+  }
+
+  .textoNoInfo{
+    text-align: center;
+    font-family: "Comfortaa", sans-serif;
   }
