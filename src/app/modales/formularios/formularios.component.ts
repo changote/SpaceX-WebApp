@@ -32,13 +32,18 @@ export class FormulariosComponent implements OnInit{
     this.dataSource.paginator = this.paginator;
   }
 
-  private async cargarDatosFormularios(email: string) {
+  private async cargarDatosFormularios(username: string) {
     try {
-      let responseApi = this.http.realizarGet(Urls.urlJsonSv + "travel_request?email=" + email);
+      let responseApi = this.http.realizarGet(Urls.urlJsonSv + "travel_request?username=" + username);
       const data = await lastValueFrom(responseApi);
       this.formularios = data;
+      this.dataSource.data = this.formularios;
     } catch (error) {
       console.error('Error:', error);
     }
+  }
+
+  deleteFormulario(){
+    this.http.
   }
 }

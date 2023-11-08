@@ -22,6 +22,8 @@ export class Formulario implements IFormulario {
   nombre: string = '';
   email: string = '';
   comentario: string = '';  
+  username: string = '';
+  status: string = 'PENDIENTE';
 }
 
 export class Lanzamiento implements ILanzamiento {

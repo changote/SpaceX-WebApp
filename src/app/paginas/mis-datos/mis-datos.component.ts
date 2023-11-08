@@ -26,7 +26,7 @@ export class MisDatosComponent implements OnInit{
 
   modalFormularios(){
     this.dialog.open(FormulariosComponent, {
-      data: this.user.email,
+      data: this.user.username,
       height: 'auto',
       width: 'auto',
     });

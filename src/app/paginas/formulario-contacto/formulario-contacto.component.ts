@@ -23,7 +23,9 @@ export class FormularioContactoComponent implements OnInit{
       id: null,
       nombre: '',
       email: this.userEmail,
-      comentario: ''
+      comentario: '',
+      status: '',
+      username: ''
     };
   }
 

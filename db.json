@@ -94,13 +94,17 @@
     },
     {
       "id": 2,
-      "nombre": "",
+      "nombre": "dddd",
+      "status": "PENDIENTE",
+      "username": "agus",
       "email": "agomez@certant.com",
       "comentario": ""
     },
     {
       "id": 3,
       "nombre": "dwadaw",
+      "status": "PENDIENTE",
+      "username": "agus",
       "email": "agomez@certant.com",
       "comentario": "asdasd"
     }

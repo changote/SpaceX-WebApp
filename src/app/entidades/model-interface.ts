@@ -18,8 +18,10 @@ export interface IRegistro {
 export interface IFormulario {
     id: number | null;
     nombre: string;
+    username: string;
     email: string;
     comentario: string;
+    status: string;
 }
 
 export interface ILanzamiento {
