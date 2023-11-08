@@ -21,6 +21,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   timeoutId?: number;
 
   ngOnInit(): void {
+    console.log(this.slides);
     this.resetTimer();
   }
   ngOnDestroy() {

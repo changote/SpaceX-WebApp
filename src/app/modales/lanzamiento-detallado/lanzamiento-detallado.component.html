@@ -1,6 +1,6 @@
 <div class="card">
   <h2>Lanzamiento {{ data.name }}</h2>
-  <div class="carrousel">
+  <div>
     <div *ngIf="data.success == true" class="exitoso">
       <p class="exito">Exito</p>
     </div>
@@ -10,11 +10,13 @@
     <div *ngIf="data.success == undefined" class="exitoso">
       <p class="sin-definir">Sin informacion</p>
     </div>
-    <div *ngIf="data.photo.length != 0">
+    <div class="justify-content-center">
+      <div *ngIf="data.photo.length != 0" class="carrousel">
         <image-slider [slides]="slides"></image-slider>
-    </div>
-    <div *ngIf="data.photo.length == 0">
+      </div>
+      <div *ngIf="data.photo.length == 0" class="carrousel">
         <img src="../../../assets/img/lanzamientoDefaut.jpg" alt="Imagen default">
+      </div>
     </div>
   </div>
   <div class="texto">

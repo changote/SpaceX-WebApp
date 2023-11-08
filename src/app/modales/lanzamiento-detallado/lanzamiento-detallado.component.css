@@ -8,10 +8,6 @@
   font-family: "Comfortaa", sans-serif;
 }
 
-.card img {
-  height: 500px;
-  border-radius: 20px;
-}
 
 h2 {
   font-size: 3rem;
@@ -23,46 +19,50 @@ p {
   text-align: start;
   margin: 0;
 }
-.texto{
-    padding: 1rem;
-    padding-bottom: 3rem;
+
+.texto {
+  padding: 1rem;
+  padding-bottom: 3rem;
 }
+
 .texto p {
   padding: 1rem;
 }
 
-.carrousel {
-  height: 500px;
-}
 
 .sector1 {
   display: flex;
   justify-content: space-between;
 }
 
-.exitoso p{
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    padding: 0.5rem;
-    padding-right: 1.5rem;
-    position: fixed;
+.exitoso p {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 0.5rem;
+  padding-right: 1.5rem;
+  position: fixed;
 }
 
-.exito{
-    background-color: rgba(0, 128, 0, 0.845);
+.exito {
+  background-color: rgba(0, 128, 0, 0.845);
 }
 
-.fracaso{
-    background-color: rgba(175, 0, 0, 0.886);
+.fracaso {
+  background-color: rgba(175, 0, 0, 0.886);
 }
 
-.sin-definir{
-    background-color: rgba(215, 215, 0, 0.834);
+.sin-definir {
+  background-color: rgba(215, 215, 0, 0.834);
 }
 
-.muestra-falla{
-    display: flex;
-    background-color: rgba(125, 7, 7, 0.726);
-    color: white;
-    border-radius: 5px;
+.muestra-falla {
+  display: flex;
+  background-color: rgba(125, 7, 7, 0.726);
+  color: white;
+  border-radius: 5px;
+}
+
+.carrousel {
+  width: 80%;
+  height: 30rem;
 }

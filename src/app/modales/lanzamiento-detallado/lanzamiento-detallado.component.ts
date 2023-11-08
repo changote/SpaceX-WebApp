@@ -24,6 +24,7 @@ export class LanzamientoDetalladoComponent {
         title: i,
         url: photo
       };
+      console.log(slide);
       this.slides.push(slide);
     }
   }
