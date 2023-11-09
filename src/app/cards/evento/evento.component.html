@@ -12,8 +12,8 @@
       <div class="informacion">
         <p>{{event.details }}</p>
       </div>
-      <div class="link">
-        <a href="{{event.links}}" target="_blank">Articulo de {{event.title }}</a>
+      <div class="link" *ngIf="event.links.article">
+        <a href="{{event.links.article}}" target="_blank">Articulo de {{event.title }}</a>
       </div>
       </div>
     </div>

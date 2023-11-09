@@ -43,7 +43,12 @@ export class FormulariosComponent implements OnInit{
     }
   }
 
-  deleteFormulario(){
-    this.http.
+  deleteFormulario(id: number){
+    this.http.realizarDelete(Urls.urlJsonSv + "travel_request/", id).subscribe(
+      (data => {
+        this.cargarDatosFormularios(this.data);
+        console.log(data);
+      })
+    );
   }
 }

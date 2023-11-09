@@ -1,8 +1,8 @@
 import { Injectable, EventEmitter, Output } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { HttpErrorResponse } from '@angular/common/http';
-import { catchError , tap , timeout } from 'rxjs/operators';
-import { Observable, throwError } from 'rxjs';
+import { catchError , map, tap , timeout } from 'rxjs/operators';
+import { Observable, of, throwError } from 'rxjs';
 
 
 @Injectable({
@@ -26,5 +26,13 @@ export class HttpService {
 
   public realizarPut(url: string, id: number, update: any): Observable<boolean> {
     return this.http.put<boolean>(url + id, update);
+  }
+
+  public realizarDelete(url: string, id: number): Observable<boolean> {
+    return this.http.delete(url + id)
+    .pipe(
+      map(respuesta => true),
+      catchError(error => of (false))
+    );
   }
 }

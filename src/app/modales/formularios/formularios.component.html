@@ -27,7 +27,7 @@
   
           <ng-container matColumnDef="eliminar">
             <th mat-header-cell *matHeaderCellDef>Eliminar</th>
-            <td mat-cell *matCellDef="let element"> <i class="fa-solid fa-trash" style="color: #000000;"></i> </td>
+            <td mat-cell *matCellDef="let element"> <button (click)="deleteFormulario(element.id)"><i class="fa-solid fa-trash" style="color: #000000;"></i></button> </td>
           </ng-container>
   
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

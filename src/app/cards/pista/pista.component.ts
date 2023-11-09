@@ -6,6 +6,8 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./pista.component.css']
 })
 export class PistaComponent {
-
 @Input() pista: any;
+
+constructor() {}
+
 }

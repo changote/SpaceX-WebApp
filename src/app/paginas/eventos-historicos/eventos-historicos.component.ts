@@ -13,40 +13,32 @@ export class EventosHistoricosComponent {
   eventos: any;
   auto: any;
 
-  constructor(private httpService: HttpService){}
+  constructor(private httpService: HttpService) { }
 
   ngOnInit() {
     this.cargarEventos();
     this.cargarEventoAuto();
     setTimeout(() => {
-    this.loading = false;
-    }, 2000);}
+      this.loading = false;
+    }, 2000);
+    console.log(this.eventos);
+  }
 
-    // private cargarEventos() {
-    //   this.httpService.realizarGet(Urls.urlApi + "history").subscribe(
-    //     (data: any) => {
-    //       this.eventos = data;
-    //       console.log(this.eventos);
-    //     },
-    //     (error: any) => {
-    //       console.error('Error:', error);
-    //     }
-    //   );
-    // }
-    private async cargarEventos() {
-      try{
-        let apiResponse = this.httpService.realizarGet(Urls.urlApiv4 + "history");
-        this.eventos = await lastValueFrom(apiResponse);
-      }catch(error){
-        console.log(error);
-      }
+  private async cargarEventos() {
+    try {
+      let apiResponse = this.httpService.realizarGet(Urls.urlApiv4 + "history");
+      this.eventos = await lastValueFrom(apiResponse);
+    } catch (error) {
+      console.log(error);
     }
-    private async cargarEventoAuto() {
-      try{
-        let apiResponse = this.httpService.realizarGet(Urls.urlApiv4 + "roadster");
-        this.auto = await lastValueFrom(apiResponse);
-      }catch(error){
-        console.log(error);
-      }
+  }
+  private async cargarEventoAuto() {
+    try {
+      let apiResponse = this.httpService.realizarGet(Urls.urlApiv4 + "roadster");
+      this.auto = await lastValueFrom(apiResponse);
+      console.log(this.auto);
+    } catch (error) {
+      console.log(error);
     }
+  }
 }

@@ -1,16 +1,16 @@
-.background{
+.background {
     background-color: rgba(27, 27, 27, 0.719);
     position: relative;
     padding-top: 100px;
 }
 
-.container{
+.container {
     padding-bottom: 150px;
     color: white;
     font-family: 'Comfortaa', sans-serif;
 }
 
-form{
+form {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -18,27 +18,38 @@ form{
     margin-left: 20rem;
     margin-right: 20rem;
 }
-.text-area{
+
+.text-area {
     width: 100%;
 }
 
-h2{
-text-align: center;
-margin: 3rem;
-font-family: 'Orbitron', sans-serif;
-margin-bottom: 4rem;
+h2 {
+    text-align: center;
+    margin: 3rem;
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 4rem;
+    font-size: 2rem;
 }
 
-.botones{
+.botones {
     display: flex;
     justify-content: space-evenly;
 }
 
-.botones input{
+button {
     cursor: pointer;
+    padding: 0.5rem;
     margin: 2rem;
     font-size: 1.5rem;
     background-color: rgba(53, 53, 53, 0.841);
     color: white;
     width: auto;
+    border-radius: 10px;
+}
+
+.mensaje-ok{
+    color: rgb(0, 170, 0);
+}
+.mensaje-error{
+    color: rgb(170, 48, 0);
 }

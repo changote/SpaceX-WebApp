@@ -12,20 +12,22 @@ import { Urls } from 'src/app/url-globales';
 })
 export class FormularioContactoComponent implements OnInit{
   formulario: Formulario = new Formulario();
-  userEmail: string = '';
+  user: Registro = new Registro();
+  mensaje: string = '';
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
+  mensajeBoolean: boolean = true;
 
   constructor(private http: HttpService, private authService: AuthService){}
   ngOnInit(): void {
     this.getUserInfo();
     this.formulario = {
       id: null,
-      nombre: '',
-      email: this.userEmail,
+      nombre: this.user.name,
+      email: this.user.email,
       comentario: '',
-      status: '',
-      username: ''
+      status: 'PENDIENTE',
+      username: this.user.username
     };
   }
 
@@ -33,13 +35,19 @@ export class FormularioContactoComponent implements OnInit{
     const resp = this.http.realizarPost(Urls.urlJsonSv + 'travel_request',this.formulario).subscribe({
       next: () => {
         console.log("Exito");
+        this.mensaje = "Enviado correctamente!";
+        this.mensajeBoolean = true;
       },
-      error: () => console.log("Error")
+      error: () => {
+        console.log("Error")
+        this.mensaje = "Error!";
+        this.mensajeBoolean = false;
+      }
     })
   }
 
   getUserInfo(){
     const user: Registro = this.authService.getUser();
-    this.userEmail = user.email;
+    this.user = user;
   }
 }

@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { HttpService } from 'src/app/servicios/http/http.service';
@@ -13,7 +14,7 @@ export class PistasComponent implements OnInit{
   launchpads: any;
   landpads: any;
   loading = true;
-  constructor(private httpService: HttpService){}
+  constructor(private httpService: HttpService, private http: HttpClient){}
 
   ngOnInit() {
     this.cargarPistas();
@@ -37,6 +38,8 @@ export class PistasComponent implements OnInit{
       console.error(error);
     }
   }
+
+  
 }
 
 

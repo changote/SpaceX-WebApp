@@ -1,14 +1,14 @@
 <div class="background">
   <div class="container">
     <h2>Formulario de contacto</h2>
-    <form action="">
+    <form>
       <mat-form-field class="example-full-width">
         <mat-label>Nombre</mat-label>
         <input matInput placeholder="Ej: Mariano" name="nombre" [(ngModel)]="formulario.nombre" required matInput>
       </mat-form-field>
       <mat-form-field class="example-full-width">
         <mat-label>Email</mat-label>
-        <input matInput placeholder="Ej: mariano@gmail.com" value="userEmail" name="email" [(ngModel)]="formulario.email" required matInput>
+        <input matInput placeholder="Ej: mariano@gmail.com" name="email" [(ngModel)]="formulario.email" required matInput>
         <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
           Ingrese un email valido
         </mat-error>
@@ -23,8 +23,9 @@
       </mat-form-field>
       <div class="botones">
         <button mat-button (click)="submit()">Enviar formulario</button>
-        <input type="Reset" value="Borrar todo" />
+        <button mat-button type="Reset">Borrar todo</button>
       </div>
+      <span [class.mensaje-ok]="mensajeBoolean" [class.mensaje-error]="!mensajeBoolean">{{mensaje}}</span>
     </form>
   </div>
 </div>
