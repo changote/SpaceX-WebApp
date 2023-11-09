@@ -1,0 +1,96 @@
+<form class="container" (ngSubmit)="onSubmit()" #registerForm="ngForm">
+  <h2 mat-dialog-title class="title">Editar Perfil</h2>
+  <div class="editarPerfil">
+    <mat-form-field>
+      <mat-label>Nombre</mat-label>
+      <input
+        type="text"
+        name="nombre"
+        maxlength="100"
+        matInput
+        [(ngModel)]="perfil.name"
+        required
+        matInput
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Apellido</mat-label>
+      <input
+        type="text"
+        name="apellido"
+        maxlength="100"
+        matInput
+        [(ngModel)]="perfil.last_name"
+        required
+        matInput
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Género</mat-label>
+      <mat-select
+        name="genero"
+        matInput
+        [(ngModel)]="perfil.gender"
+        required
+        matInput
+      >
+        <mat-option value="Mujer">Mujer</mat-option>
+        <mat-option value="Hombre">Hombre</mat-option>
+        <mat-option value="Antilope">Antilope</mat-option>
+        <mat-option value="Pelado">Pelado</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input
+        type="email"
+        name="email"
+        maxlength="100"
+        matInput
+        [(ngModel)]="perfil.email"
+        required
+        matInput
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input
+        type="password"
+        name="password"
+        maxlength="100"
+        matInput
+        [(ngModel)]="perfil.password"
+        required
+        matInput
+      />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Repite Password</mat-label>
+      <input
+        type="password"
+        name="repeatPassword"
+        maxlength="100"
+        matInput
+        [(ngModel)]="repeatPassword"
+        required
+        matInput
+      />
+    </mat-form-field>
+    <div *ngIf="!contrasenasCoinciden()" class="error-message">
+      Las contraseñas no coinciden.
+    </div>
+  </div>
+  <div class="botones">
+    <div mat-dialog-actions>
+      <button mat-button (click)="closeDialog()" class="custom-button">
+        Cancelar
+      </button>
+    </div>
+    <button type="submit" mat-button [disabled]="!todoOk()">Confirmar</button>
+  </div>
+</form>

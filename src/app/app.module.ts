@@ -35,6 +35,7 @@ import { ShipsDetalladoComponent } from './modales/ships-detallado/ships-detalla
 import { CrewDetalladoComponent } from './modales/crew-detallado/crew-detallado.component';
 import { FormulariosComponent } from './modales/formularios/formularios.component';
 import { InfoNosotrosComponent } from './paginas/info-nosotros/info-nosotros.component';
+import { EditarPerfilComponent } from './modales/editar-perfil/editar-perfil.component';
 
 
 @NgModule({
@@ -68,6 +69,7 @@ import { InfoNosotrosComponent } from './paginas/info-nosotros/info-nosotros.com
     CrewDetalladoComponent,
     FormulariosComponent,
     InfoNosotrosComponent,
+    EditarPerfilComponent,
   ],
   imports: [
     BrowserModule,

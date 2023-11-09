@@ -25,6 +25,8 @@ export class HttpService {
   }
 
   public realizarPut(url: string, id: number, update: any): Observable<boolean> {
+    console.log(update);
+    console.log(url);
     return this.http.put<boolean>(url + id, update);
   }
 
