@@ -44,3 +44,11 @@ h3 {
 .textoNoInfo{
     text-align: center;
 }
+
+.card{
+  background-color: white;
+}
+
+span {
+  color: white !important; /* Usa !important solo si es necesario */
+}

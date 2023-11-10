@@ -11,3 +11,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     display: flex;
     justify-content: center;
 }
+.mat-tab-label .mdc-tab__text-label {
+    color: white !important; /* Usa !important solo si es necesario */
+}
