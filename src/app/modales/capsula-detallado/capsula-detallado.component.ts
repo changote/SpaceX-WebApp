@@ -27,16 +27,13 @@ export class CapsulaDetalladoComponent implements AfterViewInit {
 
   ngOnInit(){
     this.getAllCapsulas();
-    console.log(this.data);
     this.dataSource.paginator = this.paginator;
   }
 
   private async cargarDatacapsulas(id: string) {
     try {
-      console.log(id);
       let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "capsules/" + id);
       const data = await lastValueFrom(responseApi);
-      console.log(data);
       this.capsulas.push(data); 
 
       this.dataSource.data = this.capsulas;

@@ -19,14 +19,10 @@ export class HttpService {
   }
 
   public realizarPost(url: string, datos: any): Observable<boolean> {
-    console.log(datos);
-    console.log(url);
     return this.http.post<boolean>(url, datos);
   }
 
   public realizarPut(url: string, id: number, update: any): Observable<boolean> {
-    console.log(update);
-    console.log(url);
     return this.http.put<boolean>(url + id, update);
   }
 

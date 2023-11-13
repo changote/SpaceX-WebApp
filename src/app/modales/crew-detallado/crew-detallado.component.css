@@ -44,3 +44,15 @@ h3 {
 .textoNoInfo{
     text-align: center;
 }
+
+.mdc-tab__text-label{
+  color: white!important;
+}
+
+span.mdc-tab__text-label{
+  color: white!important;
+}
+
+.mat-tab-label {
+  color: white!important;
+}

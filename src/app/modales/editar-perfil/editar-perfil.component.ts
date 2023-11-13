@@ -21,7 +21,6 @@ export class EditarPerfilComponent implements OnInit {
   
   ngOnInit(): void {
     this.perfil = this.data;
-    console.log(this.perfil);
   }
 
   public onSubmit() {

@@ -29,13 +29,11 @@ export class CoreDetalladoComponent implements AfterViewInit {
 
   ngOnInit() {
     this.getAllCores();
-    console.log(this.data);
     this.dataSource.paginator = this.paginator;
   }
 
   private async cargarDatacore(id: string) {
     try {
-      console.log(id);
       if (id != null) {
         let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "cores/" + id);
         const data = await lastValueFrom(responseApi);

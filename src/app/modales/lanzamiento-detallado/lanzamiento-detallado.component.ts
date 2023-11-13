@@ -14,7 +14,6 @@ export class LanzamientoDetalladoComponent {
 
   ngOnInit() {
     this.getPhotos();
-    console.log(this.data);
   }
 
   getPhotos() {
@@ -24,7 +23,6 @@ export class LanzamientoDetalladoComponent {
         title: i,
         url: photo
       };
-      console.log(slide);
       this.slides.push(slide);
     }
   }

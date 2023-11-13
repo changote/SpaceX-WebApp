@@ -3,7 +3,7 @@
     {
       "id": 1,
       "username": "agus",
-      "password": "12345"
+      "password": "123"
     },
     {
       "id": 2,
@@ -42,9 +42,10 @@
       "name": "agustin",
       "last_name": "gomez",
       "username": "agus",
-      "gender": "Hombre",
+      "gender": "Mujer",
       "email": "agomez@certant.com",
-      "age": 26
+      "age": 26,
+      "password": "123"
     },
     {
       "id": 2,

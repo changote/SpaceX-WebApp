@@ -1,31 +1,36 @@
-<div class="background">
-  <div class="container">
-    <h2>Formulario de contacto</h2>
-    <form>
-      <mat-form-field class="example-full-width">
-        <mat-label>Nombre</mat-label>
-        <input matInput placeholder="Ej: Mariano" name="nombre" [(ngModel)]="formulario.nombre" required matInput>
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Ej: mariano@gmail.com" name="email" [(ngModel)]="formulario.email" required matInput>
-        <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
-          Ingrese un email valido
-        </mat-error>
-        <mat-error *ngIf="emailFormControl.hasError('required')">
-          Email es <strong>obligatorio</strong>
-        </mat-error>
-      </mat-form-field>
+<app-loading *ngIf="loading; else elseBlock"></app-loading>
+<ng-template #elseBlock>
+  <div class="background">
+    <div class="container">
+      <h2>Formulario de contacto</h2>
+      <form>
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Ej: Mariano" name="nombre" [(ngModel)]="formulario.nombre" required matInput>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Ej: mariano@gmail.com" name="email" [(ngModel)]="formulario.email" required
+            matInput>
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Ingrese un email valido
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email es <strong>obligatorio</strong>
+          </mat-error>
+        </mat-form-field>
 
-      <mat-form-field class="text-area">
-        <mat-label>Cuentanos sobre ti y que nos aportarias..</mat-label>
-        <textarea matInput placeholder="Ej: yo quiero viajar al espacio porque..." name="comentario" [(ngModel)]="formulario.comentario" required matInput></textarea>
-      </mat-form-field>
-      <div class="botones">
-        <button mat-button (click)="submit()">Enviar formulario</button>
-        <button mat-button type="Reset">Borrar todo</button>
-      </div>
-      <span [class.mensaje-ok]="mensajeBoolean" [class.mensaje-error]="!mensajeBoolean">{{mensaje}}</span>
-    </form>
+        <mat-form-field class="text-area">
+          <mat-label>Cuentanos sobre ti y que nos aportarias..</mat-label>
+          <textarea matInput placeholder="Ej: yo quiero viajar al espacio porque..." name="comentario"
+            [(ngModel)]="formulario.comentario" required matInput></textarea>
+        </mat-form-field>
+        <div class="botones">
+          <button mat-button (click)="submit()">Enviar formulario</button>
+          <button mat-button type="Reset">Borrar todo</button>
+        </div>
+        <span [class.mensaje-ok]="mensajeBoolean" [class.mensaje-error]="!mensajeBoolean">{{mensaje}}</span>
+      </form>
+    </div>
   </div>
-</div>
+</ng-template>

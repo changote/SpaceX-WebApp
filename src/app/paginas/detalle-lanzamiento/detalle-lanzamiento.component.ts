@@ -41,7 +41,6 @@ export class DetalleLanzamientoComponent {
   }
   private async cargarDatosLauncher(id: string) {
     try {
-      console.log(id);
       let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "launches/" + id);
       const data = await lastValueFrom(responseApi);
       this.lanzamiento = new Lanzamiento(data);
@@ -60,7 +59,6 @@ export class DetalleLanzamientoComponent {
   }
 
   modalCore(){
-    console.log(this.lanzamiento.cores)
     this.dialog.open(CoreDetalladoComponent, {
       data: this.lanzamiento.cores,
       height: 'auto',
@@ -105,7 +103,6 @@ export class DetalleLanzamientoComponent {
 
   iluminarBarco() {
     const barco = document.getElementById('barco_xA0_Imagen');
-    console.log("barco");
     barco!.style.filter = 'brightness(150%)'; // Cambia el brillo para iluminar el barco
   }
 

@@ -20,7 +20,6 @@ export class MisDatosComponent implements OnInit {
     setTimeout(() => {
       this.loading = false;
     }, 1000);
-    console.log(this.user.gender);
   }
 
   modalFormularios() {

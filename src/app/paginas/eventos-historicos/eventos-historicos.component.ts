@@ -20,8 +20,7 @@ export class EventosHistoricosComponent {
     this.cargarEventoAuto();
     setTimeout(() => {
       this.loading = false;
-    }, 2000);
-    console.log(this.eventos);
+    }, 1000);
   }
 
   private async cargarEventos() {
@@ -29,16 +28,15 @@ export class EventosHistoricosComponent {
       let apiResponse = this.httpService.realizarGet(Urls.urlApiv4 + "history");
       this.eventos = await lastValueFrom(apiResponse);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
   private async cargarEventoAuto() {
     try {
       let apiResponse = this.httpService.realizarGet(Urls.urlApiv4 + "roadster");
       this.auto = await lastValueFrom(apiResponse);
-      console.log(this.auto);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   }
 }

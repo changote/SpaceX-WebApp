@@ -28,16 +28,13 @@ export class PayloadsDetalladoComponent implements AfterViewInit {
 
   ngOnInit() {
     this.getAllPayloads();
-    console.log(this.data);
     this.dataSource.paginator = this.paginator;
   }
 
   private async cargarDatapayloads(id: string) {
     try {
-      console.log(id);
       let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "payloads/" + id);
       const data = await lastValueFrom(responseApi);
-      console.log(data);
       this.payloads.push(data);
 
       this.dataSource.data = this.payloads;

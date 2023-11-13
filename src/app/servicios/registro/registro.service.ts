@@ -35,7 +35,7 @@ export class RegistroService {
       next: () => {
         console.log("Exito");
       },
-      error: () => console.log("Error")
+      error: () => console.error("Error")
     })
   }
 }
