@@ -45,14 +45,6 @@ h3 {
     text-align: center;
 }
 
-<<<<<<< HEAD
-.card{
-  background-color: white;
-}
-
-span {
-  color: white !important; /* Usa !important solo si es necesario */
-=======
 .mdc-tab__text-label{
   color: white!important;
 }
@@ -63,5 +55,4 @@ span.mdc-tab__text-label{
 
 .mat-tab-label {
   color: white!important;
->>>>>>> origin/carito
 }

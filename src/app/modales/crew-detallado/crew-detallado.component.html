@@ -5,20 +5,10 @@
   <div *ngIf="crew.length != 0">
     <mat-tab-group animationDuration="2000ms" [color]="'accent'">
       <div class="card" *ngFor="let member of crew">
-<<<<<<< HEAD
-        <div style="background-color: white;"><mat-tab label="{{ member.name }}">
-        
-          <img
-            *ngIf="member.image != null"
-            src="{{ member.image }}"
-            alt="imagen ship"
-          />
-=======
         <mat-tab [label]="member.name">
           <div class="justify-content-center">
             <img *ngIf="member.image != null" src="{{ member.image }}" alt="imagen ship" />
           </div>
->>>>>>> origin/carito
           <div class="texto">
             <h3>{{ member.name }}</h3>
             <div class="status retired" *ngIf="member.status === 'retired'">
@@ -30,7 +20,6 @@
             <p>Agencia: {{ member.agency }}</p>
           </div>
         </mat-tab>
-      </div>
       </div>
     </mat-tab-group>
   </div>
