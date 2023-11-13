@@ -1,27 +1,16 @@
-# SpaceXWebApp
+# SpaceX App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+## Descripción
 
-## Development server
+Bienvenido al repositorio oficial de SpaceX App, un proyecto escolar desarrollado para la materia Laboratorio de computacion IV de la UTN Mar del Plata, bajo la guía del Profesor Agustín Battisti.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Desarrolladores
+- Carolina Ferraris
+- Agustín Gómez
 
-## Code scaffolding
+## Uso
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Esta aplicación web fue desarrollada para cubrir la necesidad de una página donde visualizar información valiosa de despegues y flotas.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Tutorial
+En este [video explicativo](https://youtu.be/GZZOkDdcrh4) podras ver como se ve dicha aplicación.
