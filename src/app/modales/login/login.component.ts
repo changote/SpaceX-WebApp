@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
       let apiResponse = this.httpService.realizarGet(`${Urls.urlJsonSv}users/?username=${this.userData.username}&password=${this.userData.password}`);
       users = await lastValueFrom(apiResponse);
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
     return users.length == 1;
   }

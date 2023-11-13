@@ -11,6 +11,7 @@ import { Urls } from 'src/app/url-globales';
   styleUrls: ['./formulario-contacto.component.css']
 })
 export class FormularioContactoComponent implements OnInit{
+  loading: boolean = true;
   formulario: Formulario = new Formulario();
   user: Registro = new Registro();
   mensaje: string = '';
@@ -29,17 +30,18 @@ export class FormularioContactoComponent implements OnInit{
       status: 'PENDIENTE',
       username: this.user.username
     };
+    setTimeout(() => {
+      this.loading = false;
+    }, 1000);
   }
 
   submit(){
     const resp = this.http.realizarPost(Urls.urlJsonSv + 'travel_request',this.formulario).subscribe({
       next: () => {
-        console.log("Exito");
         this.mensaje = "Enviado correctamente!";
         this.mensajeBoolean = true;
       },
       error: () => {
-        console.log("Error")
         this.mensaje = "Error!";
         this.mensajeBoolean = false;
       }

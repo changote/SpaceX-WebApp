@@ -16,15 +16,12 @@ export class CrewDetalladoComponent implements OnInit{
 
   ngOnInit(){
     this.getAllCrewMembers();
-    console.log(this.crew);
   }
 
   private async cargarDataCrew(id: any) {
     try {
       let responseApi = this.httpService.realizarGet(Urls.urlApiv4 + "crew/" + id);
-      console.log(id);
       const data = await lastValueFrom(responseApi);
-      console.log(data);
       this.crew.push(data); 
     } catch (error) {
       console.error('Error:', error);

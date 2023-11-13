@@ -61,7 +61,6 @@ export class DetallePistaComponent implements OnInit {
       this.setStatus();
     } catch (error: any) {
       this.error = true;
-      console.log("error 2" + this.error);
     }
   }
   private setStatus() {

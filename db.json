@@ -3,12 +3,12 @@
     {
       "id": 1,
       "username": "agus",
-      "password": "12345"
+      "password": "123"
     },
     {
       "id": 2,
       "username": "caro",
-      "password": "12345"
+      "password": "asd"
     },
     {
       "id": 3,
@@ -42,18 +42,20 @@
       "name": "agustin",
       "last_name": "gomez",
       "username": "agus",
-      "gender": "Hombre",
+      "gender": "Mujer",
       "email": "agomez@certant.com",
-      "age": 26
+      "age": 26,
+      "password": "123"
     },
     {
       "id": 2,
       "name": "carolina",
       "last_name": "ferraris",
       "username": "caro",
-      "gender": "Mujer",
+      "gender": "Pelado",
       "email": "caro@gmail.com",
-      "age": 29
+      "age": 29,
+      "password": "asd"
     },
     {
       "id": 3,
@@ -111,42 +113,18 @@
       "username": "agus"
     },
     {
-      "id": 6,
-      "nombre": "carodwadas",
-      "email": "caro@gmail.com",
-      "comentario": "sadawd",
-      "status": "PENDIENTE",
-      "username": "caro"
-    },
-    {
-      "id": 7,
-      "nombre": "",
-      "email": "caro@gmail.com",
-      "comentario": "",
-      "status": "PENDIENTE",
-      "username": "caro"
-    },
-    {
-      "id": 8,
-      "nombre": "adsdaw",
-      "email": "caro@gmail.com",
-      "comentario": "dwadwa",
-      "status": "PENDIENTE",
-      "username": "caro"
-    },
-    {
-      "id": 9,
-      "nombre": "carolina",
-      "email": "caro@gmail.com",
-      "comentario": "asdasd",
-      "status": "PENDIENTE",
-      "username": "caro"
-    },
-    {
       "id": 10,
       "nombre": "carolina",
       "email": "caro@gmail.com",
       "comentario": "asdasdc",
+      "status": "PENDIENTE",
+      "username": "caro"
+    },
+    {
+      "id": 11,
+      "nombre": "carolina",
+      "email": "caro@gmail.com",
+      "comentario": "quiero un pipi",
       "status": "PENDIENTE",
       "username": "caro"
     }

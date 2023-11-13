@@ -15,7 +15,6 @@ export class ShipsDetalladoComponent implements OnInit{
 
   ngOnInit(){
     this.getAllShips();
-    console.log(this.data);
   }
 
   private async cargarDataShips(id: string) {

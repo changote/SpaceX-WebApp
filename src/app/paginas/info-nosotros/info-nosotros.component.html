@@ -1,4 +1,6 @@
-<div class="cuerpo">
+<app-loading *ngIf="loading; else elseBlock"></app-loading>
+<ng-template #elseBlock>
+    <div class="cuerpo">
     <h2>Desarrolladores</h2>
     <div class="conteiner">
         <div class="ladoIzquierdo">
@@ -30,4 +32,5 @@
         </div>
         </div>
 </div>
+</ng-template>
 

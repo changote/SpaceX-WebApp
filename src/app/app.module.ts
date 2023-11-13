@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { Error404Component } from './paginas/error404/error404.component';
 import { MisDatosComponent } from './paginas/mis-datos/mis-datos.component';
 import { HomeComponent } from './paginas/home/home.component';
-import { DetalleCoheteComponent } from './paginas/detalle-cohete/detalle-cohete.component';
 import { HeaderComponent } from './paginas/shared/header/header.component';
 import { FooterComponent } from './paginas/shared/footer/footer.component';
 import { CoheteComponent } from './cards/cohete/cohete.component';
@@ -35,6 +34,7 @@ import { ShipsDetalladoComponent } from './modales/ships-detallado/ships-detalla
 import { CrewDetalladoComponent } from './modales/crew-detallado/crew-detallado.component';
 import { FormulariosComponent } from './modales/formularios/formularios.component';
 import { InfoNosotrosComponent } from './paginas/info-nosotros/info-nosotros.component';
+import { EditarPerfilComponent } from './modales/editar-perfil/editar-perfil.component';
 
 
 @NgModule({
@@ -43,7 +43,6 @@ import { InfoNosotrosComponent } from './paginas/info-nosotros/info-nosotros.com
     Error404Component,
     MisDatosComponent,
     HomeComponent,
-    DetalleCoheteComponent,
     HeaderComponent,
     FooterComponent,
     CoheteComponent,
@@ -68,6 +67,7 @@ import { InfoNosotrosComponent } from './paginas/info-nosotros/info-nosotros.com
     CrewDetalladoComponent,
     FormulariosComponent,
     InfoNosotrosComponent,
+    EditarPerfilComponent,
   ],
   imports: [
     BrowserModule,
